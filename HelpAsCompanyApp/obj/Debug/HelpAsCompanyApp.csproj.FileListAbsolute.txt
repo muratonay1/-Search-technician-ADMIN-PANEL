@@ -1,0 +1,14 @@
+C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\bin\Debug\HelpAsCompanyApp.exe.config
+C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\bin\Debug\HelpAsCompanyApp.exe
+C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\bin\Debug\HelpAsCompanyApp.pdb
+C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\obj\Debug\HelpAsCompanyApp.csprojAssemblyReference.cache
+C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\obj\Debug\HelpAsCompanyApp.Properties.Resources.resources
+C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\obj\Debug\HelpAsCompanyApp.csproj.GenerateResource.cache
+C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\obj\Debug\HelpAsCompanyApp.csproj.CoreCompileInputs.cache
+C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\obj\Debug\HelpAsCompanyApp.exe
+C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\obj\Debug\HelpAsCompanyApp.pdb
+C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\obj\Debug\HelpAsCompanyApp.csproj.CopyComplete
+C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\obj\Debug\HelpAsCompanyApp.Form2.resources
+C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\obj\Debug\HelpAsCompanyApp.Form1.resources

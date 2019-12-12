@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="IlceListesi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sehir_Ismi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IlceListesiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IlceListesiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SehirListesi">
+        <s:complexType />
+      </s:element>
+      <s:element name="SehirListesiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SehirListesiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlanListesi">
+        <s:complexType />
+      </s:element>
+      <s:element name="AlanListesiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlanListesiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AltAlanListesi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Alan_Ismi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AltAlanListesiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AltAlanListesiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HaberListele">
+        <s:complexType />
+      </s:element>
+      <s:element name="HaberListeleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HaberListeleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HaberEkle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="baslik" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="icerik" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HaberEkleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HaberEkleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HaberSil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="haber_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HaberSilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HaberSilResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HaberGüncelle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="haber_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="haber_baslik" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="haber_icerik" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HaberGüncelleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HaberGüncelleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IlceListesiSoapIn">
+    <wsdl:part name="parameters" element="tns:IlceListesi" />
+  </wsdl:message>
+  <wsdl:message name="IlceListesiSoapOut">
+    <wsdl:part name="parameters" element="tns:IlceListesiResponse" />
+  </wsdl:message>
+  <wsdl:message name="SehirListesiSoapIn">
+    <wsdl:part name="parameters" element="tns:SehirListesi" />
+  </wsdl:message>
+  <wsdl:message name="SehirListesiSoapOut">
+    <wsdl:part name="parameters" element="tns:SehirListesiResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlanListesiSoapIn">
+    <wsdl:part name="parameters" element="tns:AlanListesi" />
+  </wsdl:message>
+  <wsdl:message name="AlanListesiSoapOut">
+    <wsdl:part name="parameters" element="tns:AlanListesiResponse" />
+  </wsdl:message>
+  <wsdl:message name="AltAlanListesiSoapIn">
+    <wsdl:part name="parameters" element="tns:AltAlanListesi" />
+  </wsdl:message>
+  <wsdl:message name="AltAlanListesiSoapOut">
+    <wsdl:part name="parameters" element="tns:AltAlanListesiResponse" />
+  </wsdl:message>
+  <wsdl:message name="HaberListeleSoapIn">
+    <wsdl:part name="parameters" element="tns:HaberListele" />
+  </wsdl:message>
+  <wsdl:message name="HaberListeleSoapOut">
+    <wsdl:part name="parameters" element="tns:HaberListeleResponse" />
+  </wsdl:message>
+  <wsdl:message name="HaberEkleSoapIn">
+    <wsdl:part name="parameters" element="tns:HaberEkle" />
+  </wsdl:message>
+  <wsdl:message name="HaberEkleSoapOut">
+    <wsdl:part name="parameters" element="tns:HaberEkleResponse" />
+  </wsdl:message>
+  <wsdl:message name="HaberSilSoapIn">
+    <wsdl:part name="parameters" element="tns:HaberSil" />
+  </wsdl:message>
+  <wsdl:message name="HaberSilSoapOut">
+    <wsdl:part name="parameters" element="tns:HaberSilResponse" />
+  </wsdl:message>
+  <wsdl:message name="HaberGüncelleSoapIn">
+    <wsdl:part name="parameters" element="tns:HaberGüncelle" />
+  </wsdl:message>
+  <wsdl:message name="HaberGüncelleSoapOut">
+    <wsdl:part name="parameters" element="tns:HaberGüncelleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="IlceListesi">
+      <wsdl:input message="tns:IlceListesiSoapIn" />
+      <wsdl:output message="tns:IlceListesiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SehirListesi">
+      <wsdl:input message="tns:SehirListesiSoapIn" />
+      <wsdl:output message="tns:SehirListesiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlanListesi">
+      <wsdl:input message="tns:AlanListesiSoapIn" />
+      <wsdl:output message="tns:AlanListesiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AltAlanListesi">
+      <wsdl:input message="tns:AltAlanListesiSoapIn" />
+      <wsdl:output message="tns:AltAlanListesiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HaberListele">
+      <wsdl:input message="tns:HaberListeleSoapIn" />
+      <wsdl:output message="tns:HaberListeleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HaberEkle">
+      <wsdl:input message="tns:HaberEkleSoapIn" />
+      <wsdl:output message="tns:HaberEkleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HaberSil">
+      <wsdl:input message="tns:HaberSilSoapIn" />
+      <wsdl:output message="tns:HaberSilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HaberGüncelle">
+      <wsdl:input message="tns:HaberGüncelleSoapIn" />
+      <wsdl:output message="tns:HaberGüncelleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IlceListesi">
+      <soap:operation soapAction="http://tempuri.org/IlceListesi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SehirListesi">
+      <soap:operation soapAction="http://tempuri.org/SehirListesi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlanListesi">
+      <soap:operation soapAction="http://tempuri.org/AlanListesi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AltAlanListesi">
+      <soap:operation soapAction="http://tempuri.org/AltAlanListesi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HaberListele">
+      <soap:operation soapAction="http://tempuri.org/HaberListele" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HaberEkle">
+      <soap:operation soapAction="http://tempuri.org/HaberEkle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HaberSil">
+      <soap:operation soapAction="http://tempuri.org/HaberSil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HaberGüncelle">
+      <soap:operation soapAction="http://tempuri.org/HaberGüncelle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IlceListesi">
+      <soap12:operation soapAction="http://tempuri.org/IlceListesi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SehirListesi">
+      <soap12:operation soapAction="http://tempuri.org/SehirListesi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlanListesi">
+      <soap12:operation soapAction="http://tempuri.org/AlanListesi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AltAlanListesi">
+      <soap12:operation soapAction="http://tempuri.org/AltAlanListesi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HaberListele">
+      <soap12:operation soapAction="http://tempuri.org/HaberListele" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HaberEkle">
+      <soap12:operation soapAction="http://tempuri.org/HaberEkle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HaberSil">
+      <soap12:operation soapAction="http://tempuri.org/HaberSil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HaberGüncelle">
+      <soap12:operation soapAction="http://tempuri.org/HaberGüncelle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://192.168.2.45:62839/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://192.168.2.45:62839/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
