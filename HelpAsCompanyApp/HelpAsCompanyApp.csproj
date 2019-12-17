@@ -93,7 +93,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.AlanIsmiDonderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.AlanListesiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.AltAlanIsmiDonderResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.AltAlanListesiResponse.datasource">
@@ -111,10 +117,22 @@
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.HaberSilResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.IlceIsmiDonderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.IlceListesiResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.SehirIsmiDonderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.SehirListesiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Usta_EkleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Usta_ListeleResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SonService\WebService1.wsdl" />

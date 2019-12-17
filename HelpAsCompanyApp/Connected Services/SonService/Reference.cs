@@ -70,6 +70,48 @@ namespace HelpAsCompanyApp.SonService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HaberGüncelle", ReplyAction="*")]
         System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.HaberGüncelleResponse> HaberGüncelleAsync(HelpAsCompanyApp.SonService.HaberGüncelleRequest request);
+        
+        // CODEGEN: Generating message contract since element name Usta_ListeleResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Usta_Listele", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.Usta_ListeleResponse Usta_Listele(HelpAsCompanyApp.SonService.Usta_ListeleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Usta_Listele", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Usta_ListeleResponse> Usta_ListeleAsync(HelpAsCompanyApp.SonService.Usta_ListeleRequest request);
+        
+        // CODEGEN: Generating message contract since element name AlanIsmiDonderResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AlanIsmiDonder", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.AlanIsmiDonderResponse AlanIsmiDonder(HelpAsCompanyApp.SonService.AlanIsmiDonderRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AlanIsmiDonder", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.AlanIsmiDonderResponse> AlanIsmiDonderAsync(HelpAsCompanyApp.SonService.AlanIsmiDonderRequest request);
+        
+        // CODEGEN: Generating message contract since element name AltAlanIsmiDonderResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AltAlanIsmiDonder", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.AltAlanIsmiDonderResponse AltAlanIsmiDonder(HelpAsCompanyApp.SonService.AltAlanIsmiDonderRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AltAlanIsmiDonder", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.AltAlanIsmiDonderResponse> AltAlanIsmiDonderAsync(HelpAsCompanyApp.SonService.AltAlanIsmiDonderRequest request);
+        
+        // CODEGEN: Generating message contract since element name SehirIsmiDonderResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SehirIsmiDonder", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.SehirIsmiDonderResponse SehirIsmiDonder(HelpAsCompanyApp.SonService.SehirIsmiDonderRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SehirIsmiDonder", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.SehirIsmiDonderResponse> SehirIsmiDonderAsync(HelpAsCompanyApp.SonService.SehirIsmiDonderRequest request);
+        
+        // CODEGEN: Generating message contract since element name IlceIsmiDonderResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IlceIsmiDonder", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.IlceIsmiDonderResponse IlceIsmiDonder(HelpAsCompanyApp.SonService.IlceIsmiDonderRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IlceIsmiDonder", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.IlceIsmiDonderResponse> IlceIsmiDonderAsync(HelpAsCompanyApp.SonService.IlceIsmiDonderRequest request);
+        
+        // CODEGEN: Generating message contract since element name usta_ismi from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Usta_Ekle", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.Usta_EkleResponse Usta_Ekle(HelpAsCompanyApp.SonService.Usta_EkleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Usta_Ekle", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Usta_EkleResponse> Usta_EkleAsync(HelpAsCompanyApp.SonService.Usta_EkleRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -607,6 +649,462 @@ namespace HelpAsCompanyApp.SonService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Usta_ListeleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Usta_Listele", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Usta_ListeleRequestBody Body;
+        
+        public Usta_ListeleRequest() {
+        }
+        
+        public Usta_ListeleRequest(HelpAsCompanyApp.SonService.Usta_ListeleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Usta_ListeleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int ALAN_ID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int ALTALAN_ID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int SEHIR_ID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int ILCE_ID;
+        
+        public Usta_ListeleRequestBody() {
+        }
+        
+        public Usta_ListeleRequestBody(int ALAN_ID, int ALTALAN_ID, int SEHIR_ID, int ILCE_ID) {
+            this.ALAN_ID = ALAN_ID;
+            this.ALTALAN_ID = ALTALAN_ID;
+            this.SEHIR_ID = SEHIR_ID;
+            this.ILCE_ID = ILCE_ID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Usta_ListeleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Usta_ListeleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Usta_ListeleResponseBody Body;
+        
+        public Usta_ListeleResponse() {
+        }
+        
+        public Usta_ListeleResponse(HelpAsCompanyApp.SonService.Usta_ListeleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Usta_ListeleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Usta_ListeleResult;
+        
+        public Usta_ListeleResponseBody() {
+        }
+        
+        public Usta_ListeleResponseBody(string Usta_ListeleResult) {
+            this.Usta_ListeleResult = Usta_ListeleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AlanIsmiDonderRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AlanIsmiDonder", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.AlanIsmiDonderRequestBody Body;
+        
+        public AlanIsmiDonderRequest() {
+        }
+        
+        public AlanIsmiDonderRequest(HelpAsCompanyApp.SonService.AlanIsmiDonderRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AlanIsmiDonderRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int alanid;
+        
+        public AlanIsmiDonderRequestBody() {
+        }
+        
+        public AlanIsmiDonderRequestBody(int alanid) {
+            this.alanid = alanid;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AlanIsmiDonderResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AlanIsmiDonderResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.AlanIsmiDonderResponseBody Body;
+        
+        public AlanIsmiDonderResponse() {
+        }
+        
+        public AlanIsmiDonderResponse(HelpAsCompanyApp.SonService.AlanIsmiDonderResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AlanIsmiDonderResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string AlanIsmiDonderResult;
+        
+        public AlanIsmiDonderResponseBody() {
+        }
+        
+        public AlanIsmiDonderResponseBody(string AlanIsmiDonderResult) {
+            this.AlanIsmiDonderResult = AlanIsmiDonderResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AltAlanIsmiDonderRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AltAlanIsmiDonder", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.AltAlanIsmiDonderRequestBody Body;
+        
+        public AltAlanIsmiDonderRequest() {
+        }
+        
+        public AltAlanIsmiDonderRequest(HelpAsCompanyApp.SonService.AltAlanIsmiDonderRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AltAlanIsmiDonderRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int altalanid;
+        
+        public AltAlanIsmiDonderRequestBody() {
+        }
+        
+        public AltAlanIsmiDonderRequestBody(int altalanid) {
+            this.altalanid = altalanid;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AltAlanIsmiDonderResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AltAlanIsmiDonderResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.AltAlanIsmiDonderResponseBody Body;
+        
+        public AltAlanIsmiDonderResponse() {
+        }
+        
+        public AltAlanIsmiDonderResponse(HelpAsCompanyApp.SonService.AltAlanIsmiDonderResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AltAlanIsmiDonderResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string AltAlanIsmiDonderResult;
+        
+        public AltAlanIsmiDonderResponseBody() {
+        }
+        
+        public AltAlanIsmiDonderResponseBody(string AltAlanIsmiDonderResult) {
+            this.AltAlanIsmiDonderResult = AltAlanIsmiDonderResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SehirIsmiDonderRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SehirIsmiDonder", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.SehirIsmiDonderRequestBody Body;
+        
+        public SehirIsmiDonderRequest() {
+        }
+        
+        public SehirIsmiDonderRequest(HelpAsCompanyApp.SonService.SehirIsmiDonderRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SehirIsmiDonderRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int sehirid;
+        
+        public SehirIsmiDonderRequestBody() {
+        }
+        
+        public SehirIsmiDonderRequestBody(int sehirid) {
+            this.sehirid = sehirid;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SehirIsmiDonderResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SehirIsmiDonderResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.SehirIsmiDonderResponseBody Body;
+        
+        public SehirIsmiDonderResponse() {
+        }
+        
+        public SehirIsmiDonderResponse(HelpAsCompanyApp.SonService.SehirIsmiDonderResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SehirIsmiDonderResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string SehirIsmiDonderResult;
+        
+        public SehirIsmiDonderResponseBody() {
+        }
+        
+        public SehirIsmiDonderResponseBody(string SehirIsmiDonderResult) {
+            this.SehirIsmiDonderResult = SehirIsmiDonderResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class IlceIsmiDonderRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="IlceIsmiDonder", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.IlceIsmiDonderRequestBody Body;
+        
+        public IlceIsmiDonderRequest() {
+        }
+        
+        public IlceIsmiDonderRequest(HelpAsCompanyApp.SonService.IlceIsmiDonderRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class IlceIsmiDonderRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int ilceid;
+        
+        public IlceIsmiDonderRequestBody() {
+        }
+        
+        public IlceIsmiDonderRequestBody(int ilceid) {
+            this.ilceid = ilceid;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class IlceIsmiDonderResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="IlceIsmiDonderResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.IlceIsmiDonderResponseBody Body;
+        
+        public IlceIsmiDonderResponse() {
+        }
+        
+        public IlceIsmiDonderResponse(HelpAsCompanyApp.SonService.IlceIsmiDonderResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class IlceIsmiDonderResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string IlceIsmiDonderResult;
+        
+        public IlceIsmiDonderResponseBody() {
+        }
+        
+        public IlceIsmiDonderResponseBody(string IlceIsmiDonderResult) {
+            this.IlceIsmiDonderResult = IlceIsmiDonderResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Usta_EkleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Usta_Ekle", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Usta_EkleRequestBody Body;
+        
+        public Usta_EkleRequest() {
+        }
+        
+        public Usta_EkleRequest(HelpAsCompanyApp.SonService.Usta_EkleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Usta_EkleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int alan_id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int sehir_id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int ilce_id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string usta_ismi;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string usta_soyismi;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string usta_tel;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string usta_mail;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public int usta_puan;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public int usta_musaitlik;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+        public int altalan_id;
+        
+        public Usta_EkleRequestBody() {
+        }
+        
+        public Usta_EkleRequestBody(int alan_id, int sehir_id, int ilce_id, string usta_ismi, string usta_soyismi, string usta_tel, string usta_mail, int usta_puan, int usta_musaitlik, int altalan_id) {
+            this.alan_id = alan_id;
+            this.sehir_id = sehir_id;
+            this.ilce_id = ilce_id;
+            this.usta_ismi = usta_ismi;
+            this.usta_soyismi = usta_soyismi;
+            this.usta_tel = usta_tel;
+            this.usta_mail = usta_mail;
+            this.usta_puan = usta_puan;
+            this.usta_musaitlik = usta_musaitlik;
+            this.altalan_id = altalan_id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Usta_EkleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Usta_EkleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Usta_EkleResponseBody Body;
+        
+        public Usta_EkleResponse() {
+        }
+        
+        public Usta_EkleResponse(HelpAsCompanyApp.SonService.Usta_EkleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Usta_EkleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Usta_EkleResult;
+        
+        public Usta_EkleResponseBody() {
+        }
+        
+        public Usta_EkleResponseBody(string Usta_EkleResult) {
+            this.Usta_EkleResult = Usta_EkleResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebService1SoapChannel : HelpAsCompanyApp.SonService.WebService1Soap, System.ServiceModel.IClientChannel {
     }
@@ -832,6 +1330,180 @@ namespace HelpAsCompanyApp.SonService {
             inValue.Body.haber_baslik = haber_baslik;
             inValue.Body.haber_icerik = haber_icerik;
             return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).HaberGüncelleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.Usta_ListeleResponse HelpAsCompanyApp.SonService.WebService1Soap.Usta_Listele(HelpAsCompanyApp.SonService.Usta_ListeleRequest request) {
+            return base.Channel.Usta_Listele(request);
+        }
+        
+        public string Usta_Listele(int ALAN_ID, int ALTALAN_ID, int SEHIR_ID, int ILCE_ID) {
+            HelpAsCompanyApp.SonService.Usta_ListeleRequest inValue = new HelpAsCompanyApp.SonService.Usta_ListeleRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Usta_ListeleRequestBody();
+            inValue.Body.ALAN_ID = ALAN_ID;
+            inValue.Body.ALTALAN_ID = ALTALAN_ID;
+            inValue.Body.SEHIR_ID = SEHIR_ID;
+            inValue.Body.ILCE_ID = ILCE_ID;
+            HelpAsCompanyApp.SonService.Usta_ListeleResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Usta_Listele(inValue);
+            return retVal.Body.Usta_ListeleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Usta_ListeleResponse> HelpAsCompanyApp.SonService.WebService1Soap.Usta_ListeleAsync(HelpAsCompanyApp.SonService.Usta_ListeleRequest request) {
+            return base.Channel.Usta_ListeleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Usta_ListeleResponse> Usta_ListeleAsync(int ALAN_ID, int ALTALAN_ID, int SEHIR_ID, int ILCE_ID) {
+            HelpAsCompanyApp.SonService.Usta_ListeleRequest inValue = new HelpAsCompanyApp.SonService.Usta_ListeleRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Usta_ListeleRequestBody();
+            inValue.Body.ALAN_ID = ALAN_ID;
+            inValue.Body.ALTALAN_ID = ALTALAN_ID;
+            inValue.Body.SEHIR_ID = SEHIR_ID;
+            inValue.Body.ILCE_ID = ILCE_ID;
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Usta_ListeleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.AlanIsmiDonderResponse HelpAsCompanyApp.SonService.WebService1Soap.AlanIsmiDonder(HelpAsCompanyApp.SonService.AlanIsmiDonderRequest request) {
+            return base.Channel.AlanIsmiDonder(request);
+        }
+        
+        public string AlanIsmiDonder(int alanid) {
+            HelpAsCompanyApp.SonService.AlanIsmiDonderRequest inValue = new HelpAsCompanyApp.SonService.AlanIsmiDonderRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.AlanIsmiDonderRequestBody();
+            inValue.Body.alanid = alanid;
+            HelpAsCompanyApp.SonService.AlanIsmiDonderResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).AlanIsmiDonder(inValue);
+            return retVal.Body.AlanIsmiDonderResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.AlanIsmiDonderResponse> HelpAsCompanyApp.SonService.WebService1Soap.AlanIsmiDonderAsync(HelpAsCompanyApp.SonService.AlanIsmiDonderRequest request) {
+            return base.Channel.AlanIsmiDonderAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.AlanIsmiDonderResponse> AlanIsmiDonderAsync(int alanid) {
+            HelpAsCompanyApp.SonService.AlanIsmiDonderRequest inValue = new HelpAsCompanyApp.SonService.AlanIsmiDonderRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.AlanIsmiDonderRequestBody();
+            inValue.Body.alanid = alanid;
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).AlanIsmiDonderAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.AltAlanIsmiDonderResponse HelpAsCompanyApp.SonService.WebService1Soap.AltAlanIsmiDonder(HelpAsCompanyApp.SonService.AltAlanIsmiDonderRequest request) {
+            return base.Channel.AltAlanIsmiDonder(request);
+        }
+        
+        public string AltAlanIsmiDonder(int altalanid) {
+            HelpAsCompanyApp.SonService.AltAlanIsmiDonderRequest inValue = new HelpAsCompanyApp.SonService.AltAlanIsmiDonderRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.AltAlanIsmiDonderRequestBody();
+            inValue.Body.altalanid = altalanid;
+            HelpAsCompanyApp.SonService.AltAlanIsmiDonderResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).AltAlanIsmiDonder(inValue);
+            return retVal.Body.AltAlanIsmiDonderResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.AltAlanIsmiDonderResponse> HelpAsCompanyApp.SonService.WebService1Soap.AltAlanIsmiDonderAsync(HelpAsCompanyApp.SonService.AltAlanIsmiDonderRequest request) {
+            return base.Channel.AltAlanIsmiDonderAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.AltAlanIsmiDonderResponse> AltAlanIsmiDonderAsync(int altalanid) {
+            HelpAsCompanyApp.SonService.AltAlanIsmiDonderRequest inValue = new HelpAsCompanyApp.SonService.AltAlanIsmiDonderRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.AltAlanIsmiDonderRequestBody();
+            inValue.Body.altalanid = altalanid;
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).AltAlanIsmiDonderAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.SehirIsmiDonderResponse HelpAsCompanyApp.SonService.WebService1Soap.SehirIsmiDonder(HelpAsCompanyApp.SonService.SehirIsmiDonderRequest request) {
+            return base.Channel.SehirIsmiDonder(request);
+        }
+        
+        public string SehirIsmiDonder(int sehirid) {
+            HelpAsCompanyApp.SonService.SehirIsmiDonderRequest inValue = new HelpAsCompanyApp.SonService.SehirIsmiDonderRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.SehirIsmiDonderRequestBody();
+            inValue.Body.sehirid = sehirid;
+            HelpAsCompanyApp.SonService.SehirIsmiDonderResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).SehirIsmiDonder(inValue);
+            return retVal.Body.SehirIsmiDonderResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.SehirIsmiDonderResponse> HelpAsCompanyApp.SonService.WebService1Soap.SehirIsmiDonderAsync(HelpAsCompanyApp.SonService.SehirIsmiDonderRequest request) {
+            return base.Channel.SehirIsmiDonderAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.SehirIsmiDonderResponse> SehirIsmiDonderAsync(int sehirid) {
+            HelpAsCompanyApp.SonService.SehirIsmiDonderRequest inValue = new HelpAsCompanyApp.SonService.SehirIsmiDonderRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.SehirIsmiDonderRequestBody();
+            inValue.Body.sehirid = sehirid;
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).SehirIsmiDonderAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.IlceIsmiDonderResponse HelpAsCompanyApp.SonService.WebService1Soap.IlceIsmiDonder(HelpAsCompanyApp.SonService.IlceIsmiDonderRequest request) {
+            return base.Channel.IlceIsmiDonder(request);
+        }
+        
+        public string IlceIsmiDonder(int ilceid) {
+            HelpAsCompanyApp.SonService.IlceIsmiDonderRequest inValue = new HelpAsCompanyApp.SonService.IlceIsmiDonderRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.IlceIsmiDonderRequestBody();
+            inValue.Body.ilceid = ilceid;
+            HelpAsCompanyApp.SonService.IlceIsmiDonderResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).IlceIsmiDonder(inValue);
+            return retVal.Body.IlceIsmiDonderResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.IlceIsmiDonderResponse> HelpAsCompanyApp.SonService.WebService1Soap.IlceIsmiDonderAsync(HelpAsCompanyApp.SonService.IlceIsmiDonderRequest request) {
+            return base.Channel.IlceIsmiDonderAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.IlceIsmiDonderResponse> IlceIsmiDonderAsync(int ilceid) {
+            HelpAsCompanyApp.SonService.IlceIsmiDonderRequest inValue = new HelpAsCompanyApp.SonService.IlceIsmiDonderRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.IlceIsmiDonderRequestBody();
+            inValue.Body.ilceid = ilceid;
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).IlceIsmiDonderAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.Usta_EkleResponse HelpAsCompanyApp.SonService.WebService1Soap.Usta_Ekle(HelpAsCompanyApp.SonService.Usta_EkleRequest request) {
+            return base.Channel.Usta_Ekle(request);
+        }
+        
+        public string Usta_Ekle(int alan_id, int sehir_id, int ilce_id, string usta_ismi, string usta_soyismi, string usta_tel, string usta_mail, int usta_puan, int usta_musaitlik, int altalan_id) {
+            HelpAsCompanyApp.SonService.Usta_EkleRequest inValue = new HelpAsCompanyApp.SonService.Usta_EkleRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Usta_EkleRequestBody();
+            inValue.Body.alan_id = alan_id;
+            inValue.Body.sehir_id = sehir_id;
+            inValue.Body.ilce_id = ilce_id;
+            inValue.Body.usta_ismi = usta_ismi;
+            inValue.Body.usta_soyismi = usta_soyismi;
+            inValue.Body.usta_tel = usta_tel;
+            inValue.Body.usta_mail = usta_mail;
+            inValue.Body.usta_puan = usta_puan;
+            inValue.Body.usta_musaitlik = usta_musaitlik;
+            inValue.Body.altalan_id = altalan_id;
+            HelpAsCompanyApp.SonService.Usta_EkleResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Usta_Ekle(inValue);
+            return retVal.Body.Usta_EkleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Usta_EkleResponse> HelpAsCompanyApp.SonService.WebService1Soap.Usta_EkleAsync(HelpAsCompanyApp.SonService.Usta_EkleRequest request) {
+            return base.Channel.Usta_EkleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Usta_EkleResponse> Usta_EkleAsync(int alan_id, int sehir_id, int ilce_id, string usta_ismi, string usta_soyismi, string usta_tel, string usta_mail, int usta_puan, int usta_musaitlik, int altalan_id) {
+            HelpAsCompanyApp.SonService.Usta_EkleRequest inValue = new HelpAsCompanyApp.SonService.Usta_EkleRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Usta_EkleRequestBody();
+            inValue.Body.alan_id = alan_id;
+            inValue.Body.sehir_id = sehir_id;
+            inValue.Body.ilce_id = ilce_id;
+            inValue.Body.usta_ismi = usta_ismi;
+            inValue.Body.usta_soyismi = usta_soyismi;
+            inValue.Body.usta_tel = usta_tel;
+            inValue.Body.usta_mail = usta_mail;
+            inValue.Body.usta_puan = usta_puan;
+            inValue.Body.usta_musaitlik = usta_musaitlik;
+            inValue.Body.altalan_id = altalan_id;
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Usta_EkleAsync(inValue);
         }
     }
 }

@@ -105,6 +105,102 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Usta_Listele">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ALAN_ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ALTALAN_ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SEHIR_ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ILCE_ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Usta_ListeleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usta_ListeleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlanIsmiDonder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="alanid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlanIsmiDonderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlanIsmiDonderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AltAlanIsmiDonder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="altalanid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AltAlanIsmiDonderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AltAlanIsmiDonderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SehirIsmiDonder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sehirid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SehirIsmiDonderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SehirIsmiDonderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IlceIsmiDonder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ilceid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IlceIsmiDonderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IlceIsmiDonderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Usta_Ekle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="alan_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sehir_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ilce_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="usta_ismi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usta_soyismi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usta_tel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usta_mail" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="usta_puan" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="usta_musaitlik" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="altalan_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Usta_EkleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usta_EkleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="IlceListesiSoapIn">
@@ -155,6 +251,42 @@
   <wsdl:message name="HaberGüncelleSoapOut">
     <wsdl:part name="parameters" element="tns:HaberGüncelleResponse" />
   </wsdl:message>
+  <wsdl:message name="Usta_ListeleSoapIn">
+    <wsdl:part name="parameters" element="tns:Usta_Listele" />
+  </wsdl:message>
+  <wsdl:message name="Usta_ListeleSoapOut">
+    <wsdl:part name="parameters" element="tns:Usta_ListeleResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlanIsmiDonderSoapIn">
+    <wsdl:part name="parameters" element="tns:AlanIsmiDonder" />
+  </wsdl:message>
+  <wsdl:message name="AlanIsmiDonderSoapOut">
+    <wsdl:part name="parameters" element="tns:AlanIsmiDonderResponse" />
+  </wsdl:message>
+  <wsdl:message name="AltAlanIsmiDonderSoapIn">
+    <wsdl:part name="parameters" element="tns:AltAlanIsmiDonder" />
+  </wsdl:message>
+  <wsdl:message name="AltAlanIsmiDonderSoapOut">
+    <wsdl:part name="parameters" element="tns:AltAlanIsmiDonderResponse" />
+  </wsdl:message>
+  <wsdl:message name="SehirIsmiDonderSoapIn">
+    <wsdl:part name="parameters" element="tns:SehirIsmiDonder" />
+  </wsdl:message>
+  <wsdl:message name="SehirIsmiDonderSoapOut">
+    <wsdl:part name="parameters" element="tns:SehirIsmiDonderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IlceIsmiDonderSoapIn">
+    <wsdl:part name="parameters" element="tns:IlceIsmiDonder" />
+  </wsdl:message>
+  <wsdl:message name="IlceIsmiDonderSoapOut">
+    <wsdl:part name="parameters" element="tns:IlceIsmiDonderResponse" />
+  </wsdl:message>
+  <wsdl:message name="Usta_EkleSoapIn">
+    <wsdl:part name="parameters" element="tns:Usta_Ekle" />
+  </wsdl:message>
+  <wsdl:message name="Usta_EkleSoapOut">
+    <wsdl:part name="parameters" element="tns:Usta_EkleResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebService1Soap">
     <wsdl:operation name="IlceListesi">
       <wsdl:input message="tns:IlceListesiSoapIn" />
@@ -187,6 +319,30 @@
     <wsdl:operation name="HaberGüncelle">
       <wsdl:input message="tns:HaberGüncelleSoapIn" />
       <wsdl:output message="tns:HaberGüncelleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Listele">
+      <wsdl:input message="tns:Usta_ListeleSoapIn" />
+      <wsdl:output message="tns:Usta_ListeleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlanIsmiDonder">
+      <wsdl:input message="tns:AlanIsmiDonderSoapIn" />
+      <wsdl:output message="tns:AlanIsmiDonderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AltAlanIsmiDonder">
+      <wsdl:input message="tns:AltAlanIsmiDonderSoapIn" />
+      <wsdl:output message="tns:AltAlanIsmiDonderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SehirIsmiDonder">
+      <wsdl:input message="tns:SehirIsmiDonderSoapIn" />
+      <wsdl:output message="tns:SehirIsmiDonderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IlceIsmiDonder">
+      <wsdl:input message="tns:IlceIsmiDonderSoapIn" />
+      <wsdl:output message="tns:IlceIsmiDonderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Ekle">
+      <wsdl:input message="tns:Usta_EkleSoapIn" />
+      <wsdl:output message="tns:Usta_EkleSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
@@ -263,6 +419,60 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Usta_Listele">
+      <soap:operation soapAction="http://tempuri.org/Usta_Listele" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlanIsmiDonder">
+      <soap:operation soapAction="http://tempuri.org/AlanIsmiDonder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AltAlanIsmiDonder">
+      <soap:operation soapAction="http://tempuri.org/AltAlanIsmiDonder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SehirIsmiDonder">
+      <soap:operation soapAction="http://tempuri.org/SehirIsmiDonder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IlceIsmiDonder">
+      <soap:operation soapAction="http://tempuri.org/IlceIsmiDonder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Ekle">
+      <soap:operation soapAction="http://tempuri.org/Usta_Ekle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -331,6 +541,60 @@
     </wsdl:operation>
     <wsdl:operation name="HaberGüncelle">
       <soap12:operation soapAction="http://tempuri.org/HaberGüncelle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Listele">
+      <soap12:operation soapAction="http://tempuri.org/Usta_Listele" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlanIsmiDonder">
+      <soap12:operation soapAction="http://tempuri.org/AlanIsmiDonder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AltAlanIsmiDonder">
+      <soap12:operation soapAction="http://tempuri.org/AltAlanIsmiDonder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SehirIsmiDonder">
+      <soap12:operation soapAction="http://tempuri.org/SehirIsmiDonder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IlceIsmiDonder">
+      <soap12:operation soapAction="http://tempuri.org/IlceIsmiDonder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Ekle">
+      <soap12:operation soapAction="http://tempuri.org/Usta_Ekle" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

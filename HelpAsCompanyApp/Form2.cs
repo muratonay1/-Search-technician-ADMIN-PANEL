@@ -21,8 +21,32 @@ namespace HelpAsCompanyApp
         #region Service Nesne ve Değişkenler
         SonService.WebService1SoapClient service = new SonService.WebService1SoapClient();
         public dynamic Response_Haber;
-        public dynamic Response_Alan;
+        public dynamic Response_Alan;     
         public dynamic Response_AltAlan;
+        public dynamic Response_Alan_Usta;
+        public dynamic Response_AltAlan_Usta;
+        public dynamic Response_Sehirler_Usta;
+        public dynamic Response_Ilceler_Usta;
+        public dynamic Response_String_Result;
+        //UstaListeleme Degiskenleri
+        public dynamic Response_Usta_Listele;
+        public int alanId;
+        public int altalanId;
+        public int sehirId;
+        public int ilceId;
+
+
+
+        public int denemeint;
+
+        public int _alanId;
+        public int _altalanId;
+        public int _sehirId;
+        public int _ilceId;
+        public string sehir_ismi;
+        public string ilce_ismi;
+        public string alan_ismi;
+        public string altalan_ismi;
         #endregion
 
 
@@ -372,7 +396,7 @@ namespace HelpAsCompanyApp
         {
             yorumlar_panel.BringToFront();
             flowLayoutPanel1.Controls.Clear();
-            Yorum_Listele();
+            //Yorum_Listele();
         }
         private void button2_Click(object sender, EventArgs e)//İSTEKLER NAVBAR BUTTON CLICK
         {
@@ -387,6 +411,8 @@ namespace HelpAsCompanyApp
         private void button4_Click(object sender, EventArgs e)//Ustalar NAVBAR BUTTON CLICK
         {
             ustalar_panel.BringToFront();
+            Alan_Listele_Usta_Function();
+            Sehir_Listele_Usta_Function();
         }
         private void button5_Click(object sender, EventArgs e)//Alanlar navbar button CLICK
         {
@@ -398,6 +424,10 @@ namespace HelpAsCompanyApp
         {
             geri_bildirimler_panel.BringToFront();
            
+        }
+        private void button7_Click(object sender, EventArgs e)//Kullanıcılar buton click
+        {
+            kullanıcılar_panel.BringToFront();
         }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -432,6 +462,7 @@ namespace HelpAsCompanyApp
             pictureBox2.Size = new Size(50, 50);
             pictureBox2.Location = new Point(12, 150);
         }
+        //NAVBAR SEKME RESİMLERİ İÇİN TASARIMSAL EVENTLER
         private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
         {
 
@@ -498,10 +529,7 @@ namespace HelpAsCompanyApp
             pictureBox9.Size = new Size(40, 40);
             pictureBox9.Location = new Point(16, 536);
         }
-        private void button7_Click(object sender, EventArgs e)
-        {
-            kullanıcılar_panel.BringToFront();
-        }
+       
         
         #endregion
         
@@ -738,70 +766,671 @@ namespace HelpAsCompanyApp
         #endregion
 
 
-        public void Yorum_Listele()
+        #region Ustalar
+
+            //comboBox'tan alan seçimi yapoıldığında otomatik alt alan combosunu kendi alt alanlarıyla doldurması
+        private void comboBox_Usta_Alan_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-                FlowLayoutPanel flp = new FlowLayoutPanel();
-                flp.BackColor = Color.FromArgb(39, 60, 117);
-                flp.Size = new System.Drawing.Size(280, 130);
-                flp.Padding = new Padding(10);
-                flp.AutoScroll = true;
-                flp.FlowDirection = FlowDirection.TopDown;
-                
+            string aln = comboBox_Usta_Alan.SelectedItem.ToString();
 
-                Font header = new Font("Rajdhani", 14, FontStyle.Bold);
-                Label lblheader = new Label();
-                //lblheader.Top = 15;
-                lblheader.AutoSize = true;
-                lblheader.AutoEllipsis = true;
-                lblheader.UseCompatibleTextRendering = true;
-                
-                lblheader.ForeColor = Color.White;
-                lblheader.Font = header;
+            //aln[0] yani alanın string olarak gelen id değerini public tanımladığımız değişken tipine benzetiyoruz.
+            Int32.TryParse(aln[0].ToString(), out alanId);            
+            comboBox_AltAlan_Usta.Items.Clear();
+            comboBox_AltAlan_Usta.Text = "";
+            //1- Ev Aletleri Örneğini verelim= 1,-, , simgelerini kaldırıp 3. indexten sonrasını yazdırıyoruz.
+            //Çünkü Servisten alt alanları isteyebilmek için sadece db'deki alan ismini yazmamız gerekli.            
+            string alan_secimi = comboBox_Usta_Alan.SelectedItem.ToString().Substring(3);
+            //MessageBox.Show(alan_secimi);
+            var response = service.AltAlanListesi(alan_secimi);
+            if (response == null || response == "")
+            {
+                comboBox_AltAlan_Usta.Items.Clear();
+                comboBox_AltAlan_Usta.Items.Add("0");               
 
-                Font txt = new Font("Rajdhani", 14);
-                Label lbltxt = new Label();
-                lbltxt.AutoSize = true;
-                lbltxt.AutoEllipsis = true;
-                lbltxt.UseCompatibleTextRendering = true;
-                //lbltxt.Top = 40;
-                lbltxt.Text = "Yorum Yapan Kişi";
-                lbltxt.ForeColor = Color.FromArgb(46, 204, 113);
-                lbltxt.Font = txt;
-               
+            }
+            else
+            {
+                Response_AltAlan_Usta = JsonConvert.DeserializeObject(response);
+                int altalan_id;
+                string altalan_adi;
+                string altalan_alan_id;
+                foreach (var item in Response_AltAlan_Usta)
+                {
+                    altalan_id = item.Dal_Id;
+                    altalan_adi = item.Dal_Isim;
+                    altalan_alan_id = item.Alan_Isim;
+                    comboBox_AltAlan_Usta.Items.Add(altalan_id + "- " + altalan_adi);
 
-                Font date = new Font("Rajdhani", 10);
-                Label lbldate = new Label();
-                //lbldate.Top = 80;
-                lbldate.AutoSize = true;
-                lbldate.AutoEllipsis = true;
-                lbldate.UseCompatibleTextRendering = true;
-              
-                lbldate.ForeColor = Color.FromArgb(251, 197, 49);
-                lbldate.Font = date;
+                }
+            }
+        }
+        //usta ekleme/arama/güncelleme combo box eventi
+        private void comboBox_Alanlar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string aln = comboBox_Alanlar.SelectedItem.ToString();
 
-                flp.Controls.Add(lblheader);
-                flp.Controls.Add(lbldate);
-                flp.Controls.Add(lbltxt);
-                flp.Click += new EventHandler(this.Yorum_Click);
-                this.Controls.Add(flp);
-                flowLayoutPanel1.Controls.Add(flp);
-                
-                
+            //aln[0] yani alanın string olarak gelen id değerini public tanımladığımız değişken tipine benzetiyoruz.
+            Int32.TryParse(aln[0].ToString(), out alanId);
+            comboBox_Brans.Items.Clear();
+            comboBox_Brans.Text = "";
+            //1- Ev Aletleri Örneğini verelim= 1,-, , simgelerini kaldırıp 3. indexten sonrasını yazdırıyoruz.
+            //Çünkü Servisten alt alanları isteyebilmek için sadece db'deki alan ismini yazmamız gerekli.            
+            string alan_secimi = comboBox_Alanlar.SelectedItem.ToString().Substring(3);
+            //MessageBox.Show(alan_secimi);
+            var response = service.AltAlanListesi(alan_secimi);
+            if (response == null || response == "")
+            {
+                comboBox_Brans.Items.Clear();
+
+            }
+            else
+            {
+                Response_AltAlan_Usta = JsonConvert.DeserializeObject(response);
+                int altalan_id;
+                string altalan_adi;
+                string altalan_alan_id;
+                foreach (var item in Response_AltAlan_Usta)
+                {
+                    altalan_id = item.Dal_Id;
+                    altalan_adi = item.Dal_Isim;
+                    altalan_alan_id = item.Alan_Isim;
+                    comboBox_Brans.Items.Add(altalan_id + "- " + altalan_adi);
+
+                }
+            }
+        }
+        //Ustalar alanların comboBox'a gömülmesi
+        public void Alan_Listele_Usta_Function()
+        {
+            var response = service.AlanListesi();
+            Response_Alan_Usta = JsonConvert.DeserializeObject(response);
+            int alan_id;
+            string alan_adi;
+            foreach (var item in Response_Alan_Usta)
+            {
+                alan_id = item.Alan_Id;
+                alan_adi = item.Alan_Isim;
+                comboBox_Usta_Alan.Items.Add(alan_id+"- "+alan_adi);
+                comboBox_Alanlar.Items.Add(alan_id + "- " + alan_adi);
+            }
+        }       
+        //Ustalar şehirleri comboBox'a gömme
+        public void Sehir_Listele_Usta_Function()
+        {
+            var response = service.SehirListesi();
+            Response_Sehirler_Usta = JsonConvert.DeserializeObject(response);
+            int sehir_id;
+            string sehir_name;
+            foreach (var item in Response_Sehirler_Usta)
+            {
+                sehir_id = item.Id;
+                sehir_name = item.Name;
+                comboBox_Sehirler_Usta.Items.Add(sehir_id+"- "+sehir_name);
+                comboBox_Sehirler.Items.Add(sehir_id + "- " + sehir_name);
+            }
+        }
+        //şehir comboBox seçilince otomatik şehrin ilçelerinin getirilmesi
+        private void comboBox_Sehirler_Usta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string shr = comboBox_Sehirler_Usta.SelectedItem.ToString().Split('-').First();            
+            Int32.TryParse(shr.ToString(), out sehirId);
+            comboBox_Ilceler_Usta.Items.Clear();
+            comboBox_Ilceler_Usta.Text = "";
+            string sehir_secimi = comboBox_Sehirler_Usta.SelectedItem.ToString().Substring(3);
             
+            
+            var response = service.IlceListesi(sehir_secimi.Trim());         
+            Response_Ilceler_Usta = JsonConvert.DeserializeObject(response);
+            int ilce_no;
+            string isim;
+            foreach (var item in Response_Ilceler_Usta)
+            {
+                ilce_no = item.ilce_no;
+                isim = item.isim;
+                comboBox_Ilceler_Usta.Items.Add(ilce_no+"- "+isim);
+            }
         }
-        public void Yorum_Click(object sender, EventArgs e)
+        private void comboBox_Sehirler_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FlowLayoutPanel yorum_alanı = sender as FlowLayoutPanel;
-            MessageBox.Show(yorum_alanı.Tag.ToString()+"\n"+yorum_alanı.Name.ToString()+"\n");
+            string shr = comboBox_Sehirler.SelectedItem.ToString().Split('-').First();
+            Int32.TryParse(shr.ToString(), out sehirId);
+            comboBox_Ilceler.Items.Clear();
+            comboBox_Ilceler.Text = "";
+            string sehir_secimi = comboBox_Sehirler.SelectedItem.ToString().Substring(3);
+
+
+            var response = service.IlceListesi(sehir_secimi.Trim());
+            Response_Ilceler_Usta = JsonConvert.DeserializeObject(response);
+            int ilce_no;
+            string isim;
+            foreach (var item in Response_Ilceler_Usta)
+            {
+                ilce_no = item.ilce_no;
+                isim = item.isim;
+                comboBox_Ilceler.Items.Add(ilce_no + "- " + isim);
+            }
+        }
+        //USTA BULMA BUTONU
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            //AlanId parse
+            flowpanel_USTA_MAIN.Controls.Clear();
+            button_UstaEkle.Enabled = true;
+            button_UstaKaydet.Enabled = true;
+            button_UstaSil.Enabled = true;
+            textBox_isim.Clear();
+            textBox_soyisim.Clear();
+            comboBox_Alanlar.Text = "";
+            comboBox_Brans.Text="";
+            comboBox_Sehirler.Text="";
+            comboBox_Ilceler.Text = "";
+            textBox_telefon.Clear();
+            textBox_mail.Clear();
+            textBox_puan.Clear();
+            textBox_musaitlik.Clear();
+            if (comboBox_AltAlan_Usta.Text=="0")
+            {               
+                
+                    string altaln = "0";
+                    Int32.TryParse(altaln.ToString(), out altalanId);
+                    //IlceId parse
+                    string ilcem = comboBox_Ilceler_Usta.SelectedItem.ToString().Split('-').First();
+                    Int32.TryParse(ilcem.ToString(), out ilceId);
+                    var response = service.Usta_Listele(alanId, altalanId, sehirId, ilceId);
+                    Response_Usta_Listele = JsonConvert.DeserializeObject(response);
+                    int Usta_Id;
+                    string _Alan_Ismi;
+                    string _Sehir_Ismi;
+                    string _Ilce_Ismi;
+                    string Usta_Isim;
+                    string Usta_SoyIsim;
+                    string Usta_Telefon;
+                    string Usta_Email;
+                    float Usta_Puan;
+                    int Usta_Musaitlik;
+                    string _AltAlan_Ismi;
+                    foreach (var item in Response_Usta_Listele)
+                    {
+                        Usta_Id = item.Usta_Id;
+                        _Alan_Ismi = Alan__Ismi(Convert.ToInt32(item.Alan_Id));
+                        _Sehir_Ismi = Sehir_Ismi(Convert.ToInt32(item.Sehir_Id));
+                        _Ilce_Ismi = Ilce_Ismi(Convert.ToInt32(item.Ilce_Id));
+                        Usta_Isim = item.Usta_Isim;
+                        Usta_SoyIsim = item.Usta_SoyIsim;
+                        Usta_Email = item.Usta_Email;
+                        Usta_Telefon = item.Usta_Telefon;
+                        Usta_Puan = item.Usta_Puan;
+                        Usta_Musaitlik = item.Usta_Musaitlik;
+                        _AltAlan_Ismi = "0";
+                        Usta_Listele_for_FlowPanel(Usta_Id, _Alan_Ismi, _Sehir_Ismi, _Ilce_Ismi, Usta_Isim, Usta_SoyIsim, Usta_Telefon, Usta_Email, Usta_Puan, Usta_Musaitlik, _AltAlan_Ismi);
+                    }
+                             
+            }
+            else
+            {
+                try
+                {
+                    var response = service.Usta_Listele(alanId, altalanId, sehirId, ilceId);
+                    string altaln = comboBox_AltAlan_Usta.SelectedItem.ToString().Split('-').First();
+                    Int32.TryParse(altaln.ToString(), out altalanId);
+                    //IlceId parse
+                    string ilcem = comboBox_Ilceler_Usta.SelectedItem.ToString().Split('-').First();
+                    Int32.TryParse(ilcem.ToString(), out ilceId);
+                    response = service.Usta_Listele(alanId, altalanId, sehirId, ilceId);
+                    Response_Usta_Listele = JsonConvert.DeserializeObject(response);
+                    int Usta_Id;
+                    string _Alan_Ismi;
+                    string _Sehir_Ismi;
+                    string _Ilce_Ismi;
+                    string Usta_Isim;
+                    string Usta_SoyIsim;
+                    string Usta_Telefon;
+                    string Usta_Email;
+                    float Usta_Puan;
+                    int Usta_Musaitlik;
+                    string _AltAlan_Ismi;
+                    foreach (var item in Response_Usta_Listele)
+                    {
+                        Usta_Id = item.Usta_Id;
+                        _Alan_Ismi = Alan__Ismi(Convert.ToInt32(item.Alan_Id));
+                        _Sehir_Ismi = Sehir_Ismi(Convert.ToInt32(item.Sehir_Id));
+                        _Ilce_Ismi = Ilce_Ismi(Convert.ToInt32(item.Ilce_Id));
+                        Usta_Isim = item.Usta_Isim;
+                        Usta_SoyIsim = item.Usta_SoyIsim;
+                        Usta_Email = item.Usta_Email;
+                        Usta_Telefon = item.Usta_Telefon;
+                        Usta_Puan = item.Usta_Puan;
+                        Usta_Musaitlik = item.Usta_Musaitlik;
+                        Int32.TryParse(item.AltAlan_Id.ToString(), out denemeint);
+                        _AltAlan_Ismi = AltAlan__Ismi(denemeint);
+                        Usta_Listele_for_FlowPanel(Usta_Id, _Alan_Ismi, _Sehir_Ismi, _Ilce_Ismi, Usta_Isim, Usta_SoyIsim, Usta_Telefon, Usta_Email, Usta_Puan, Usta_Musaitlik, _AltAlan_Ismi);
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Bu kriterlerde usta bulunmamaktadır.");
+                }           
+            }           
+        }       
+        //BURALARI GÖRMEZDEN GELELİM FACİA :)
+        //TEK BİR SEHİR İSMİ VS ÇEKMEK İÇİN SERVİS YAZDIM ve fonk isimlerini çekmek için :)
+        public dynamic Sehir_Ismi(int sehir_id)
+        {            
+            dynamic cevap;
+            var response = service.SehirIsmiDonder(sehir_id);
+            cevap = JsonConvert.DeserializeObject(response);
+            foreach (var item in cevap)
+            {
+                sehir_ismi = item.Name;
+             
+            }
+            return sehir_ismi;
+        }
+        public dynamic Ilce_Ismi(int ilce_id)
+        {
+            dynamic cevap;
+            var response = service.IlceIsmiDonder(ilce_id);
+            cevap = JsonConvert.DeserializeObject(response);
+            foreach (var item in cevap)
+            {
+                ilce_ismi = item.isim;
+
+            }
+            return ilce_ismi;
+        }
+        public dynamic Alan__Ismi(int alan_id)
+        {
+            dynamic cevap;
+            var response = service.AlanIsmiDonder(alan_id);
+            cevap = JsonConvert.DeserializeObject(response);
+            foreach (var item in cevap)
+            {
+                alan_ismi = item.Alan_Isim;
+            }
+            return alan_ismi;
+        }
+        public dynamic AltAlan__Ismi(int altalan_id)
+        {
+            dynamic cevap;
+            var response = service.AltAlanIsmiDonder(altalan_id);
+            cevap = JsonConvert.DeserializeObject(response);
+            foreach (var item in cevap)
+            {
+                altalan_ismi = item.Dal_Isim;
+            }
+            return altalan_ismi;
+        }
+        public void Usta_Listele_for_FlowPanel(int usta_id, string alan_ismi,string sehir_ismi, string ilce_ismi,string usta_ismi,string usta_soyad,string usta_tel,string usta_mail,float usta_puan,int usta_müs,string alt_isim)
+        {
+            FlowLayoutPanel flp = new FlowLayoutPanel();
+            flp.BackColor = Color.FromArgb(39, 60, 117);
+            flp.Size = new System.Drawing.Size(410, 217);
+            flp.Padding = new Padding(10);
+            flp.AutoScroll = true;
+            flp.FlowDirection = FlowDirection.TopDown;
+            flp.Tag = usta_id;
+            //click eventi ekle
+            flp.Click += new EventHandler(this.Usta_click);
+            //USTA İSİM
+            Font usta_isim_font = new Font("Rajdhani", 8, FontStyle.Bold);
+            Label label_ustaisim = new Label();
+            label_ustaisim.AutoSize = true;
+            label_ustaisim.AutoEllipsis = true;
+            label_ustaisim.UseCompatibleTextRendering = true;
+            label_ustaisim.Text = "Usta İsmi:  "+usta_ismi;
+            label_ustaisim.ForeColor = Color.Gold;
+            label_ustaisim.Font = usta_isim_font;
+            label_ustaisim.Padding = new Padding(5);
+
+
+            //USTA SOYİSİM
+            Font usta_soyad_font = new Font("Rajdhani", 8, FontStyle.Bold);
+            Label label_usta_soyad = new Label();
+            label_usta_soyad.AutoSize = true;
+            label_usta_soyad.AutoEllipsis = true;
+            label_usta_soyad.UseCompatibleTextRendering = true;
+            label_usta_soyad.Text = "Soyadı:  "+usta_soyad;
+            label_usta_soyad.ForeColor = Color.Gold;
+            label_usta_soyad.Font = usta_soyad_font;
+            label_usta_soyad.Padding = new Padding(5);
+
+
+
+            //USTA ŞEHİR
+            Font usta_sehir_font = new Font("Rajdhani", 8, FontStyle.Bold);
+            Label label_usta_sehir = new Label();
+            label_usta_sehir.AutoSize = true;
+            label_usta_sehir.AutoEllipsis = true;
+            label_usta_sehir.UseCompatibleTextRendering = true;
+            label_usta_sehir.Text = "Şehir:  "+sehir_ismi;
+            label_usta_sehir.ForeColor = Color.Gold;
+            label_usta_sehir.Font = usta_sehir_font;
+            label_usta_sehir.Padding = new Padding(5);
+
+
+
+            //USTA İLÇE
+            Font usta_ilce_font = new Font("Rajdhani", 8, FontStyle.Bold);
+            Label label_usta_ilce = new Label();
+            label_usta_ilce.AutoSize = true;
+            label_usta_ilce.AutoEllipsis = true;
+            label_usta_ilce.UseCompatibleTextRendering = true;
+            label_usta_ilce.Text = "İlçe:  "+ilce_ismi;
+            label_usta_ilce.ForeColor = Color.Gold;
+            label_usta_ilce.Font = usta_ilce_font;
+            label_usta_ilce.Padding = new Padding(5);
+
+
+
+            //USTA ALAN
+            Font usta_alan_font = new Font("Rajdhani", 8, FontStyle.Bold);
+            Label label_usta_alan = new Label();
+            label_usta_alan.AutoSize = true;
+            label_usta_alan.AutoEllipsis = true;
+            label_usta_alan.UseCompatibleTextRendering = true;
+            label_usta_alan.Text = "Alanı:  "+alan_ismi;
+            label_usta_alan.ForeColor = Color.Gold;
+            label_usta_alan.Font = usta_alan_font;
+            label_usta_alan.Padding = new Padding(5);
+
+
+            //USTA ALT ALAN
+            Font usta_altalan_font = new Font("Rajdhani", 8, FontStyle.Bold);
+            Label label_usta_altalan = new Label();
+            label_usta_altalan.AutoSize = true;
+            label_usta_altalan.AutoEllipsis = true;
+            label_usta_altalan.UseCompatibleTextRendering = true;
+            label_usta_altalan.Text = "Branşı:  "+altalan_ismi;
+            label_usta_altalan.ForeColor = Color.Gold;
+            label_usta_altalan.Font = usta_altalan_font;
+            label_usta_altalan.Padding = new Padding(5);
+
+
+
+            //USTA TELEFON
+            Font usta_tel_font = new Font("Rajdhani", 8, FontStyle.Bold);
+            Label label_usta_tel = new Label();
+            label_usta_tel.AutoSize = true;
+            label_usta_tel.AutoEllipsis = true;
+            label_usta_tel.UseCompatibleTextRendering = true;
+            label_usta_tel.Text = "Telefon:  "+usta_tel;
+            label_usta_tel.ForeColor = Color.Gold;
+            label_usta_tel.Font = usta_tel_font;
+            label_usta_tel.Padding = new Padding(5);
+
+
+            //USTA MAİL
+            Font usta_mail_font = new Font("Rajdhani", 8, FontStyle.Bold);
+            Label label_usta_mail = new Label();
+            label_usta_mail.AutoSize = true;
+            label_usta_mail.AutoEllipsis = true;
+            label_usta_mail.UseCompatibleTextRendering = true;
+            label_usta_mail.Text = "    E-mail:  "+usta_mail;
+            label_usta_mail.ForeColor = Color.Gold;
+            label_usta_mail.Font = usta_mail_font;
+            label_usta_mail.Padding = new Padding(5);
+
+
+            //USTA PUAN
+            Font usta_puan_font = new Font("Rajdhani", 8, FontStyle.Bold);
+            Label label_usta_puan = new Label();
+            label_usta_puan.AutoSize = true;
+            label_usta_puan.AutoEllipsis = true;
+            label_usta_puan.UseCompatibleTextRendering = true;
+            label_usta_puan.Text = "    Puanı:  "+usta_puan.ToString();
+            label_usta_puan.ForeColor = Color.Gold;
+            label_usta_puan.Font = usta_puan_font;
+            label_usta_puan.Padding = new Padding(5);
+
+            //USTA MUSAIT
+            Font usta_musait_font = new Font("Rajdhani", 9, FontStyle.Bold);
+            Label label_ustamusait = new Label();
+            if (usta_müs==0)
+            {
+                
+                label_ustamusait.AutoSize = true;
+                label_ustamusait.AutoEllipsis = true;
+                label_ustamusait.UseCompatibleTextRendering = true;
+                label_ustamusait.Text = "   Durumu:  " + usta_müs.ToString()+" MEŞGUL";
+                label_ustamusait.ForeColor = Color.Red;
+                label_ustamusait.Font = usta_musait_font;
+                label_ustamusait.Padding = new Padding(5);
+            }
+            else if(usta_müs==1)
+            {
+                
+                label_ustamusait.AutoSize = true;
+                label_ustamusait.AutoEllipsis = true;
+                label_ustamusait.UseCompatibleTextRendering = true;
+                label_ustamusait.Text = "   Durumu:  " + usta_müs.ToString()+" MUSAIT";
+                label_ustamusait.ForeColor = Color.Green;
+                label_ustamusait.Font = usta_musait_font;
+                label_ustamusait.Padding = new Padding(5);
+            }            
+            flp.Controls.Add(label_ustaisim);
+            flp.Controls.Add(label_usta_soyad);
+            flp.Controls.Add(label_usta_sehir);
+            flp.Controls.Add(label_usta_ilce);
+            flp.Controls.Add(label_usta_alan);
+            flp.Controls.Add(label_usta_altalan);
+            flp.Controls.Add(label_usta_tel);
+            flp.Controls.Add(label_usta_mail);
+            flp.Controls.Add(label_usta_puan);
+            flp.Controls.Add(label_ustamusait);
+            flowpanel_USTA_MAIN.Controls.Add(flp);
+        }
+        //Flow habere tıklama işlemi
+        public void Usta_click(object sender, EventArgs e)
+        {
+            groupBox9.Visible = false;
+            FlowLayoutPanel usta_paneli = sender as FlowLayoutPanel;
+            string _usta_id = usta_paneli.Tag.ToString();
+            foreach (var item in Response_Usta_Listele)
+            {
+                if (Convert.ToInt32(item.Usta_Id) == Convert.ToInt32(_usta_id))
+                {
+                    if(item.Usta_Musaitlik == 0)
+                    {
+                        button_UstaEkle.Enabled = false;
+                        button_UstaKaydet.Enabled = false;
+                        button_UstaSil.Enabled = false;
+                        textBox_isim.Text = item.Usta_Isim;
+                        textBox_soyisim.Text = item.Usta_SoyIsim;
+                        comboBox_Alanlar.Text = Alan__Ismi(Convert.ToInt32(item.Alan_Id));
+                        comboBox_Brans.Text = item.AltAlan_Id;
+                        comboBox_Sehirler.Text = Sehir_Ismi(Convert.ToInt32(item.Sehir_Id));
+                        comboBox_Ilceler.Text = Ilce_Ismi(Convert.ToInt32(item.Ilce_Id));
+                        textBox_telefon.Text = item.Usta_Telefon;
+                        textBox_mail.Text = item.Usta_Email;
+                        textBox_puan.Text = item.Usta_Puan;
+                        textBox_musaitlik.Text = item.Usta_Musaitlik;
+                        MessageBox.Show("Usta şuan msait olmadığı için bilgileri değiştiremezsiniz.");
+                    }
+                    else
+                    {
+                        button_UstaEkle.Enabled = true;
+                        button_UstaKaydet.Enabled = true;
+                        button_UstaSil.Enabled = true;
+                        textBox_isim.Text = item.Usta_Isim;
+                        textBox_soyisim.Text = item.Usta_SoyIsim;
+                        comboBox_Alanlar.Text = Alan__Ismi(Convert.ToInt32(item.Alan_Id));
+                        comboBox_Brans.Text = item.AltAlan_Id;
+                        comboBox_Sehirler.Text = Sehir_Ismi(Convert.ToInt32(item.Sehir_Id));
+                        comboBox_Ilceler.Text = Ilce_Ismi(Convert.ToInt32(item.Ilce_Id));
+                        textBox_telefon.Text = item.Usta_Telefon;
+                        textBox_mail.Text = item.Usta_Email;
+                        textBox_puan.Text = item.Usta_Puan;
+                        textBox_musaitlik.Text = item.Usta_Musaitlik;
+                    }                    
+                }
+            }
         }
 
-       
-       
+        private void button_UstaTemizle_Click(object sender, EventArgs e)
+        {
+            button_UstaEkle.Enabled = true;
+            button_UstaKaydet.Enabled = true;
+            button_UstaSil.Enabled = true;
+            textBox_isim.Clear();
+            textBox_soyisim.Clear();
+            comboBox_Alanlar.Text = "";
+            comboBox_Brans.Text = "";
+            comboBox_Sehirler.Text = "";
+            comboBox_Ilceler.Text = "";
+            textBox_telefon.Clear();
+            textBox_mail.Clear();
+            textBox_puan.Clear();
+            textBox_musaitlik.Clear();
+        }
 
-       
+        private void button_UstaEkle_Click(object sender, EventArgs e)
+        {
+            button_UstaEkle.Enabled = true;
+            button_UstaKaydet.Enabled = true;
+            button_UstaSil.Enabled = true;
+            textBox_isim.Clear();
+            textBox_soyisim.Clear();
+            comboBox_Alanlar.Text = "";
+            comboBox_Brans.Text = "";
+            comboBox_Sehirler.Text = "";
+            comboBox_Ilceler.Text = "";
+            textBox_telefon.Clear();
+            textBox_mail.Clear();
+            textBox_puan.Clear();
+            textBox_musaitlik.Clear();
+            groupBox9.Visible = true;
+            button_UstaEkle.Enabled = false;
+            //başlangıç puanı 0 ve müsait olarak ayarlandı.
+            textBox_puan.Text = "0";
+            textBox_musaitlik.Text = "1";
+            textBox_puan.Enabled = false;
+            textBox_musaitlik.Enabled = false;
+        }
 
-      
+        private void button_iptal_Click(object sender, EventArgs e)
+        {
+            DialogResult ds;
+            ds = MessageBox.Show("İptali onaylıyor musunuz?", "Kayıt İptal", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            if (ds == DialogResult.Yes)
+            {
+                textBox_puan.Clear();
+                textBox_musaitlik.Clear();
+                textBox_puan.Enabled = true;
+                textBox_musaitlik.Enabled = true;
+                button_UstaEkle.Enabled = true;
+                groupBox9.Visible = false;
+            }
+
+        }
+
+        private void button_tamamla_Click(object sender, EventArgs e)
+        {
+            if (
+                textBox_isim.Text == "" ||
+                textBox_soyisim.Text == "" ||
+                textBox_telefon.Text == "" ||
+                comboBox_Alanlar.Text == "" ||
+                comboBox_Ilceler.Text == "" ||
+                comboBox_Sehirler.Text == ""
+                )
+            {
+                MessageBox.Show("Boş alanlar mevcut, boş alanları doldurduğunuza emin olun.");
+            }
+
+            else
+            {
+                int i;
+                for (i = 0; i < comboBox_Brans.Items.Count; i++)
+                {
+                    //comboBox'ta item varmı yokmu kontrolü altalan (televinyon tamirinde yok, eklerken çıkan problemi ortadan kaldırmak için sayıyı bilmeliyiz.)
+                }
+                if (i == 0)
+                {
+                    string shr = comboBox_Sehirler.SelectedItem.ToString().Split('-').First();
+                    Int32.TryParse(shr.ToString(), out _sehirId);
+
+                    string ilc = comboBox_Ilceler.SelectedItem.ToString().Split('-').First();
+                    Int32.TryParse(ilc.ToString(), out _ilceId);
+
+                    string aln_id = comboBox_Alanlar.SelectedItem.ToString().Split('-').First();
+                    Int32.TryParse(aln_id.ToString(), out _alanId);
+                    int puan;
+                    int musait;
+
+                    int _altalan_id = 0;
+                    Int32.TryParse(textBox_puan.Text, out puan);
+
+                    Int32.TryParse(textBox_musaitlik.Text, out musait);
+                   
+                    var response = service.Usta_Ekle(
+                        _alanId,
+                        _sehirId,
+                        _ilceId,
+                        textBox_isim.Text,
+                        textBox_soyisim.Text,
+                        textBox_telefon.Text,
+                        textBox_mail.Text,
+                        puan,
+                        musait,
+                        _altalan_id
+                        );
+                   
+                    MessageBox.Show(response);
+                    if(response=="ok")
+                    {
+                        groupBox9.Visible = false;
+                        button_UstaEkle.Enabled = true;
+                        button_UstaSil.Enabled = true;
+                        button_UstaKaydet.Enabled = true;
+                    }                    
+                   
+                }
+                else if (i != 0)
+                {
+                    string shr = comboBox_Sehirler.SelectedItem.ToString().Split('-').First();
+                    Int32.TryParse(shr.ToString(), out _sehirId);
+
+                    string ilc = comboBox_Ilceler.SelectedItem.ToString().Split('-').First();
+                    Int32.TryParse(ilc.ToString(), out _ilceId);
+
+                    string aln_id = comboBox_Alanlar.SelectedItem.ToString().Split('-').First();
+                    Int32.TryParse(aln_id.ToString(), out _alanId);
+                    int puan;
+                    int musait;
+                 
+                    Int32.TryParse(textBox_puan.Text, out puan);
+
+                    Int32.TryParse(textBox_musaitlik.Text, out musait);
+                    
+                    string _altalan_id = comboBox_Brans.SelectedItem.ToString().Split('-').First();
+                    Int32.TryParse(_altalan_id.ToString(), out _altalanId);
+                    
+                    var response = service.Usta_Ekle(
+                        _alanId,
+                        _sehirId,
+                        _ilceId,
+                        textBox_isim.Text,
+                        textBox_soyisim.Text,
+                        textBox_telefon.Text,
+                        textBox_mail.Text,
+                        puan,
+                        musait,
+                        _altalanId
+                        );
+
+                    MessageBox.Show(response);
+                    if (response == "ok")
+                    {
+                        groupBox9.Visible = false;
+                        button_UstaEkle.Enabled = true;
+                        button_UstaSil.Enabled = true;
+                        button_UstaKaydet.Enabled = true;
+                    }
+
+                }
+            }
+        }
+        #endregion
 
 
     }

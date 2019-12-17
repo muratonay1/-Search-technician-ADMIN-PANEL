@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SehirListesi">
+        <s:complexType />
+      </s:element>
+      <s:element name="SehirListesiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SehirListesiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IlceListesi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sehir_Ismi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IlceListesiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IlceListesiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlanListesi">
+        <s:complexType />
+      </s:element>
+      <s:element name="AlanListesiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlanListesiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AltAlanListesi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Alan_İsmi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AltAlanListesiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AltAlanListesiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UstaEkleme">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Alan_İsmi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UstaEklemeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UstaEklemeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Deneme">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="shr_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DenemeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DenemeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SehirListesiSoapIn">
+    <wsdl:part name="parameters" element="tns:SehirListesi" />
+  </wsdl:message>
+  <wsdl:message name="SehirListesiSoapOut">
+    <wsdl:part name="parameters" element="tns:SehirListesiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IlceListesiSoapIn">
+    <wsdl:part name="parameters" element="tns:IlceListesi" />
+  </wsdl:message>
+  <wsdl:message name="IlceListesiSoapOut">
+    <wsdl:part name="parameters" element="tns:IlceListesiResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlanListesiSoapIn">
+    <wsdl:part name="parameters" element="tns:AlanListesi" />
+  </wsdl:message>
+  <wsdl:message name="AlanListesiSoapOut">
+    <wsdl:part name="parameters" element="tns:AlanListesiResponse" />
+  </wsdl:message>
+  <wsdl:message name="AltAlanListesiSoapIn">
+    <wsdl:part name="parameters" element="tns:AltAlanListesi" />
+  </wsdl:message>
+  <wsdl:message name="AltAlanListesiSoapOut">
+    <wsdl:part name="parameters" element="tns:AltAlanListesiResponse" />
+  </wsdl:message>
+  <wsdl:message name="UstaEklemeSoapIn">
+    <wsdl:part name="parameters" element="tns:UstaEkleme" />
+  </wsdl:message>
+  <wsdl:message name="UstaEklemeSoapOut">
+    <wsdl:part name="parameters" element="tns:UstaEklemeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DenemeSoapIn">
+    <wsdl:part name="parameters" element="tns:Deneme" />
+  </wsdl:message>
+  <wsdl:message name="DenemeSoapOut">
+    <wsdl:part name="parameters" element="tns:DenemeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HelpAsServiceSoap">
+    <wsdl:operation name="SehirListesi">
+      <wsdl:input message="tns:SehirListesiSoapIn" />
+      <wsdl:output message="tns:SehirListesiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IlceListesi">
+      <wsdl:input message="tns:IlceListesiSoapIn" />
+      <wsdl:output message="tns:IlceListesiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlanListesi">
+      <wsdl:input message="tns:AlanListesiSoapIn" />
+      <wsdl:output message="tns:AlanListesiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AltAlanListesi">
+      <wsdl:input message="tns:AltAlanListesiSoapIn" />
+      <wsdl:output message="tns:AltAlanListesiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UstaEkleme">
+      <wsdl:input message="tns:UstaEklemeSoapIn" />
+      <wsdl:output message="tns:UstaEklemeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Deneme">
+      <wsdl:input message="tns:DenemeSoapIn" />
+      <wsdl:output message="tns:DenemeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelpAsServiceSoap" type="tns:HelpAsServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SehirListesi">
+      <soap:operation soapAction="http://tempuri.org/SehirListesi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IlceListesi">
+      <soap:operation soapAction="http://tempuri.org/IlceListesi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlanListesi">
+      <soap:operation soapAction="http://tempuri.org/AlanListesi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AltAlanListesi">
+      <soap:operation soapAction="http://tempuri.org/AltAlanListesi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UstaEkleme">
+      <soap:operation soapAction="http://tempuri.org/UstaEkleme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Deneme">
+      <soap:operation soapAction="http://tempuri.org/Deneme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HelpAsServiceSoap12" type="tns:HelpAsServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SehirListesi">
+      <soap12:operation soapAction="http://tempuri.org/SehirListesi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IlceListesi">
+      <soap12:operation soapAction="http://tempuri.org/IlceListesi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlanListesi">
+      <soap12:operation soapAction="http://tempuri.org/AlanListesi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AltAlanListesi">
+      <soap12:operation soapAction="http://tempuri.org/AltAlanListesi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UstaEkleme">
+      <soap12:operation soapAction="http://tempuri.org/UstaEkleme" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Deneme">
+      <soap12:operation soapAction="http://tempuri.org/Deneme" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelpAsService">
+    <wsdl:port name="HelpAsServiceSoap" binding="tns:HelpAsServiceSoap">
+      <soap:address location="http://192.168.2.45:52489/HelpAsService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HelpAsServiceSoap12" binding="tns:HelpAsServiceSoap12">
+      <soap12:address location="http://192.168.2.45:52489/HelpAsService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

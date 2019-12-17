@@ -62,6 +62,17 @@
             this.label8 = new System.Windows.Forms.Label();
             this.ustalar_panel = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button_Usta_Listele = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBox_Ilceler_Usta = new System.Windows.Forms.ComboBox();
+            this.comboBox_Sehirler_Usta = new System.Windows.Forms.ComboBox();
+            this.comboBox_AltAlan_Usta = new System.Windows.Forms.ComboBox();
+            this.comboBox_Usta_Alan = new System.Windows.Forms.ComboBox();
+            this.flowpanel_USTA_MAIN = new System.Windows.Forms.FlowLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.alanlar_panel = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -87,8 +98,36 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.HaberListesiFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.kullanıcılar_panel = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox_isim = new System.Windows.Forms.TextBox();
+            this.textBox_soyisim = new System.Windows.Forms.TextBox();
+            this.textBox_telefon = new System.Windows.Forms.TextBox();
+            this.textBox_mail = new System.Windows.Forms.TextBox();
+            this.textBox_puan = new System.Windows.Forms.TextBox();
+            this.textBox_musaitlik = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.button_UstaKaydet = new System.Windows.Forms.Button();
+            this.comboBox_Sehirler = new System.Windows.Forms.ComboBox();
+            this.comboBox_Ilceler = new System.Windows.Forms.ComboBox();
+            this.comboBox_Alanlar = new System.Windows.Forms.ComboBox();
+            this.comboBox_Brans = new System.Windows.Forms.ComboBox();
+            this.button_UstaTemizle = new System.Windows.Forms.Button();
+            this.button_UstaEkle = new System.Windows.Forms.Button();
+            this.button_UstaSil = new System.Windows.Forms.Button();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.button_tamamla = new System.Windows.Forms.Button();
+            this.button_iptal = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -106,6 +145,7 @@
             this.groupBox2.SuspendLayout();
             this.ustalar_panel.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.alanlar_panel.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.geri_bildirimler_panel.SuspendLayout();
@@ -114,6 +154,7 @@
             this.groupBox3.SuspendLayout();
             this.kullanıcılar_panel.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -536,23 +577,179 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.groupBox9);
+            this.groupBox4.Controls.Add(this.button_UstaSil);
+            this.groupBox4.Controls.Add(this.button_UstaEkle);
+            this.groupBox4.Controls.Add(this.button_UstaTemizle);
+            this.groupBox4.Controls.Add(this.comboBox_Brans);
+            this.groupBox4.Controls.Add(this.comboBox_Alanlar);
+            this.groupBox4.Controls.Add(this.comboBox_Ilceler);
+            this.groupBox4.Controls.Add(this.comboBox_Sehirler);
+            this.groupBox4.Controls.Add(this.button_UstaKaydet);
+            this.groupBox4.Controls.Add(this.label28);
+            this.groupBox4.Controls.Add(this.label27);
+            this.groupBox4.Controls.Add(this.label26);
+            this.groupBox4.Controls.Add(this.label25);
+            this.groupBox4.Controls.Add(this.label24);
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.label20);
+            this.groupBox4.Controls.Add(this.label19);
+            this.groupBox4.Controls.Add(this.label18);
+            this.groupBox4.Controls.Add(this.textBox_musaitlik);
+            this.groupBox4.Controls.Add(this.textBox_puan);
+            this.groupBox4.Controls.Add(this.textBox_mail);
+            this.groupBox4.Controls.Add(this.textBox_telefon);
+            this.groupBox4.Controls.Add(this.textBox_soyisim);
+            this.groupBox4.Controls.Add(this.textBox_isim);
+            this.groupBox4.Controls.Add(this.groupBox8);
+            this.groupBox4.Controls.Add(this.flowpanel_USTA_MAIN);
             this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Location = new System.Drawing.Point(18, 25);
+            this.groupBox4.Location = new System.Drawing.Point(18, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1101, 615);
+            this.groupBox4.Size = new System.Drawing.Size(1101, 634);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.button_Usta_Listele);
+            this.groupBox8.Controls.Add(this.label17);
+            this.groupBox8.Controls.Add(this.label16);
+            this.groupBox8.Controls.Add(this.label15);
+            this.groupBox8.Controls.Add(this.label13);
+            this.groupBox8.Controls.Add(this.comboBox_Ilceler_Usta);
+            this.groupBox8.Controls.Add(this.comboBox_Sehirler_Usta);
+            this.groupBox8.Controls.Add(this.comboBox_AltAlan_Usta);
+            this.groupBox8.Controls.Add(this.comboBox_Usta_Alan);
+            this.groupBox8.Location = new System.Drawing.Point(6, 8);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(411, 123);
+            this.groupBox8.TabIndex = 3;
+            this.groupBox8.TabStop = false;
+            // 
+            // button_Usta_Listele
+            // 
+            this.button_Usta_Listele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Usta_Listele.Font = new System.Drawing.Font("Rajdhani", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button_Usta_Listele.ForeColor = System.Drawing.Color.Lime;
+            this.button_Usta_Listele.Location = new System.Drawing.Point(132, 96);
+            this.button_Usta_Listele.Name = "button_Usta_Listele";
+            this.button_Usta_Listele.Size = new System.Drawing.Size(263, 23);
+            this.button_Usta_Listele.TabIndex = 4;
+            this.button_Usta_Listele.Text = "Bul";
+            this.button_Usta_Listele.UseVisualStyleBackColor = true;
+            this.button_Usta_Listele.Click += new System.EventHandler(this.button12_Click_1);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label17.Location = new System.Drawing.Point(19, 73);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(58, 24);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "İlçe Seç";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label16.Location = new System.Drawing.Point(19, 52);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(70, 24);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "Şehir Seç";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label15.Location = new System.Drawing.Point(19, 31);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(87, 24);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Alt Alan Seç";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label13.Location = new System.Drawing.Point(19, 11);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(65, 24);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Alan Seç";
+            // 
+            // comboBox_Ilceler_Usta
+            // 
+            this.comboBox_Ilceler_Usta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.comboBox_Ilceler_Usta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboBox_Ilceler_Usta.ForeColor = System.Drawing.SystemColors.Info;
+            this.comboBox_Ilceler_Usta.FormattingEnabled = true;
+            this.comboBox_Ilceler_Usta.Location = new System.Drawing.Point(131, 75);
+            this.comboBox_Ilceler_Usta.Name = "comboBox_Ilceler_Usta";
+            this.comboBox_Ilceler_Usta.Size = new System.Drawing.Size(264, 21);
+            this.comboBox_Ilceler_Usta.TabIndex = 3;
+            // 
+            // comboBox_Sehirler_Usta
+            // 
+            this.comboBox_Sehirler_Usta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.comboBox_Sehirler_Usta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboBox_Sehirler_Usta.ForeColor = System.Drawing.SystemColors.Info;
+            this.comboBox_Sehirler_Usta.FormattingEnabled = true;
+            this.comboBox_Sehirler_Usta.Location = new System.Drawing.Point(131, 54);
+            this.comboBox_Sehirler_Usta.Name = "comboBox_Sehirler_Usta";
+            this.comboBox_Sehirler_Usta.Size = new System.Drawing.Size(264, 21);
+            this.comboBox_Sehirler_Usta.TabIndex = 2;
+            this.comboBox_Sehirler_Usta.SelectedIndexChanged += new System.EventHandler(this.comboBox_Sehirler_Usta_SelectedIndexChanged);
+            // 
+            // comboBox_AltAlan_Usta
+            // 
+            this.comboBox_AltAlan_Usta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.comboBox_AltAlan_Usta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboBox_AltAlan_Usta.ForeColor = System.Drawing.SystemColors.Info;
+            this.comboBox_AltAlan_Usta.FormattingEnabled = true;
+            this.comboBox_AltAlan_Usta.Location = new System.Drawing.Point(131, 33);
+            this.comboBox_AltAlan_Usta.Name = "comboBox_AltAlan_Usta";
+            this.comboBox_AltAlan_Usta.Size = new System.Drawing.Size(264, 21);
+            this.comboBox_AltAlan_Usta.TabIndex = 1;
+            // 
+            // comboBox_Usta_Alan
+            // 
+            this.comboBox_Usta_Alan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.comboBox_Usta_Alan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboBox_Usta_Alan.ForeColor = System.Drawing.SystemColors.Info;
+            this.comboBox_Usta_Alan.FormattingEnabled = true;
+            this.comboBox_Usta_Alan.Location = new System.Drawing.Point(131, 12);
+            this.comboBox_Usta_Alan.Name = "comboBox_Usta_Alan";
+            this.comboBox_Usta_Alan.Size = new System.Drawing.Size(264, 21);
+            this.comboBox_Usta_Alan.TabIndex = 0;
+            this.comboBox_Usta_Alan.SelectedIndexChanged += new System.EventHandler(this.comboBox_Usta_Alan_SelectedIndexChanged);
+            // 
+            // flowpanel_USTA_MAIN
+            // 
+            this.flowpanel_USTA_MAIN.AutoScroll = true;
+            this.flowpanel_USTA_MAIN.Location = new System.Drawing.Point(4, 156);
+            this.flowpanel_USTA_MAIN.Name = "flowpanel_USTA_MAIN";
+            this.flowpanel_USTA_MAIN.Size = new System.Drawing.Size(417, 466);
+            this.flowpanel_USTA_MAIN.TabIndex = 2;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(493, 23);
+            this.label7.Location = new System.Drawing.Point(487, 25);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(140, 20);
+            this.label7.Size = new System.Drawing.Size(342, 20);
             this.label7.TabIndex = 1;
-            this.label7.Text = "USTALAR PANEL";
+            this.label7.Text = "Görüntülemek için Usta Listesinden Usta Seçin";
             // 
             // alanlar_panel
             // 
@@ -627,9 +824,9 @@
             this.groupBox6.Controls.Add(this.listBox2);
             this.groupBox6.Controls.Add(this.listBox1);
             this.groupBox6.Controls.Add(this.label6);
-            this.groupBox6.Location = new System.Drawing.Point(18, 6);
+            this.groupBox6.Location = new System.Drawing.Point(18, 33);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(1095, 628);
+            this.groupBox6.Size = new System.Drawing.Size(1095, 601);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             // 
@@ -813,6 +1010,15 @@
             this.kullanıcılar_panel.Size = new System.Drawing.Size(1125, 646);
             this.kullanıcılar_panel.TabIndex = 11;
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label14);
+            this.groupBox7.Location = new System.Drawing.Point(7, 25);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(1106, 603);
+            this.groupBox7.TabIndex = 1;
+            this.groupBox7.TabStop = false;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -824,14 +1030,325 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "kullanıcılar_paneli";
             // 
-            // groupBox7
+            // textBox_isim
             // 
-            this.groupBox7.Controls.Add(this.label14);
-            this.groupBox7.Location = new System.Drawing.Point(7, 6);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(1106, 622);
-            this.groupBox7.TabIndex = 1;
-            this.groupBox7.TabStop = false;
+            this.textBox_isim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.textBox_isim.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox_isim.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBox_isim.Location = new System.Drawing.Point(552, 56);
+            this.textBox_isim.Name = "textBox_isim";
+            this.textBox_isim.Size = new System.Drawing.Size(201, 23);
+            this.textBox_isim.TabIndex = 4;
+            this.textBox_isim.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_soyisim
+            // 
+            this.textBox_soyisim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.textBox_soyisim.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox_soyisim.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBox_soyisim.Location = new System.Drawing.Point(552, 85);
+            this.textBox_soyisim.Name = "textBox_soyisim";
+            this.textBox_soyisim.Size = new System.Drawing.Size(201, 23);
+            this.textBox_soyisim.TabIndex = 5;
+            this.textBox_soyisim.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_telefon
+            // 
+            this.textBox_telefon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.textBox_telefon.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox_telefon.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBox_telefon.Location = new System.Drawing.Point(552, 229);
+            this.textBox_telefon.Name = "textBox_telefon";
+            this.textBox_telefon.Size = new System.Drawing.Size(201, 23);
+            this.textBox_telefon.TabIndex = 10;
+            this.textBox_telefon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_mail
+            // 
+            this.textBox_mail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.textBox_mail.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox_mail.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBox_mail.Location = new System.Drawing.Point(553, 257);
+            this.textBox_mail.Name = "textBox_mail";
+            this.textBox_mail.Size = new System.Drawing.Size(201, 23);
+            this.textBox_mail.TabIndex = 11;
+            this.textBox_mail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_puan
+            // 
+            this.textBox_puan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.textBox_puan.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox_puan.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBox_puan.Location = new System.Drawing.Point(553, 285);
+            this.textBox_puan.Name = "textBox_puan";
+            this.textBox_puan.Size = new System.Drawing.Size(201, 23);
+            this.textBox_puan.TabIndex = 12;
+            this.textBox_puan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_musaitlik
+            // 
+            this.textBox_musaitlik.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.textBox_musaitlik.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox_musaitlik.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBox_musaitlik.Location = new System.Drawing.Point(553, 312);
+            this.textBox_musaitlik.Name = "textBox_musaitlik";
+            this.textBox_musaitlik.Size = new System.Drawing.Size(201, 23);
+            this.textBox_musaitlik.TabIndex = 13;
+            this.textBox_musaitlik.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label18.ForeColor = System.Drawing.Color.Lime;
+            this.label18.Location = new System.Drawing.Point(511, 55);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(36, 24);
+            this.label18.TabIndex = 15;
+            this.label18.Text = "İsim";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label19.ForeColor = System.Drawing.Color.Lime;
+            this.label19.Location = new System.Drawing.Point(484, 85);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(64, 24);
+            this.label19.TabIndex = 16;
+            this.label19.Text = "Soy İsim";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label20.ForeColor = System.Drawing.Color.Lime;
+            this.label20.Location = new System.Drawing.Point(509, 168);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(38, 24);
+            this.label20.TabIndex = 17;
+            this.label20.Text = "Alan";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label21.ForeColor = System.Drawing.Color.Lime;
+            this.label21.Location = new System.Drawing.Point(500, 198);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(47, 24);
+            this.label21.TabIndex = 18;
+            this.label21.Text = "Branş";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label22.ForeColor = System.Drawing.Color.Lime;
+            this.label22.Location = new System.Drawing.Point(429, 312);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(120, 24);
+            this.label22.TabIndex = 19;
+            this.label22.Text = "Müsaitlik Durumu";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label23.ForeColor = System.Drawing.Color.Lime;
+            this.label23.Location = new System.Drawing.Point(516, 142);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(31, 24);
+            this.label23.TabIndex = 20;
+            this.label23.Text = "İlçe";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label24.ForeColor = System.Drawing.Color.Lime;
+            this.label24.Location = new System.Drawing.Point(499, 256);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(48, 24);
+            this.label24.TabIndex = 21;
+            this.label24.Text = "E-Mail";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label25.ForeColor = System.Drawing.Color.Lime;
+            this.label25.Location = new System.Drawing.Point(491, 228);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(57, 24);
+            this.label25.TabIndex = 22;
+            this.label25.Text = "Telefon";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label26.ForeColor = System.Drawing.Color.Lime;
+            this.label26.Location = new System.Drawing.Point(504, 113);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(43, 24);
+            this.label26.TabIndex = 23;
+            this.label26.Text = "Şehir";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label27.ForeColor = System.Drawing.Color.Lime;
+            this.label27.Location = new System.Drawing.Point(507, 285);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(42, 24);
+            this.label27.TabIndex = 24;
+            this.label27.Text = "Puan";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label28.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label28.Location = new System.Drawing.Point(163, 133);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(92, 20);
+            this.label28.TabIndex = 25;
+            this.label28.Text = "Usta Listesi";
+            // 
+            // button_UstaKaydet
+            // 
+            this.button_UstaKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_UstaKaydet.Font = new System.Drawing.Font("Rajdhani", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button_UstaKaydet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button_UstaKaydet.Location = new System.Drawing.Point(806, 103);
+            this.button_UstaKaydet.Name = "button_UstaKaydet";
+            this.button_UstaKaydet.Size = new System.Drawing.Size(103, 43);
+            this.button_UstaKaydet.TabIndex = 26;
+            this.button_UstaKaydet.Text = "Kaydet";
+            this.button_UstaKaydet.UseVisualStyleBackColor = true;
+            // 
+            // comboBox_Sehirler
+            // 
+            this.comboBox_Sehirler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.comboBox_Sehirler.Font = new System.Drawing.Font("Rajdhani", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboBox_Sehirler.ForeColor = System.Drawing.SystemColors.Info;
+            this.comboBox_Sehirler.FormattingEnabled = true;
+            this.comboBox_Sehirler.Location = new System.Drawing.Point(553, 111);
+            this.comboBox_Sehirler.Name = "comboBox_Sehirler";
+            this.comboBox_Sehirler.Size = new System.Drawing.Size(201, 26);
+            this.comboBox_Sehirler.TabIndex = 27;
+            this.comboBox_Sehirler.SelectedIndexChanged += new System.EventHandler(this.comboBox_Sehirler_SelectedIndexChanged);
+            // 
+            // comboBox_Ilceler
+            // 
+            this.comboBox_Ilceler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.comboBox_Ilceler.Font = new System.Drawing.Font("Rajdhani", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboBox_Ilceler.ForeColor = System.Drawing.SystemColors.Info;
+            this.comboBox_Ilceler.FormattingEnabled = true;
+            this.comboBox_Ilceler.Location = new System.Drawing.Point(553, 140);
+            this.comboBox_Ilceler.Name = "comboBox_Ilceler";
+            this.comboBox_Ilceler.Size = new System.Drawing.Size(201, 26);
+            this.comboBox_Ilceler.TabIndex = 28;
+            // 
+            // comboBox_Alanlar
+            // 
+            this.comboBox_Alanlar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.comboBox_Alanlar.Font = new System.Drawing.Font("Rajdhani", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboBox_Alanlar.ForeColor = System.Drawing.SystemColors.Info;
+            this.comboBox_Alanlar.FormattingEnabled = true;
+            this.comboBox_Alanlar.Location = new System.Drawing.Point(553, 168);
+            this.comboBox_Alanlar.Name = "comboBox_Alanlar";
+            this.comboBox_Alanlar.Size = new System.Drawing.Size(201, 26);
+            this.comboBox_Alanlar.TabIndex = 29;
+            this.comboBox_Alanlar.SelectedIndexChanged += new System.EventHandler(this.comboBox_Alanlar_SelectedIndexChanged);
+            // 
+            // comboBox_Brans
+            // 
+            this.comboBox_Brans.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.comboBox_Brans.Font = new System.Drawing.Font("Rajdhani", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboBox_Brans.ForeColor = System.Drawing.SystemColors.Info;
+            this.comboBox_Brans.FormattingEnabled = true;
+            this.comboBox_Brans.Location = new System.Drawing.Point(553, 197);
+            this.comboBox_Brans.Name = "comboBox_Brans";
+            this.comboBox_Brans.Size = new System.Drawing.Size(201, 26);
+            this.comboBox_Brans.TabIndex = 30;
+            // 
+            // button_UstaTemizle
+            // 
+            this.button_UstaTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_UstaTemizle.Font = new System.Drawing.Font("Rajdhani", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button_UstaTemizle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button_UstaTemizle.Location = new System.Drawing.Point(950, 103);
+            this.button_UstaTemizle.Name = "button_UstaTemizle";
+            this.button_UstaTemizle.Size = new System.Drawing.Size(103, 43);
+            this.button_UstaTemizle.TabIndex = 31;
+            this.button_UstaTemizle.Text = "Temizle";
+            this.button_UstaTemizle.UseVisualStyleBackColor = true;
+            this.button_UstaTemizle.Click += new System.EventHandler(this.button_UstaTemizle_Click);
+            // 
+            // button_UstaEkle
+            // 
+            this.button_UstaEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_UstaEkle.Font = new System.Drawing.Font("Rajdhani", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button_UstaEkle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button_UstaEkle.Location = new System.Drawing.Point(806, 188);
+            this.button_UstaEkle.Name = "button_UstaEkle";
+            this.button_UstaEkle.Size = new System.Drawing.Size(103, 43);
+            this.button_UstaEkle.TabIndex = 32;
+            this.button_UstaEkle.Text = "Ekle";
+            this.button_UstaEkle.UseVisualStyleBackColor = true;
+            this.button_UstaEkle.Click += new System.EventHandler(this.button_UstaEkle_Click);
+            // 
+            // button_UstaSil
+            // 
+            this.button_UstaSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_UstaSil.Font = new System.Drawing.Font("Rajdhani", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button_UstaSil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button_UstaSil.Location = new System.Drawing.Point(950, 188);
+            this.button_UstaSil.Name = "button_UstaSil";
+            this.button_UstaSil.Size = new System.Drawing.Size(103, 43);
+            this.button_UstaSil.TabIndex = 33;
+            this.button_UstaSil.Text = "Sil";
+            this.button_UstaSil.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.button_iptal);
+            this.groupBox9.Controls.Add(this.button_tamamla);
+            this.groupBox9.Location = new System.Drawing.Point(793, 240);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(135, 81);
+            this.groupBox9.TabIndex = 34;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Visible = false;
+            // 
+            // button_tamamla
+            // 
+            this.button_tamamla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_tamamla.Font = new System.Drawing.Font("Rajdhani", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button_tamamla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button_tamamla.Location = new System.Drawing.Point(13, 16);
+            this.button_tamamla.Name = "button_tamamla";
+            this.button_tamamla.Size = new System.Drawing.Size(109, 24);
+            this.button_tamamla.TabIndex = 35;
+            this.button_tamamla.Text = "Eklemeyi Tamamla";
+            this.button_tamamla.UseVisualStyleBackColor = true;
+            this.button_tamamla.Click += new System.EventHandler(this.button_tamamla_Click);
+            // 
+            // button_iptal
+            // 
+            this.button_iptal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_iptal.Font = new System.Drawing.Font("Rajdhani", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button_iptal.ForeColor = System.Drawing.Color.Red;
+            this.button_iptal.Location = new System.Drawing.Point(13, 49);
+            this.button_iptal.Name = "button_iptal";
+            this.button_iptal.Size = new System.Drawing.Size(109, 24);
+            this.button_iptal.TabIndex = 37;
+            this.button_iptal.Text = "İptal";
+            this.button_iptal.UseVisualStyleBackColor = true;
+            this.button_iptal.Click += new System.EventHandler(this.button_iptal_Click);
             // 
             // Form2
             // 
@@ -840,13 +1357,13 @@
             this.ClientSize = new System.Drawing.Size(1425, 679);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ustalar_panel);
+            this.Controls.Add(this.kullanıcılar_panel);
+            this.Controls.Add(this.istekler_panel);
             this.Controls.Add(this.haberler_panel);
             this.Controls.Add(this.yorumlar_panel);
             this.Controls.Add(this.alanlar_panel);
             this.Controls.Add(this.geri_bildirimler_panel);
-            this.Controls.Add(this.ustalar_panel);
-            this.Controls.Add(this.kullanıcılar_panel);
-            this.Controls.Add(this.istekler_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -874,6 +1391,8 @@
             this.ustalar_panel.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.alanlar_panel.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -886,6 +1405,7 @@
             this.kullanıcılar_panel.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -952,5 +1472,44 @@
         private System.Windows.Forms.Panel kullanıcılar_panel;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox comboBox_Ilceler_Usta;
+        private System.Windows.Forms.ComboBox comboBox_Sehirler_Usta;
+        private System.Windows.Forms.ComboBox comboBox_AltAlan_Usta;
+        private System.Windows.Forms.ComboBox comboBox_Usta_Alan;
+        private System.Windows.Forms.FlowLayoutPanel flowpanel_USTA_MAIN;
+        private System.Windows.Forms.Button button_Usta_Listele;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBox_musaitlik;
+        private System.Windows.Forms.TextBox textBox_puan;
+        private System.Windows.Forms.TextBox textBox_mail;
+        private System.Windows.Forms.TextBox textBox_telefon;
+        private System.Windows.Forms.TextBox textBox_soyisim;
+        private System.Windows.Forms.TextBox textBox_isim;
+        private System.Windows.Forms.Button button_UstaKaydet;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ComboBox comboBox_Brans;
+        private System.Windows.Forms.ComboBox comboBox_Alanlar;
+        private System.Windows.Forms.ComboBox comboBox_Ilceler;
+        private System.Windows.Forms.ComboBox comboBox_Sehirler;
+        private System.Windows.Forms.Button button_UstaSil;
+        private System.Windows.Forms.Button button_UstaEkle;
+        private System.Windows.Forms.Button button_UstaTemizle;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Button button_tamamla;
+        private System.Windows.Forms.Button button_iptal;
     }
 }
