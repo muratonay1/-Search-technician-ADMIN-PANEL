@@ -112,6 +112,83 @@ namespace HelpAsCompanyApp.SonService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Usta_Ekle", ReplyAction="*")]
         System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Usta_EkleResponse> Usta_EkleAsync(HelpAsCompanyApp.SonService.Usta_EkleRequest request);
+        
+        // CODEGEN: Generating message contract since element name mail from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Uye_Girisi", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.Uye_GirisiResponse Uye_Girisi(HelpAsCompanyApp.SonService.Uye_GirisiRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Uye_Girisi", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Uye_GirisiResponse> Uye_GirisiAsync(HelpAsCompanyApp.SonService.Uye_GirisiRequest request);
+        
+        // CODEGEN: Generating message contract since element name tarih from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Geri_Bildirim_Gonder", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.Geri_Bildirim_GonderResponse Geri_Bildirim_Gonder(HelpAsCompanyApp.SonService.Geri_Bildirim_GonderRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Geri_Bildirim_Gonder", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Geri_Bildirim_GonderResponse> Geri_Bildirim_GonderAsync(HelpAsCompanyApp.SonService.Geri_Bildirim_GonderRequest request);
+        
+        // CODEGEN: Generating message contract since element name uye_ad from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Uye_Guncelle", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.Uye_GuncelleResponse Uye_Guncelle(HelpAsCompanyApp.SonService.Uye_GuncelleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Uye_Guncelle", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Uye_GuncelleResponse> Uye_GuncelleAsync(HelpAsCompanyApp.SonService.Uye_GuncelleRequest request);
+        
+        // CODEGEN: Generating message contract since element name _alan_ismi from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Hizmet_Sorgula", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.Hizmet_SorgulaResponse Hizmet_Sorgula(HelpAsCompanyApp.SonService.Hizmet_SorgulaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Hizmet_Sorgula", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Hizmet_SorgulaResponse> Hizmet_SorgulaAsync(HelpAsCompanyApp.SonService.Hizmet_SorgulaRequest request);
+        
+        // CODEGEN: Generating message contract since element name alan_ismi from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Istek_Olustur", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.Istek_OlusturResponse Istek_Olustur(HelpAsCompanyApp.SonService.Istek_OlusturRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Istek_Olustur", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Istek_OlusturResponse> Istek_OlusturAsync(HelpAsCompanyApp.SonService.Istek_OlusturRequest request);
+        
+        // CODEGEN: Generating message contract since element name Geri_Bildirim_ListeleResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Geri_Bildirim_Listele", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleResponse Geri_Bildirim_Listele(HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Geri_Bildirim_Listele", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleResponse> Geri_Bildirim_ListeleAsync(HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleRequest request);
+        
+        // CODEGEN: Generating message contract since element name Geri_Bildirim_SilResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Geri_Bildirim_Sil", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.Geri_Bildirim_SilResponse Geri_Bildirim_Sil(HelpAsCompanyApp.SonService.Geri_Bildirim_SilRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Geri_Bildirim_Sil", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Geri_Bildirim_SilResponse> Geri_Bildirim_SilAsync(HelpAsCompanyApp.SonService.Geri_Bildirim_SilRequest request);
+        
+        // CODEGEN: Generating message contract since element name Engelli_Uye_ListeleResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Engelli_Uye_Listele", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.Engelli_Uye_ListeleResponse Engelli_Uye_Listele(HelpAsCompanyApp.SonService.Engelli_Uye_ListeleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Engelli_Uye_Listele", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Engelli_Uye_ListeleResponse> Engelli_Uye_ListeleAsync(HelpAsCompanyApp.SonService.Engelli_Uye_ListeleRequest request);
+        
+        // CODEGEN: Generating message contract since element name Uye_Sorgula_forEngelleResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Uye_Sorgula_forEngelle", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleResponse Uye_Sorgula_forEngelle(HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Uye_Sorgula_forEngelle", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleResponse> Uye_Sorgula_forEngelleAsync(HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleRequest request);
+        
+        // CODEGEN: Generating message contract since element name engel_sebep from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UYE_ENGELLE", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.UYE_ENGELLEResponse UYE_ENGELLE(HelpAsCompanyApp.SonService.UYE_ENGELLERequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UYE_ENGELLE", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.UYE_ENGELLEResponse> UYE_ENGELLEAsync(HelpAsCompanyApp.SonService.UYE_ENGELLERequest request);
+        
+        // CODEGEN: Generating message contract since element name UYE_LİSTELEResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UYE_LİSTELE", ReplyAction="*")]
+        HelpAsCompanyApp.SonService.UYE_LİSTELEResponse UYE_LİSTELE(HelpAsCompanyApp.SonService.UYE_LİSTELERequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UYE_LİSTELE", ReplyAction="*")]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.UYE_LİSTELEResponse> UYE_LİSTELEAsync(HelpAsCompanyApp.SonService.UYE_LİSTELERequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1105,6 +1182,817 @@ namespace HelpAsCompanyApp.SonService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Uye_GirisiRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Uye_Girisi", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Uye_GirisiRequestBody Body;
+        
+        public Uye_GirisiRequest() {
+        }
+        
+        public Uye_GirisiRequest(HelpAsCompanyApp.SonService.Uye_GirisiRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Uye_GirisiRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string mail;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string sifre;
+        
+        public Uye_GirisiRequestBody() {
+        }
+        
+        public Uye_GirisiRequestBody(string mail, string sifre) {
+            this.mail = mail;
+            this.sifre = sifre;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Uye_GirisiResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Uye_GirisiResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Uye_GirisiResponseBody Body;
+        
+        public Uye_GirisiResponse() {
+        }
+        
+        public Uye_GirisiResponse(HelpAsCompanyApp.SonService.Uye_GirisiResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Uye_GirisiResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Uye_GirisiResult;
+        
+        public Uye_GirisiResponseBody() {
+        }
+        
+        public Uye_GirisiResponseBody(string Uye_GirisiResult) {
+            this.Uye_GirisiResult = Uye_GirisiResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Geri_Bildirim_GonderRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Geri_Bildirim_Gonder", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Geri_Bildirim_GonderRequestBody Body;
+        
+        public Geri_Bildirim_GonderRequest() {
+        }
+        
+        public Geri_Bildirim_GonderRequest(HelpAsCompanyApp.SonService.Geri_Bildirim_GonderRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Geri_Bildirim_GonderRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int uye_id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string tarih;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string bildirim;
+        
+        public Geri_Bildirim_GonderRequestBody() {
+        }
+        
+        public Geri_Bildirim_GonderRequestBody(int uye_id, string tarih, string bildirim) {
+            this.uye_id = uye_id;
+            this.tarih = tarih;
+            this.bildirim = bildirim;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Geri_Bildirim_GonderResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Geri_Bildirim_GonderResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Geri_Bildirim_GonderResponseBody Body;
+        
+        public Geri_Bildirim_GonderResponse() {
+        }
+        
+        public Geri_Bildirim_GonderResponse(HelpAsCompanyApp.SonService.Geri_Bildirim_GonderResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Geri_Bildirim_GonderResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Geri_Bildirim_GonderResult;
+        
+        public Geri_Bildirim_GonderResponseBody() {
+        }
+        
+        public Geri_Bildirim_GonderResponseBody(string Geri_Bildirim_GonderResult) {
+            this.Geri_Bildirim_GonderResult = Geri_Bildirim_GonderResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Uye_GuncelleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Uye_Guncelle", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Uye_GuncelleRequestBody Body;
+        
+        public Uye_GuncelleRequest() {
+        }
+        
+        public Uye_GuncelleRequest(HelpAsCompanyApp.SonService.Uye_GuncelleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Uye_GuncelleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int uye_id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string uye_ad;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string uye_soyad;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string uye_tel;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string uye_mail;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string sehir_ismi;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string ilce_ismi;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string sifre;
+        
+        public Uye_GuncelleRequestBody() {
+        }
+        
+        public Uye_GuncelleRequestBody(int uye_id, string uye_ad, string uye_soyad, string uye_tel, string uye_mail, string sehir_ismi, string ilce_ismi, string sifre) {
+            this.uye_id = uye_id;
+            this.uye_ad = uye_ad;
+            this.uye_soyad = uye_soyad;
+            this.uye_tel = uye_tel;
+            this.uye_mail = uye_mail;
+            this.sehir_ismi = sehir_ismi;
+            this.ilce_ismi = ilce_ismi;
+            this.sifre = sifre;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Uye_GuncelleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Uye_GuncelleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Uye_GuncelleResponseBody Body;
+        
+        public Uye_GuncelleResponse() {
+        }
+        
+        public Uye_GuncelleResponse(HelpAsCompanyApp.SonService.Uye_GuncelleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Uye_GuncelleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Uye_GuncelleResult;
+        
+        public Uye_GuncelleResponseBody() {
+        }
+        
+        public Uye_GuncelleResponseBody(string Uye_GuncelleResult) {
+            this.Uye_GuncelleResult = Uye_GuncelleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Hizmet_SorgulaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Hizmet_Sorgula", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Hizmet_SorgulaRequestBody Body;
+        
+        public Hizmet_SorgulaRequest() {
+        }
+        
+        public Hizmet_SorgulaRequest(HelpAsCompanyApp.SonService.Hizmet_SorgulaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Hizmet_SorgulaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string _alan_ismi;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string _altalan_ismi;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string _sehir_ismi;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string _ilce_ismi;
+        
+        public Hizmet_SorgulaRequestBody() {
+        }
+        
+        public Hizmet_SorgulaRequestBody(string _alan_ismi, string _altalan_ismi, string _sehir_ismi, string _ilce_ismi) {
+            this._alan_ismi = _alan_ismi;
+            this._altalan_ismi = _altalan_ismi;
+            this._sehir_ismi = _sehir_ismi;
+            this._ilce_ismi = _ilce_ismi;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Hizmet_SorgulaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Hizmet_SorgulaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Hizmet_SorgulaResponseBody Body;
+        
+        public Hizmet_SorgulaResponse() {
+        }
+        
+        public Hizmet_SorgulaResponse(HelpAsCompanyApp.SonService.Hizmet_SorgulaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Hizmet_SorgulaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Hizmet_SorgulaResult;
+        
+        public Hizmet_SorgulaResponseBody() {
+        }
+        
+        public Hizmet_SorgulaResponseBody(string Hizmet_SorgulaResult) {
+            this.Hizmet_SorgulaResult = Hizmet_SorgulaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Istek_OlusturRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Istek_Olustur", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Istek_OlusturRequestBody Body;
+        
+        public Istek_OlusturRequest() {
+        }
+        
+        public Istek_OlusturRequest(HelpAsCompanyApp.SonService.Istek_OlusturRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Istek_OlusturRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string alan_ismi;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string dal_ismi;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int uye_id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string sehir_ismi;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string ilce_ismi;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string aciklama;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string tarih;
+        
+        public Istek_OlusturRequestBody() {
+        }
+        
+        public Istek_OlusturRequestBody(string alan_ismi, string dal_ismi, int uye_id, string sehir_ismi, string ilce_ismi, string aciklama, string tarih) {
+            this.alan_ismi = alan_ismi;
+            this.dal_ismi = dal_ismi;
+            this.uye_id = uye_id;
+            this.sehir_ismi = sehir_ismi;
+            this.ilce_ismi = ilce_ismi;
+            this.aciklama = aciklama;
+            this.tarih = tarih;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Istek_OlusturResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Istek_OlusturResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Istek_OlusturResponseBody Body;
+        
+        public Istek_OlusturResponse() {
+        }
+        
+        public Istek_OlusturResponse(HelpAsCompanyApp.SonService.Istek_OlusturResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Istek_OlusturResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Istek_OlusturResult;
+        
+        public Istek_OlusturResponseBody() {
+        }
+        
+        public Istek_OlusturResponseBody(string Istek_OlusturResult) {
+            this.Istek_OlusturResult = Istek_OlusturResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Geri_Bildirim_ListeleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Geri_Bildirim_Listele", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleRequestBody Body;
+        
+        public Geri_Bildirim_ListeleRequest() {
+        }
+        
+        public Geri_Bildirim_ListeleRequest(HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class Geri_Bildirim_ListeleRequestBody {
+        
+        public Geri_Bildirim_ListeleRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Geri_Bildirim_ListeleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Geri_Bildirim_ListeleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleResponseBody Body;
+        
+        public Geri_Bildirim_ListeleResponse() {
+        }
+        
+        public Geri_Bildirim_ListeleResponse(HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Geri_Bildirim_ListeleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Geri_Bildirim_ListeleResult;
+        
+        public Geri_Bildirim_ListeleResponseBody() {
+        }
+        
+        public Geri_Bildirim_ListeleResponseBody(string Geri_Bildirim_ListeleResult) {
+            this.Geri_Bildirim_ListeleResult = Geri_Bildirim_ListeleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Geri_Bildirim_SilRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Geri_Bildirim_Sil", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Geri_Bildirim_SilRequestBody Body;
+        
+        public Geri_Bildirim_SilRequest() {
+        }
+        
+        public Geri_Bildirim_SilRequest(HelpAsCompanyApp.SonService.Geri_Bildirim_SilRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Geri_Bildirim_SilRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int bildirim_id;
+        
+        public Geri_Bildirim_SilRequestBody() {
+        }
+        
+        public Geri_Bildirim_SilRequestBody(int bildirim_id) {
+            this.bildirim_id = bildirim_id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Geri_Bildirim_SilResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Geri_Bildirim_SilResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Geri_Bildirim_SilResponseBody Body;
+        
+        public Geri_Bildirim_SilResponse() {
+        }
+        
+        public Geri_Bildirim_SilResponse(HelpAsCompanyApp.SonService.Geri_Bildirim_SilResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Geri_Bildirim_SilResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Geri_Bildirim_SilResult;
+        
+        public Geri_Bildirim_SilResponseBody() {
+        }
+        
+        public Geri_Bildirim_SilResponseBody(string Geri_Bildirim_SilResult) {
+            this.Geri_Bildirim_SilResult = Geri_Bildirim_SilResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Engelli_Uye_ListeleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Engelli_Uye_Listele", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Engelli_Uye_ListeleRequestBody Body;
+        
+        public Engelli_Uye_ListeleRequest() {
+        }
+        
+        public Engelli_Uye_ListeleRequest(HelpAsCompanyApp.SonService.Engelli_Uye_ListeleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class Engelli_Uye_ListeleRequestBody {
+        
+        public Engelli_Uye_ListeleRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Engelli_Uye_ListeleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Engelli_Uye_ListeleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Engelli_Uye_ListeleResponseBody Body;
+        
+        public Engelli_Uye_ListeleResponse() {
+        }
+        
+        public Engelli_Uye_ListeleResponse(HelpAsCompanyApp.SonService.Engelli_Uye_ListeleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Engelli_Uye_ListeleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Engelli_Uye_ListeleResult;
+        
+        public Engelli_Uye_ListeleResponseBody() {
+        }
+        
+        public Engelli_Uye_ListeleResponseBody(string Engelli_Uye_ListeleResult) {
+            this.Engelli_Uye_ListeleResult = Engelli_Uye_ListeleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Uye_Sorgula_forEngelleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Uye_Sorgula_forEngelle", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleRequestBody Body;
+        
+        public Uye_Sorgula_forEngelleRequest() {
+        }
+        
+        public Uye_Sorgula_forEngelleRequest(HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Uye_Sorgula_forEngelleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public Uye_Sorgula_forEngelleRequestBody() {
+        }
+        
+        public Uye_Sorgula_forEngelleRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class Uye_Sorgula_forEngelleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="Uye_Sorgula_forEngelleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleResponseBody Body;
+        
+        public Uye_Sorgula_forEngelleResponse() {
+        }
+        
+        public Uye_Sorgula_forEngelleResponse(HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class Uye_Sorgula_forEngelleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Uye_Sorgula_forEngelleResult;
+        
+        public Uye_Sorgula_forEngelleResponseBody() {
+        }
+        
+        public Uye_Sorgula_forEngelleResponseBody(string Uye_Sorgula_forEngelleResult) {
+            this.Uye_Sorgula_forEngelleResult = Uye_Sorgula_forEngelleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UYE_ENGELLERequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UYE_ENGELLE", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.UYE_ENGELLERequestBody Body;
+        
+        public UYE_ENGELLERequest() {
+        }
+        
+        public UYE_ENGELLERequest(HelpAsCompanyApp.SonService.UYE_ENGELLERequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class UYE_ENGELLERequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int üye_id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string engel_sebep;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string tarih;
+        
+        public UYE_ENGELLERequestBody() {
+        }
+        
+        public UYE_ENGELLERequestBody(int üye_id, string engel_sebep, string tarih) {
+            this.üye_id = üye_id;
+            this.engel_sebep = engel_sebep;
+            this.tarih = tarih;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UYE_ENGELLEResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UYE_ENGELLEResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.UYE_ENGELLEResponseBody Body;
+        
+        public UYE_ENGELLEResponse() {
+        }
+        
+        public UYE_ENGELLEResponse(HelpAsCompanyApp.SonService.UYE_ENGELLEResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class UYE_ENGELLEResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string UYE_ENGELLEResult;
+        
+        public UYE_ENGELLEResponseBody() {
+        }
+        
+        public UYE_ENGELLEResponseBody(string UYE_ENGELLEResult) {
+            this.UYE_ENGELLEResult = UYE_ENGELLEResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UYE_LİSTELERequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UYE_LİSTELE", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.UYE_LİSTELERequestBody Body;
+        
+        public UYE_LİSTELERequest() {
+        }
+        
+        public UYE_LİSTELERequest(HelpAsCompanyApp.SonService.UYE_LİSTELERequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class UYE_LİSTELERequestBody {
+        
+        public UYE_LİSTELERequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UYE_LİSTELEResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UYE_LİSTELEResponse", Namespace="http://tempuri.org/", Order=0)]
+        public HelpAsCompanyApp.SonService.UYE_LİSTELEResponseBody Body;
+        
+        public UYE_LİSTELEResponse() {
+        }
+        
+        public UYE_LİSTELEResponse(HelpAsCompanyApp.SonService.UYE_LİSTELEResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class UYE_LİSTELEResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string UYE_LİSTELEResult;
+        
+        public UYE_LİSTELEResponseBody() {
+        }
+        
+        public UYE_LİSTELEResponseBody(string UYE_LİSTELEResult) {
+            this.UYE_LİSTELEResult = UYE_LİSTELEResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebService1SoapChannel : HelpAsCompanyApp.SonService.WebService1Soap, System.ServiceModel.IClientChannel {
     }
@@ -1504,6 +2392,317 @@ namespace HelpAsCompanyApp.SonService {
             inValue.Body.usta_musaitlik = usta_musaitlik;
             inValue.Body.altalan_id = altalan_id;
             return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Usta_EkleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.Uye_GirisiResponse HelpAsCompanyApp.SonService.WebService1Soap.Uye_Girisi(HelpAsCompanyApp.SonService.Uye_GirisiRequest request) {
+            return base.Channel.Uye_Girisi(request);
+        }
+        
+        public string Uye_Girisi(string mail, string sifre) {
+            HelpAsCompanyApp.SonService.Uye_GirisiRequest inValue = new HelpAsCompanyApp.SonService.Uye_GirisiRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Uye_GirisiRequestBody();
+            inValue.Body.mail = mail;
+            inValue.Body.sifre = sifre;
+            HelpAsCompanyApp.SonService.Uye_GirisiResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Uye_Girisi(inValue);
+            return retVal.Body.Uye_GirisiResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Uye_GirisiResponse> HelpAsCompanyApp.SonService.WebService1Soap.Uye_GirisiAsync(HelpAsCompanyApp.SonService.Uye_GirisiRequest request) {
+            return base.Channel.Uye_GirisiAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Uye_GirisiResponse> Uye_GirisiAsync(string mail, string sifre) {
+            HelpAsCompanyApp.SonService.Uye_GirisiRequest inValue = new HelpAsCompanyApp.SonService.Uye_GirisiRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Uye_GirisiRequestBody();
+            inValue.Body.mail = mail;
+            inValue.Body.sifre = sifre;
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Uye_GirisiAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.Geri_Bildirim_GonderResponse HelpAsCompanyApp.SonService.WebService1Soap.Geri_Bildirim_Gonder(HelpAsCompanyApp.SonService.Geri_Bildirim_GonderRequest request) {
+            return base.Channel.Geri_Bildirim_Gonder(request);
+        }
+        
+        public string Geri_Bildirim_Gonder(int uye_id, string tarih, string bildirim) {
+            HelpAsCompanyApp.SonService.Geri_Bildirim_GonderRequest inValue = new HelpAsCompanyApp.SonService.Geri_Bildirim_GonderRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Geri_Bildirim_GonderRequestBody();
+            inValue.Body.uye_id = uye_id;
+            inValue.Body.tarih = tarih;
+            inValue.Body.bildirim = bildirim;
+            HelpAsCompanyApp.SonService.Geri_Bildirim_GonderResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Geri_Bildirim_Gonder(inValue);
+            return retVal.Body.Geri_Bildirim_GonderResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Geri_Bildirim_GonderResponse> HelpAsCompanyApp.SonService.WebService1Soap.Geri_Bildirim_GonderAsync(HelpAsCompanyApp.SonService.Geri_Bildirim_GonderRequest request) {
+            return base.Channel.Geri_Bildirim_GonderAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Geri_Bildirim_GonderResponse> Geri_Bildirim_GonderAsync(int uye_id, string tarih, string bildirim) {
+            HelpAsCompanyApp.SonService.Geri_Bildirim_GonderRequest inValue = new HelpAsCompanyApp.SonService.Geri_Bildirim_GonderRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Geri_Bildirim_GonderRequestBody();
+            inValue.Body.uye_id = uye_id;
+            inValue.Body.tarih = tarih;
+            inValue.Body.bildirim = bildirim;
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Geri_Bildirim_GonderAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.Uye_GuncelleResponse HelpAsCompanyApp.SonService.WebService1Soap.Uye_Guncelle(HelpAsCompanyApp.SonService.Uye_GuncelleRequest request) {
+            return base.Channel.Uye_Guncelle(request);
+        }
+        
+        public string Uye_Guncelle(int uye_id, string uye_ad, string uye_soyad, string uye_tel, string uye_mail, string sehir_ismi, string ilce_ismi, string sifre) {
+            HelpAsCompanyApp.SonService.Uye_GuncelleRequest inValue = new HelpAsCompanyApp.SonService.Uye_GuncelleRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Uye_GuncelleRequestBody();
+            inValue.Body.uye_id = uye_id;
+            inValue.Body.uye_ad = uye_ad;
+            inValue.Body.uye_soyad = uye_soyad;
+            inValue.Body.uye_tel = uye_tel;
+            inValue.Body.uye_mail = uye_mail;
+            inValue.Body.sehir_ismi = sehir_ismi;
+            inValue.Body.ilce_ismi = ilce_ismi;
+            inValue.Body.sifre = sifre;
+            HelpAsCompanyApp.SonService.Uye_GuncelleResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Uye_Guncelle(inValue);
+            return retVal.Body.Uye_GuncelleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Uye_GuncelleResponse> HelpAsCompanyApp.SonService.WebService1Soap.Uye_GuncelleAsync(HelpAsCompanyApp.SonService.Uye_GuncelleRequest request) {
+            return base.Channel.Uye_GuncelleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Uye_GuncelleResponse> Uye_GuncelleAsync(int uye_id, string uye_ad, string uye_soyad, string uye_tel, string uye_mail, string sehir_ismi, string ilce_ismi, string sifre) {
+            HelpAsCompanyApp.SonService.Uye_GuncelleRequest inValue = new HelpAsCompanyApp.SonService.Uye_GuncelleRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Uye_GuncelleRequestBody();
+            inValue.Body.uye_id = uye_id;
+            inValue.Body.uye_ad = uye_ad;
+            inValue.Body.uye_soyad = uye_soyad;
+            inValue.Body.uye_tel = uye_tel;
+            inValue.Body.uye_mail = uye_mail;
+            inValue.Body.sehir_ismi = sehir_ismi;
+            inValue.Body.ilce_ismi = ilce_ismi;
+            inValue.Body.sifre = sifre;
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Uye_GuncelleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.Hizmet_SorgulaResponse HelpAsCompanyApp.SonService.WebService1Soap.Hizmet_Sorgula(HelpAsCompanyApp.SonService.Hizmet_SorgulaRequest request) {
+            return base.Channel.Hizmet_Sorgula(request);
+        }
+        
+        public string Hizmet_Sorgula(string _alan_ismi, string _altalan_ismi, string _sehir_ismi, string _ilce_ismi) {
+            HelpAsCompanyApp.SonService.Hizmet_SorgulaRequest inValue = new HelpAsCompanyApp.SonService.Hizmet_SorgulaRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Hizmet_SorgulaRequestBody();
+            inValue.Body._alan_ismi = _alan_ismi;
+            inValue.Body._altalan_ismi = _altalan_ismi;
+            inValue.Body._sehir_ismi = _sehir_ismi;
+            inValue.Body._ilce_ismi = _ilce_ismi;
+            HelpAsCompanyApp.SonService.Hizmet_SorgulaResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Hizmet_Sorgula(inValue);
+            return retVal.Body.Hizmet_SorgulaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Hizmet_SorgulaResponse> HelpAsCompanyApp.SonService.WebService1Soap.Hizmet_SorgulaAsync(HelpAsCompanyApp.SonService.Hizmet_SorgulaRequest request) {
+            return base.Channel.Hizmet_SorgulaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Hizmet_SorgulaResponse> Hizmet_SorgulaAsync(string _alan_ismi, string _altalan_ismi, string _sehir_ismi, string _ilce_ismi) {
+            HelpAsCompanyApp.SonService.Hizmet_SorgulaRequest inValue = new HelpAsCompanyApp.SonService.Hizmet_SorgulaRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Hizmet_SorgulaRequestBody();
+            inValue.Body._alan_ismi = _alan_ismi;
+            inValue.Body._altalan_ismi = _altalan_ismi;
+            inValue.Body._sehir_ismi = _sehir_ismi;
+            inValue.Body._ilce_ismi = _ilce_ismi;
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Hizmet_SorgulaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.Istek_OlusturResponse HelpAsCompanyApp.SonService.WebService1Soap.Istek_Olustur(HelpAsCompanyApp.SonService.Istek_OlusturRequest request) {
+            return base.Channel.Istek_Olustur(request);
+        }
+        
+        public string Istek_Olustur(string alan_ismi, string dal_ismi, int uye_id, string sehir_ismi, string ilce_ismi, string aciklama, string tarih) {
+            HelpAsCompanyApp.SonService.Istek_OlusturRequest inValue = new HelpAsCompanyApp.SonService.Istek_OlusturRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Istek_OlusturRequestBody();
+            inValue.Body.alan_ismi = alan_ismi;
+            inValue.Body.dal_ismi = dal_ismi;
+            inValue.Body.uye_id = uye_id;
+            inValue.Body.sehir_ismi = sehir_ismi;
+            inValue.Body.ilce_ismi = ilce_ismi;
+            inValue.Body.aciklama = aciklama;
+            inValue.Body.tarih = tarih;
+            HelpAsCompanyApp.SonService.Istek_OlusturResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Istek_Olustur(inValue);
+            return retVal.Body.Istek_OlusturResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Istek_OlusturResponse> HelpAsCompanyApp.SonService.WebService1Soap.Istek_OlusturAsync(HelpAsCompanyApp.SonService.Istek_OlusturRequest request) {
+            return base.Channel.Istek_OlusturAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Istek_OlusturResponse> Istek_OlusturAsync(string alan_ismi, string dal_ismi, int uye_id, string sehir_ismi, string ilce_ismi, string aciklama, string tarih) {
+            HelpAsCompanyApp.SonService.Istek_OlusturRequest inValue = new HelpAsCompanyApp.SonService.Istek_OlusturRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Istek_OlusturRequestBody();
+            inValue.Body.alan_ismi = alan_ismi;
+            inValue.Body.dal_ismi = dal_ismi;
+            inValue.Body.uye_id = uye_id;
+            inValue.Body.sehir_ismi = sehir_ismi;
+            inValue.Body.ilce_ismi = ilce_ismi;
+            inValue.Body.aciklama = aciklama;
+            inValue.Body.tarih = tarih;
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Istek_OlusturAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleResponse HelpAsCompanyApp.SonService.WebService1Soap.Geri_Bildirim_Listele(HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleRequest request) {
+            return base.Channel.Geri_Bildirim_Listele(request);
+        }
+        
+        public string Geri_Bildirim_Listele() {
+            HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleRequest inValue = new HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleRequestBody();
+            HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Geri_Bildirim_Listele(inValue);
+            return retVal.Body.Geri_Bildirim_ListeleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleResponse> HelpAsCompanyApp.SonService.WebService1Soap.Geri_Bildirim_ListeleAsync(HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleRequest request) {
+            return base.Channel.Geri_Bildirim_ListeleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleResponse> Geri_Bildirim_ListeleAsync() {
+            HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleRequest inValue = new HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleRequestBody();
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Geri_Bildirim_ListeleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.Geri_Bildirim_SilResponse HelpAsCompanyApp.SonService.WebService1Soap.Geri_Bildirim_Sil(HelpAsCompanyApp.SonService.Geri_Bildirim_SilRequest request) {
+            return base.Channel.Geri_Bildirim_Sil(request);
+        }
+        
+        public string Geri_Bildirim_Sil(int bildirim_id) {
+            HelpAsCompanyApp.SonService.Geri_Bildirim_SilRequest inValue = new HelpAsCompanyApp.SonService.Geri_Bildirim_SilRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Geri_Bildirim_SilRequestBody();
+            inValue.Body.bildirim_id = bildirim_id;
+            HelpAsCompanyApp.SonService.Geri_Bildirim_SilResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Geri_Bildirim_Sil(inValue);
+            return retVal.Body.Geri_Bildirim_SilResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Geri_Bildirim_SilResponse> HelpAsCompanyApp.SonService.WebService1Soap.Geri_Bildirim_SilAsync(HelpAsCompanyApp.SonService.Geri_Bildirim_SilRequest request) {
+            return base.Channel.Geri_Bildirim_SilAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Geri_Bildirim_SilResponse> Geri_Bildirim_SilAsync(int bildirim_id) {
+            HelpAsCompanyApp.SonService.Geri_Bildirim_SilRequest inValue = new HelpAsCompanyApp.SonService.Geri_Bildirim_SilRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Geri_Bildirim_SilRequestBody();
+            inValue.Body.bildirim_id = bildirim_id;
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Geri_Bildirim_SilAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.Engelli_Uye_ListeleResponse HelpAsCompanyApp.SonService.WebService1Soap.Engelli_Uye_Listele(HelpAsCompanyApp.SonService.Engelli_Uye_ListeleRequest request) {
+            return base.Channel.Engelli_Uye_Listele(request);
+        }
+        
+        public string Engelli_Uye_Listele() {
+            HelpAsCompanyApp.SonService.Engelli_Uye_ListeleRequest inValue = new HelpAsCompanyApp.SonService.Engelli_Uye_ListeleRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Engelli_Uye_ListeleRequestBody();
+            HelpAsCompanyApp.SonService.Engelli_Uye_ListeleResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Engelli_Uye_Listele(inValue);
+            return retVal.Body.Engelli_Uye_ListeleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Engelli_Uye_ListeleResponse> HelpAsCompanyApp.SonService.WebService1Soap.Engelli_Uye_ListeleAsync(HelpAsCompanyApp.SonService.Engelli_Uye_ListeleRequest request) {
+            return base.Channel.Engelli_Uye_ListeleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Engelli_Uye_ListeleResponse> Engelli_Uye_ListeleAsync() {
+            HelpAsCompanyApp.SonService.Engelli_Uye_ListeleRequest inValue = new HelpAsCompanyApp.SonService.Engelli_Uye_ListeleRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Engelli_Uye_ListeleRequestBody();
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Engelli_Uye_ListeleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleResponse HelpAsCompanyApp.SonService.WebService1Soap.Uye_Sorgula_forEngelle(HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleRequest request) {
+            return base.Channel.Uye_Sorgula_forEngelle(request);
+        }
+        
+        public string Uye_Sorgula_forEngelle(int id) {
+            HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleRequest inValue = new HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleRequestBody();
+            inValue.Body.id = id;
+            HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Uye_Sorgula_forEngelle(inValue);
+            return retVal.Body.Uye_Sorgula_forEngelleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleResponse> HelpAsCompanyApp.SonService.WebService1Soap.Uye_Sorgula_forEngelleAsync(HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleRequest request) {
+            return base.Channel.Uye_Sorgula_forEngelleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleResponse> Uye_Sorgula_forEngelleAsync(int id) {
+            HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleRequest inValue = new HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleRequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleRequestBody();
+            inValue.Body.id = id;
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).Uye_Sorgula_forEngelleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.UYE_ENGELLEResponse HelpAsCompanyApp.SonService.WebService1Soap.UYE_ENGELLE(HelpAsCompanyApp.SonService.UYE_ENGELLERequest request) {
+            return base.Channel.UYE_ENGELLE(request);
+        }
+        
+        public string UYE_ENGELLE(int üye_id, string engel_sebep, string tarih) {
+            HelpAsCompanyApp.SonService.UYE_ENGELLERequest inValue = new HelpAsCompanyApp.SonService.UYE_ENGELLERequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.UYE_ENGELLERequestBody();
+            inValue.Body.üye_id = üye_id;
+            inValue.Body.engel_sebep = engel_sebep;
+            inValue.Body.tarih = tarih;
+            HelpAsCompanyApp.SonService.UYE_ENGELLEResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).UYE_ENGELLE(inValue);
+            return retVal.Body.UYE_ENGELLEResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.UYE_ENGELLEResponse> HelpAsCompanyApp.SonService.WebService1Soap.UYE_ENGELLEAsync(HelpAsCompanyApp.SonService.UYE_ENGELLERequest request) {
+            return base.Channel.UYE_ENGELLEAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.UYE_ENGELLEResponse> UYE_ENGELLEAsync(int üye_id, string engel_sebep, string tarih) {
+            HelpAsCompanyApp.SonService.UYE_ENGELLERequest inValue = new HelpAsCompanyApp.SonService.UYE_ENGELLERequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.UYE_ENGELLERequestBody();
+            inValue.Body.üye_id = üye_id;
+            inValue.Body.engel_sebep = engel_sebep;
+            inValue.Body.tarih = tarih;
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).UYE_ENGELLEAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        HelpAsCompanyApp.SonService.UYE_LİSTELEResponse HelpAsCompanyApp.SonService.WebService1Soap.UYE_LİSTELE(HelpAsCompanyApp.SonService.UYE_LİSTELERequest request) {
+            return base.Channel.UYE_LİSTELE(request);
+        }
+        
+        public string UYE_LİSTELE() {
+            HelpAsCompanyApp.SonService.UYE_LİSTELERequest inValue = new HelpAsCompanyApp.SonService.UYE_LİSTELERequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.UYE_LİSTELERequestBody();
+            HelpAsCompanyApp.SonService.UYE_LİSTELEResponse retVal = ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).UYE_LİSTELE(inValue);
+            return retVal.Body.UYE_LİSTELEResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.UYE_LİSTELEResponse> HelpAsCompanyApp.SonService.WebService1Soap.UYE_LİSTELEAsync(HelpAsCompanyApp.SonService.UYE_LİSTELERequest request) {
+            return base.Channel.UYE_LİSTELEAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<HelpAsCompanyApp.SonService.UYE_LİSTELEResponse> UYE_LİSTELEAsync() {
+            HelpAsCompanyApp.SonService.UYE_LİSTELERequest inValue = new HelpAsCompanyApp.SonService.UYE_LİSTELERequest();
+            inValue.Body = new HelpAsCompanyApp.SonService.UYE_LİSTELERequestBody();
+            return ((HelpAsCompanyApp.SonService.WebService1Soap)(this)).UYE_LİSTELEAsync(inValue);
         }
     }
 }

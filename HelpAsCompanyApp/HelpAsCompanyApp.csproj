@@ -70,6 +70,16 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Geri_Bildirimler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Istekler.cs" />
+    <Compile Include="Kullanici_Engelle_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici_Engelle_Form.Designer.cs">
+      <DependentUpon>Kullanici_Engelle_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="REQUEST_URL.cs" />
@@ -83,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici_Engelle_Form.resx">
+      <DependentUpon>Kullanici_Engelle_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -105,6 +118,18 @@
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.AltAlanListesiResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Engelli_Uye_ListeleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Geri_Bildirim_GonderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Geri_Bildirim_ListeleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Geri_Bildirim_SilResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.HaberEkleResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -117,10 +142,16 @@
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.HaberSilResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Hizmet_SorgulaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.IlceIsmiDonderResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.IlceListesiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Istek_OlusturResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.SehirIsmiDonderResponse.datasource">
@@ -133,6 +164,21 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Usta_ListeleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.UYE_ENGELLEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Uye_GirisiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Uye_GuncelleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.UYE_LİSTELEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SonService\WebService1.wsdl" />

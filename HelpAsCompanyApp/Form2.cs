@@ -28,6 +28,9 @@ namespace HelpAsCompanyApp
         public dynamic Response_Sehirler_Usta;
         public dynamic Response_Ilceler_Usta;
         public dynamic Response_String_Result;
+        public dynamic Response_Geri_Bildirimler;
+        public dynamic Response_Uyeler;
+        public dynamic Response_Engelli_Uyeler;
         //UstaListeleme Degiskenleri
         public dynamic Response_Usta_Listele;
         public int alanId;
@@ -48,7 +51,6 @@ namespace HelpAsCompanyApp
         public string alan_ismi;
         public string altalan_ismi;
         #endregion
-
 
         #region CLİCK EVENTLERİ
         public Form2()
@@ -73,6 +75,7 @@ namespace HelpAsCompanyApp
         //PROGRAM START PANEL
         public void StartLoadPage()
         {
+            lbl_Panel_Ismi.Text = "YORUMLAR";
             yorumlar_panel.BringToFront();
         }
         //GROUPBOX CHANGES POSITION AND DELETE NAVBAR BORDER LINE  
@@ -394,39 +397,59 @@ namespace HelpAsCompanyApp
         }
         private void button1_Click(object sender, EventArgs e)//YORUMLAR NAVBAR BUTTON CLICK
         {
+            lbl_Panel_Ismi.Text = "YORUMLAR";
             yorumlar_panel.BringToFront();
             flowLayoutPanel1.Controls.Clear();
             //Yorum_Listele();
         }
         private void button2_Click(object sender, EventArgs e)//İSTEKLER NAVBAR BUTTON CLICK
         {
+            lbl_Panel_Ismi.Text = "ISTEKLER";
             istekler_panel.BringToFront();
         }
         private void button3_Click(object sender, EventArgs e)//Haberler NAVBAR BUTTON CLICK
         {
+            lbl_Panel_Ismi.Text = "HABERLER";
             HaberListesiFlowPanel.Controls.Clear();
             HaberListele_Function();
             haberler_panel.BringToFront();
         }
         private void button4_Click(object sender, EventArgs e)//Ustalar NAVBAR BUTTON CLICK
         {
+            lbl_Panel_Ismi.Text = "USTALAR";
+            //panele her girişte şehir,ilçe,alan,branş sıfırlama
+            comboBox_Usta_Alan.Items.Clear();
+            comboBox_AltAlan_Usta.Items.Clear();
+            comboBox_Sehirler_Usta.Items.Clear();
+            comboBox_Ilceler_Usta.Items.Clear();
+            comboBox_Alanlar.Items.Clear();
+            comboBox_Sehirler.Items.Clear();
+            comboBox_Brans.Items.Clear();
+            comboBox_Ilceler.Items.Clear();
+
             ustalar_panel.BringToFront();
             Alan_Listele_Usta_Function();
             Sehir_Listele_Usta_Function();
         }
         private void button5_Click(object sender, EventArgs e)//Alanlar navbar button CLICK
         {
+            lbl_Panel_Ismi.Text = "ALANLAR";
             alanlar_panel.BringToFront();
             AlanListele_Function();
             
         }
         private void button6_Click(object sender, EventArgs e)//GERİ BİLDİRİM NAVBAR BUTTON CLICK
         {
+            lbl_Panel_Ismi.Text = "GERI BILDIRIMLER";
+            flowLayoutPanel_Geri_Bildirim_MAIN.Controls.Clear();
             geri_bildirimler_panel.BringToFront();
-           
+            Geri_Bildirim_Request();
+            label_gb_sayisi.Text = flowLayoutPanel_Geri_Bildirim_MAIN.Controls.Count.ToString();
+                    
         }
         private void button7_Click(object sender, EventArgs e)//Kullanıcılar buton click
         {
+            lbl_Panel_Ismi.Text = "KULLANICILAR";
             kullanıcılar_panel.BringToFront();
         }
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -532,10 +555,7 @@ namespace HelpAsCompanyApp
        
         
         #endregion
-        
-       
-
-
+             
         #region Alanlar
         //Alanların flowlayout panel tasarımı
         public void AlanListele_for_FlowPanel(int Alan_Id, string Alan_Adi)
@@ -637,7 +657,6 @@ namespace HelpAsCompanyApp
             flowLayoutPanel3.Controls.Add(flp);
         }
         #endregion
-
 
         #region Haberler 
         //------------------------------------------------------------------HABERLER vvvvvvvvvvvvv
@@ -764,7 +783,6 @@ namespace HelpAsCompanyApp
         }
         //-------------------------------------------------------------HABERLER ^^^^^^^^^^^^^^^^^^
         #endregion
-
 
         #region Ustalar
 
@@ -929,8 +947,9 @@ namespace HelpAsCompanyApp
             textBox_puan.Clear();
             textBox_musaitlik.Clear();
             if (comboBox_AltAlan_Usta.Text=="0")
-            {               
-                
+            {
+                try
+                {
                     string altaln = "0";
                     Int32.TryParse(altaln.ToString(), out altalanId);
                     //IlceId parse
@@ -964,6 +983,13 @@ namespace HelpAsCompanyApp
                         _AltAlan_Ismi = "0";
                         Usta_Listele_for_FlowPanel(Usta_Id, _Alan_Ismi, _Sehir_Ismi, _Ilce_Ismi, Usta_Isim, Usta_SoyIsim, Usta_Telefon, Usta_Email, Usta_Puan, Usta_Musaitlik, _AltAlan_Ismi);
                     }
+                }
+                catch
+                {
+                    MessageBox.Show("Bu koşullarda usta bulunamadı");
+                }
+                
+                    
                              
             }
             else
@@ -1430,6 +1456,352 @@ namespace HelpAsCompanyApp
                 }
             }
         }
+        #endregion
+
+        #region GERİ BİLDİRİMLER
+        //GERİ BİLDİRİM SERVİS İSTEĞİ
+        public void Geri_Bildirim_Request()
+        {
+            Geri_Bildirimler G_Bildirimler = new Geri_Bildirimler();
+            
+            var response = service.Geri_Bildirim_Listele();
+            if(response!=null)
+            {
+                Response_Geri_Bildirimler = JsonConvert.DeserializeObject(response);
+                int _Bildirim_Id;
+                int _Uye_Id;
+                string _Uye_Adi;
+                string _Uye_Soyadi;
+                string _Tarih;
+                string _Aciklama;
+                foreach (var item in Response_Geri_Bildirimler)
+                {
+                    _Bildirim_Id = item.Id_Bildirim;
+                    _Uye_Id = item.Id_Uye;
+                    _Uye_Adi = item.Uye_Ad;
+                    _Uye_Soyadi = item.Uye_Soyad;
+                    _Tarih = item.Tarih;
+                    _Aciklama = item.Aciklama;
+                    flowLayoutPanel_Geri_Bildirim_MAIN.Controls.Add(G_Bildirimler.Geri_Bildirim_FlowLayoutDesign(_Bildirim_Id, _Uye_Id, _Uye_Adi,_Uye_Soyadi, _Tarih, _Aciklama));
+                }
+            }
+            else if(response == null)
+            {
+                MessageBox.Show("Hiç bildirim yok");
+            }
+            
+
+        }
+        //GERİ BİLDİRİM MAIN FLOW DA GELEN DYNAMİC FLOWLARI LİSTELİYORUZ 
+        public async void listele()
+        {
+            flowLayoutPanel_Geri_Bildirim_MAIN.Controls.Clear();
+            Geri_Bildirim_Request();
+        }
+
+
+        #endregion
+
+        #region KULLANICILAR
+
+        //Tüm kullanıcılar radiobuttonu, engellenmeyen tüm kullanıcıları listeler
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            flowLayoutPanel_UYELER.Controls.Clear();
+            if(radioButton1.Checked==true)
+            {
+                var response = service.UYE_LİSTELE();
+                if (response != null)
+                {
+                    Response_Uyeler = JsonConvert.DeserializeObject(response);
+                    int uye_id;
+                    string uye_ad;
+                    string uye_soyad;
+                    string uye_telefon;
+                    string uye_mail;
+                    string uye_sehir;
+                    string uye_ilce;
+                    string uye_sifre;
+                    foreach (var item in Response_Uyeler)
+                    {
+                        uye_id = item.Uye_Id;
+                        uye_ad = item.Uye_Ad;
+                        uye_soyad = item.Uye_Soyad;
+                        uye_telefon = item.Uye_Telefon;
+                        uye_mail = item.Uye_Email;
+                        uye_sehir = Sehir_Ismi(Convert.ToInt32(item.Uye_Sehir_Id));
+                        uye_ilce = Ilce_Ismi(Convert.ToInt32(item.Uye_Ilce_Id));
+                        uye_sifre = item.Uye_Sifre;
+                        Uye_Listele_FlowPanel(uye_id, uye_ad, uye_soyad, uye_telefon, uye_mail, uye_sehir, uye_ilce, uye_sifre);
+                    }
+                }
+                else if (response == null)
+                {
+                    MessageBox.Show("Hiç bildirim yok");
+                }
+            }
+            else
+            {
+                flowLayoutPanel_UYELER.Controls.Clear();
+            }
+            
+        }
+        //üyeleri flowpanele yerleştirme
+        public void Uye_Listele_FlowPanel(int uye_id, string uye_ad, string uye_soyad, string uye_tel, string uye_mail, string sehir, string ilce, string sifre)
+        {
+            //bildirimler paneli size 350,222 veya 234,253
+            int x = 350;
+            int y = 175;
+
+            FlowLayoutPanel flp = new FlowLayoutPanel();
+            flp.BackColor = Color.WhiteSmoke;
+            flp.Size = new System.Drawing.Size(x, y);
+            flp.Padding = new Padding(10);
+            flp.AutoScroll = true;
+            flp.FlowDirection = FlowDirection.TopDown;
+            flp.Tag = uye_id;          
+            //flp.DoubleClick += new EventHandler(this.Engelle_click);
+
+            //isim soyisim
+            Font f_isim_soyisim = new Font("Rajdhani", 14, FontStyle.Bold);
+            Label label_isim_soyisim = new Label();
+            label_isim_soyisim.Size = new System.Drawing.Size(426, 104);
+            label_isim_soyisim.AutoSize = true;
+            label_isim_soyisim.AutoEllipsis = true;
+            label_isim_soyisim.UseCompatibleTextRendering = true;
+            label_isim_soyisim.ForeColor = Color.FromArgb(46, 204, 113);
+            label_isim_soyisim.AutoSize = true;
+            label_isim_soyisim.Font = f_isim_soyisim;
+            label_isim_soyisim.Text = "Ad Soyad: "+uye_ad + " " + uye_soyad;
+
+            //telefon
+            Font font_tel = new Font("Rajdhani", 14);
+            Label lbl_tel = new Label();
+            lbl_tel.AutoSize = true;
+            lbl_tel.AutoEllipsis = true;
+            lbl_tel.UseCompatibleTextRendering = true;
+            lbl_tel.ForeColor = Color.Black;
+            lbl_tel.Font = font_tel;
+            lbl_tel.Text = "Tel: "+uye_tel;
+
+            //mail
+            Font font_mail = new Font("Rajdhani", 14);
+            Label lbl_mail = new Label();
+            lbl_mail.AutoSize = true;
+            lbl_mail.AutoEllipsis = true;
+            lbl_mail.UseCompatibleTextRendering = true;
+            lbl_mail.ForeColor = Color.DimGray;
+            lbl_mail.AutoSize = true;
+            lbl_mail.Font = font_mail;
+            lbl_mail.Text = "Mail: "+uye_mail;
+
+            //şehir
+            Font font_sehir = new Font("Rajdhani", 14);
+            Label lbl_sehir = new Label();
+            lbl_sehir.AutoSize = true;
+            lbl_sehir.AutoEllipsis = true;
+            lbl_sehir.UseCompatibleTextRendering = true;
+            lbl_sehir.ForeColor = Color.Black;
+            lbl_sehir.Font = font_sehir;
+            lbl_sehir.Text = "Şehir: "+sehir;
+
+            //ilçe
+            Font font_ilce = new Font("Rajdhani", 14);
+            Label lbl_ilce = new Label();
+            lbl_ilce.AutoSize = true;
+            lbl_ilce.AutoEllipsis = true;
+            lbl_ilce.UseCompatibleTextRendering = true;
+            lbl_ilce.ForeColor = Color.Black;
+            lbl_ilce.Font = font_ilce;
+            lbl_ilce.Text = "İlçe: "+ilce;
+
+            //şifre
+            Font font_sifre = new Font("Rajdhani", 14);
+            Label lbl_sifre = new Label();
+            lbl_sifre.AutoSize = true;
+            lbl_sifre.AutoEllipsis = true;
+            lbl_sifre.UseCompatibleTextRendering = true;
+            lbl_sifre.ForeColor = Color.Black;
+            lbl_sifre.Font = font_sifre;
+            lbl_sifre.Text = "Şifre: "+sifre;
+            
+            flp.Controls.Add(label_isim_soyisim);
+            flp.Controls.Add(lbl_tel);
+            flp.Controls.Add(lbl_mail);
+            flp.Controls.Add(lbl_sehir);
+            flp.Controls.Add(lbl_ilce);
+            flp.Controls.Add(lbl_sifre);
+
+            flowLayoutPanel_UYELER.Controls.Add(flp);
+        }
+        //engelli kullanıcılar radiobutonu, engelli kullanıcıları listeler
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            flowLayoutPanel_UYELER.Controls.Clear();
+            if (radioButton2.Checked == true)
+            {
+                var response = service.Engelli_Uye_Listele();
+                if (response != null)
+                {
+                    Response_Uyeler = JsonConvert.DeserializeObject(response);
+                    int ek_id;
+                    string ek_uye_ad;
+                    string ek_uye_soyad;
+                    string ek_uye_telefon;
+                    string ek_uye_mail;
+                    string ek_uye_sifre;
+                    string ek_uye_sehir;
+                    string ek_uye_ilce;
+                    string ek_uye_engel_sebep;
+                    string ek_uye_enge_tarih;
+                    foreach (var item in Response_Uyeler)
+                    {
+                        ek_id = item.EK_Id;
+                        ek_uye_ad = item.Uye_Ad;
+                        ek_uye_soyad = item.Uye_Soyad;
+                        ek_uye_telefon = item.Uye_Telefon;
+                        ek_uye_mail = item.Uye_Email;
+                        ek_uye_sifre = item.Uye_Sifre;
+                        ek_uye_sehir = item.Name;
+                        ek_uye_ilce = item.isim;
+                        ek_uye_engel_sebep = item.EK_Engel_Sebebi;
+                        ek_uye_enge_tarih = item.EK_Engel_Tarihi;
+
+                        Engelli_Uye_Listele_FlowPanel(ek_id, ek_uye_ad, ek_uye_soyad, ek_uye_telefon, ek_uye_mail, ek_uye_sifre, ek_uye_sehir, ek_uye_ilce, ek_uye_engel_sebep, ek_uye_enge_tarih);
+                    }
+                }
+                else if (response == null)
+                {
+                    MessageBox.Show("Hiç bildirim yok");
+                }
+            }
+            else
+            {
+                flowLayoutPanel_UYELER.Controls.Clear();
+            }
+        }
+        //engelli kullanıcıları flowpanele yerleştirme
+        public void Engelli_Uye_Listele_FlowPanel(int ek_id, string ek_uye_ad, string ek_uye_soyad, string ek_uye_telefon, string ek_uye_mail, string ek_uye_sifre, string ek_uye_sehir, string ek_uye_ilce, string ek_uye_engel_sebep, string ek_uye_enge_tarih)
+        {
+            //bildirimler paneli size 350,222 veya 234,253
+            int x = 350;
+            int y = 310;
+
+            FlowLayoutPanel flp = new FlowLayoutPanel();
+            flp.BackColor = Color.WhiteSmoke;
+            flp.Size = new System.Drawing.Size(x, y);
+            flp.Padding = new Padding(10);
+            flp.AutoScroll = true;
+            flp.FlowDirection = FlowDirection.TopDown;
+            flp.Tag = ek_id;
+            //flp.DoubleClick += new EventHandler(this.Engelle_click);
+
+            //isim soyisim
+            Font f_isim_soyisim = new Font("Rajdhani", 14, FontStyle.Bold);
+            Label label_isim_soyisim = new Label();
+            label_isim_soyisim.Size = new System.Drawing.Size(426, 104);
+            label_isim_soyisim.AutoSize = true;
+            label_isim_soyisim.AutoEllipsis = true;
+            label_isim_soyisim.UseCompatibleTextRendering = true;
+            label_isim_soyisim.ForeColor = Color.FromArgb(46, 204, 113);
+            label_isim_soyisim.AutoSize = true;
+            label_isim_soyisim.Font = f_isim_soyisim;
+            label_isim_soyisim.Text = "Ad Soyad: " + ek_uye_ad + " " + ek_uye_soyad;
+
+            //telefon
+            Font font_tel = new Font("Rajdhani", 14);
+            Label lbl_tel = new Label();
+            lbl_tel.AutoSize = true;
+            lbl_tel.AutoEllipsis = true;
+            lbl_tel.UseCompatibleTextRendering = true;
+            lbl_tel.ForeColor = Color.Black;
+            lbl_tel.Font = font_tel;
+            lbl_tel.Text = "Tel: " + ek_uye_telefon;
+
+            //mail
+            Font font_mail = new Font("Rajdhani", 14);
+            Label lbl_mail = new Label();
+            lbl_mail.AutoSize = true;
+            lbl_mail.AutoEllipsis = true;
+            lbl_mail.UseCompatibleTextRendering = true;
+            lbl_mail.ForeColor = Color.DimGray;
+            lbl_mail.AutoSize = true;
+            lbl_mail.Font = font_mail;
+            lbl_mail.Text = "Mail: " + ek_uye_mail;
+
+            //şehir
+            Font font_sehir = new Font("Rajdhani", 14);
+            Label lbl_sehir = new Label();
+            lbl_sehir.AutoSize = true;
+            lbl_sehir.AutoEllipsis = true;
+            lbl_sehir.UseCompatibleTextRendering = true;
+            lbl_sehir.ForeColor = Color.Black;
+            lbl_sehir.Font = font_sehir;
+            lbl_sehir.Text = "Şehir: " + ek_uye_sehir;
+
+            //ilçe
+            Font font_ilce = new Font("Rajdhani", 14);
+            Label lbl_ilce = new Label();
+            lbl_ilce.AutoSize = true;
+            lbl_ilce.AutoEllipsis = true;
+            lbl_ilce.UseCompatibleTextRendering = true;
+            lbl_ilce.ForeColor = Color.Black;
+            lbl_ilce.Font = font_ilce;
+            lbl_ilce.Text = "İlçe: " + ek_uye_ilce;
+
+            //şifre
+            Font font_sifre = new Font("Rajdhani", 14);
+            Label lbl_sifre = new Label();
+            lbl_sifre.AutoSize = true;
+            lbl_sifre.AutoEllipsis = true;
+            lbl_sifre.UseCompatibleTextRendering = true;
+            lbl_sifre.ForeColor = Color.Black;
+            lbl_sifre.Font = font_sifre;
+            lbl_sifre.Text = "Şifre: " + ek_uye_sifre;
+
+            //engel sebebi
+            Font font_sebep = new Font("Rajdhani", 14);
+            Label lbl_sebep = new Label();
+            lbl_sebep.AutoSize = false;
+            lbl_sebep.Size = new Size(330, 75);
+            lbl_sebep.AutoEllipsis = true;
+            lbl_sebep.UseCompatibleTextRendering = true;
+            lbl_sebep.ForeColor = Color.Black;
+            lbl_sebep.Font = font_sebep;
+            lbl_sebep.Text = "Engel Sebebi: " + ek_uye_engel_sebep;
+
+            //engel tarihi
+            Font font_tarih = new Font("Rajdhani", 14);
+            Label lbl_tarih = new Label();
+            lbl_tarih.AutoSize = true;
+            lbl_tarih.AutoEllipsis = true;
+            lbl_tarih.UseCompatibleTextRendering = true;
+            lbl_tarih.ForeColor = Color.Black;
+            lbl_tarih.Font = font_tarih;
+            lbl_tarih.Text = "Engel Tarihi: " + ek_uye_enge_tarih;
+
+            //engel kaldır butonu
+            Button btn_EngelKaldir = new Button();
+            Font font_button = new Font("Rajdhani", 16);
+            btn_EngelKaldir.Size = new Size(320, 39);
+            btn_EngelKaldir.Font = font_button;
+            btn_EngelKaldir.ForeColor = Color.DarkKhaki;
+            btn_EngelKaldir.FlatStyle = FlatStyle.Flat;
+            btn_EngelKaldir.Text = "Engeli Kaldır";
+
+            flp.Controls.Add(label_isim_soyisim);
+            flp.Controls.Add(lbl_tel);
+            flp.Controls.Add(lbl_mail);
+            flp.Controls.Add(lbl_sehir);
+            flp.Controls.Add(lbl_ilce);
+            flp.Controls.Add(lbl_sifre);
+
+            flp.Controls.Add(lbl_sebep);
+            flp.Controls.Add(lbl_tarih);
+            flp.Controls.Add(btn_EngelKaldir);
+            flowLayoutPanel_UYELER.Controls.Add(flp);
+        }
+        
         #endregion
 
 

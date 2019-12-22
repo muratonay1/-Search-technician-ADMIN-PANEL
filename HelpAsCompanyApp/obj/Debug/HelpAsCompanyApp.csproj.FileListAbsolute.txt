@@ -12,3 +12,4 @@ C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\bin\Debug\Newtonso
 C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\obj\Debug\HelpAsCompanyApp.csproj.CopyComplete
 C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\obj\Debug\HelpAsCompanyApp.Form2.resources
 C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\obj\Debug\HelpAsCompanyApp.Form1.resources
+C:\Users\murat\source\repos\HelpAsCompanyApp\HelpAsCompanyApp\obj\Debug\HelpAsCompanyApp.Kullanici_Engelle_Form.resources
