@@ -27,7 +27,7 @@ namespace HelpAsCompanyApp
             //bildirimler paneli size
             int x = 1030;
             int y = 100;
-            
+            //main panel
             FlowLayoutPanel flp = new FlowLayoutPanel();
             flp.BackColor = Color.WhiteSmoke;
             flp.Size = new System.Drawing.Size(x, y);
@@ -79,6 +79,7 @@ namespace HelpAsCompanyApp
             btn_kaldir.Tag = User_Bildirim_Id;
             btn_kaldir.Name = User_Isim;
             btn_kaldir.Click += new EventHandler(this.Kaldir_click);
+            
             //Tek haber için panele yığma
             flp.Controls.Add(label_isim);
             flp.Controls.Add(lbl_tarih);
@@ -87,6 +88,7 @@ namespace HelpAsCompanyApp
             
             return flp;          
         }
+        //BİLDİRİM SİLME İŞLEMİNİ SERVİSE BİLDİRME
         public void Kaldir_click(object sender, EventArgs e)
         {
             Button bildirim_kaldir = sender as Button;
@@ -99,29 +101,32 @@ namespace HelpAsCompanyApp
                 Bildirim_Sil(OUT_Bildirim_Id);
             }           
         }
+        //YORUM PENNCERESİNE ÇİFT TIKLAMA SONUCU KİŞİ ENGELLEME VE YORUM SİLME
         public void Engelle_click(object sender, EventArgs e)
         {
-            FlowLayoutPanel kullanıcı_engelle = sender as FlowLayoutPanel;
-           // MessageBox.Show(kullanıcı_engelle.Tag.ToString()+"/"+kullanıcı_engelle.Name);
-            string bildirim_id = kullanıcı_engelle.Tag.ToString();
-            
+            FlowLayoutPanel kullanıcı_engelle = sender as FlowLayoutPanel;          
+            string bildirim_id = kullanıcı_engelle.Tag.ToString();           
             DialogResult ds;
             ds = MessageBox.Show(kullanıcı_engelle.Name + " \n(YORUM SAHİBİNİ ENGELLEMEK İSTİYOR MUSUN?)", "Bilgilendirme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (ds == DialogResult.Yes)
-            {
-                
+            {                
                 Kullanici_Engelle_Form K_E_F = new Kullanici_Engelle_Form(kullanıcı_engelle.Tag.ToString(),kullanıcı_engelle.Name);
                 K_E_F.ShowDialog();
-
             }
         }
+        //YAPILAN BİLDİRİMİ SİLME FONKSİYONU
         public async void Bildirim_Sil(int Bildirim_id)
         {
-            var response = service.Geri_Bildirim_Sil(Bildirim_id);
-            MessageBox.Show(response);
-            listele();
-            
+            try
+            {
+                var response = service.Geri_Bildirim_Sil(Bildirim_id);
+                MessageBox.Show(response);
+                listele();
+            }
+            catch
+            {
+                MessageBox.Show("Sunucu ya da Servis hatası", "HELPAS");
+            }            
         }
-
     }
 }

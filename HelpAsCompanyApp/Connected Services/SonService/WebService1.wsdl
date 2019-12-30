@@ -364,6 +364,101 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="UYE_ENGELI_KALDIR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="engel_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UYE_ENGELI_KALDIRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UYE_ENGELI_KALDIRResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Istek_Listele_Bekleyenler">
+        <s:complexType />
+      </s:element>
+      <s:element name="Istek_Listele_BekleyenlerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Istek_Listele_BekleyenlerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Istek_HizmetVerilenler">
+        <s:complexType />
+      </s:element>
+      <s:element name="Istek_HizmetVerilenlerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Istek_HizmetVerilenlerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Uygun_Ustalar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="alan_ismi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dal_ismi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sehir_ismi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ilce_ismi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Uygun_UstalarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Uygun_UstalarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Usta_Musaitmi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="usta_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Usta_MusaitmiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usta_MusaitmiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Usta_Ata">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="istek_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="usta_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Usta_AtaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usta_AtaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Usta_Musaitlik_Degistir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="usta_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="deger" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Usta_Musaitlik_DegistirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usta_Musaitlik_DegistirResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="IlceListesiSoapIn">
@@ -516,6 +611,48 @@
   <wsdl:message name="UYE_LİSTELESoapOut">
     <wsdl:part name="parameters" element="tns:UYE_LİSTELEResponse" />
   </wsdl:message>
+  <wsdl:message name="UYE_ENGELI_KALDIRSoapIn">
+    <wsdl:part name="parameters" element="tns:UYE_ENGELI_KALDIR" />
+  </wsdl:message>
+  <wsdl:message name="UYE_ENGELI_KALDIRSoapOut">
+    <wsdl:part name="parameters" element="tns:UYE_ENGELI_KALDIRResponse" />
+  </wsdl:message>
+  <wsdl:message name="Istek_Listele_BekleyenlerSoapIn">
+    <wsdl:part name="parameters" element="tns:Istek_Listele_Bekleyenler" />
+  </wsdl:message>
+  <wsdl:message name="Istek_Listele_BekleyenlerSoapOut">
+    <wsdl:part name="parameters" element="tns:Istek_Listele_BekleyenlerResponse" />
+  </wsdl:message>
+  <wsdl:message name="Istek_HizmetVerilenlerSoapIn">
+    <wsdl:part name="parameters" element="tns:Istek_HizmetVerilenler" />
+  </wsdl:message>
+  <wsdl:message name="Istek_HizmetVerilenlerSoapOut">
+    <wsdl:part name="parameters" element="tns:Istek_HizmetVerilenlerResponse" />
+  </wsdl:message>
+  <wsdl:message name="Uygun_UstalarSoapIn">
+    <wsdl:part name="parameters" element="tns:Uygun_Ustalar" />
+  </wsdl:message>
+  <wsdl:message name="Uygun_UstalarSoapOut">
+    <wsdl:part name="parameters" element="tns:Uygun_UstalarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Usta_MusaitmiSoapIn">
+    <wsdl:part name="parameters" element="tns:Usta_Musaitmi" />
+  </wsdl:message>
+  <wsdl:message name="Usta_MusaitmiSoapOut">
+    <wsdl:part name="parameters" element="tns:Usta_MusaitmiResponse" />
+  </wsdl:message>
+  <wsdl:message name="Usta_AtaSoapIn">
+    <wsdl:part name="parameters" element="tns:Usta_Ata" />
+  </wsdl:message>
+  <wsdl:message name="Usta_AtaSoapOut">
+    <wsdl:part name="parameters" element="tns:Usta_AtaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Usta_Musaitlik_DegistirSoapIn">
+    <wsdl:part name="parameters" element="tns:Usta_Musaitlik_Degistir" />
+  </wsdl:message>
+  <wsdl:message name="Usta_Musaitlik_DegistirSoapOut">
+    <wsdl:part name="parameters" element="tns:Usta_Musaitlik_DegistirResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebService1Soap">
     <wsdl:operation name="IlceListesi">
       <wsdl:input message="tns:IlceListesiSoapIn" />
@@ -616,6 +753,34 @@
     <wsdl:operation name="UYE_LİSTELE">
       <wsdl:input message="tns:UYE_LİSTELESoapIn" />
       <wsdl:output message="tns:UYE_LİSTELESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UYE_ENGELI_KALDIR">
+      <wsdl:input message="tns:UYE_ENGELI_KALDIRSoapIn" />
+      <wsdl:output message="tns:UYE_ENGELI_KALDIRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Istek_Listele_Bekleyenler">
+      <wsdl:input message="tns:Istek_Listele_BekleyenlerSoapIn" />
+      <wsdl:output message="tns:Istek_Listele_BekleyenlerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Istek_HizmetVerilenler">
+      <wsdl:input message="tns:Istek_HizmetVerilenlerSoapIn" />
+      <wsdl:output message="tns:Istek_HizmetVerilenlerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Uygun_Ustalar">
+      <wsdl:input message="tns:Uygun_UstalarSoapIn" />
+      <wsdl:output message="tns:Uygun_UstalarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Musaitmi">
+      <wsdl:input message="tns:Usta_MusaitmiSoapIn" />
+      <wsdl:output message="tns:Usta_MusaitmiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Ata">
+      <wsdl:input message="tns:Usta_AtaSoapIn" />
+      <wsdl:output message="tns:Usta_AtaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Musaitlik_Degistir">
+      <wsdl:input message="tns:Usta_Musaitlik_DegistirSoapIn" />
+      <wsdl:output message="tns:Usta_Musaitlik_DegistirSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
@@ -845,6 +1010,69 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UYE_ENGELI_KALDIR">
+      <soap:operation soapAction="http://tempuri.org/UYE_ENGELI_KALDIR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Istek_Listele_Bekleyenler">
+      <soap:operation soapAction="http://tempuri.org/Istek_Listele_Bekleyenler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Istek_HizmetVerilenler">
+      <soap:operation soapAction="http://tempuri.org/Istek_HizmetVerilenler" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Uygun_Ustalar">
+      <soap:operation soapAction="http://tempuri.org/Uygun_Ustalar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Musaitmi">
+      <soap:operation soapAction="http://tempuri.org/Usta_Musaitmi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Ata">
+      <soap:operation soapAction="http://tempuri.org/Usta_Ata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Musaitlik_Degistir">
+      <soap:operation soapAction="http://tempuri.org/Usta_Musaitlik_Degistir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1066,6 +1294,69 @@
     </wsdl:operation>
     <wsdl:operation name="UYE_LİSTELE">
       <soap12:operation soapAction="http://tempuri.org/UYE_LİSTELE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UYE_ENGELI_KALDIR">
+      <soap12:operation soapAction="http://tempuri.org/UYE_ENGELI_KALDIR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Istek_Listele_Bekleyenler">
+      <soap12:operation soapAction="http://tempuri.org/Istek_Listele_Bekleyenler" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Istek_HizmetVerilenler">
+      <soap12:operation soapAction="http://tempuri.org/Istek_HizmetVerilenler" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Uygun_Ustalar">
+      <soap12:operation soapAction="http://tempuri.org/Uygun_Ustalar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Musaitmi">
+      <soap12:operation soapAction="http://tempuri.org/Usta_Musaitmi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Ata">
+      <soap12:operation soapAction="http://tempuri.org/Usta_Ata" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Musaitlik_Degistir">
+      <soap12:operation soapAction="http://tempuri.org/Usta_Musaitlik_Degistir" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

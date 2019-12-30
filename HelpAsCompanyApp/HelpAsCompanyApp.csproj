@@ -73,6 +73,12 @@
     <Compile Include="Geri_Bildirimler.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="HizmetSaglaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HizmetSaglaForm.Designer.cs">
+      <DependentUpon>HizmetSaglaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Istekler.cs" />
     <Compile Include="Kullanici_Engelle_Form.cs">
       <SubType>Form</SubType>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HizmetSaglaForm.resx">
+      <DependentUpon>HizmetSaglaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kullanici_Engelle_Form.resx">
       <DependentUpon>Kullanici_Engelle_Form.cs</DependentUpon>
@@ -151,6 +160,12 @@
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.IlceListesiResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Istek_HizmetVerilenlerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Istek_Listele_BekleyenlerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Istek_OlusturResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -160,10 +175,22 @@
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.SehirListesiResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Usta_AtaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Usta_EkleResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Usta_ListeleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Usta_Musaitlik_DegistirResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Usta_MusaitmiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.UYE_ENGELI_KALDIRResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.UYE_ENGELLEResponse.datasource">
@@ -179,6 +206,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Uye_Sorgula_forEngelleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Uygun_UstalarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SonService\WebService1.wsdl" />

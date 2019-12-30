@@ -31,6 +31,7 @@ namespace HelpAsCompanyApp
         public dynamic Response_Geri_Bildirimler;
         public dynamic Response_Uyeler;
         public dynamic Response_Engelli_Uyeler;
+        public dynamic Response_BekleyenIstek_Listele;
         //UstaListeleme Degiskenleri
         public dynamic Response_Usta_Listele;
         public int alanId;
@@ -433,6 +434,7 @@ namespace HelpAsCompanyApp
         }
         private void button5_Click(object sender, EventArgs e)//Alanlar navbar button CLICK
         {
+            flowLayoutPanel2.Controls.Clear();
             lbl_Panel_Ismi.Text = "ALANLAR";
             alanlar_panel.BringToFront();
             AlanListele_Function();
@@ -462,22 +464,46 @@ namespace HelpAsCompanyApp
         }//İSTEKLER NAVBAR İCON CLICK
         private void pictureBox4_Click(object sender, EventArgs e)
         {
+            lbl_Panel_Ismi.Text = "HABERLER";
+            HaberListesiFlowPanel.Controls.Clear();
+            HaberListele_Function();
             haberler_panel.BringToFront();
         }//HABERLER NAVBAR İCON CLICK
         private void pictureBox5_Click(object sender, EventArgs e)
         {
+            lbl_Panel_Ismi.Text = "USTALAR";
+            //panele her girişte şehir,ilçe,alan,branş sıfırlama
+            comboBox_Usta_Alan.Items.Clear();
+            comboBox_AltAlan_Usta.Items.Clear();
+            comboBox_Sehirler_Usta.Items.Clear();
+            comboBox_Ilceler_Usta.Items.Clear();
+            comboBox_Alanlar.Items.Clear();
+            comboBox_Sehirler.Items.Clear();
+            comboBox_Brans.Items.Clear();
+            comboBox_Ilceler.Items.Clear();
+
             ustalar_panel.BringToFront();
+            Alan_Listele_Usta_Function();
+            Sehir_Listele_Usta_Function();
         }//USTALAR NAVBAR İCON CLICK
         private void pictureBox6_Click(object sender, EventArgs e)
         {
+            flowLayoutPanel2.Controls.Clear();
+            lbl_Panel_Ismi.Text = "ALANLAR";
             alanlar_panel.BringToFront();
+            AlanListele_Function();
         }//ALANLAR NAVBAR İCON CLICK
         private void pictureBox7_Click(object sender, EventArgs e)
         {
+            lbl_Panel_Ismi.Text = "GERI BILDIRIMLER";
+            flowLayoutPanel_Geri_Bildirim_MAIN.Controls.Clear();
             geri_bildirimler_panel.BringToFront();
+            Geri_Bildirim_Request();
+            label_gb_sayisi.Text = flowLayoutPanel_Geri_Bildirim_MAIN.Controls.Count.ToString();
         }//GERİ BİLDİRİMLER NAVBAR İCON CLICK
         private void pictureBox9_Click(object sender, EventArgs e)
         {
+            lbl_Panel_Ismi.Text = "KULLANICILAR";
             kullanıcılar_panel.BringToFront();
         }
         private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
@@ -551,9 +577,7 @@ namespace HelpAsCompanyApp
         {
             pictureBox9.Size = new Size(40, 40);
             pictureBox9.Location = new Point(16, 536);
-        }
-       
-        
+        }             
         #endregion
              
         #region Alanlar
@@ -583,57 +607,80 @@ namespace HelpAsCompanyApp
         //Alanların listelenmesi fonksiyonu (Service request)
         public void AlanListele_Function()
         {
-            var response = service.AlanListesi();
-            Response_Alan = JsonConvert.DeserializeObject(response);
-            int alan_id;
-            string alan_adi;
-            foreach (var item in Response_Alan)
+            try
             {
-                alan_id = item.Alan_Id;
-                alan_adi = item.Alan_Isim;
-                AlanListele_for_FlowPanel(alan_id, alan_adi);
+                var response = service.AlanListesi();
+                Response_Alan = JsonConvert.DeserializeObject(response);
+                int alan_id;
+                string alan_adi;               
+                foreach (var item in Response_Alan)
+                {
+                    alan_id = item.Alan_Id;
+                    alan_adi = item.Alan_Isim;
+                    AlanListele_for_FlowPanel(alan_id, alan_adi);
+                }
             }
+            catch
+            {
+                MessageBox.Show("Sunucu yada Servis kaynaklı bir hata", "HELPAS");
+            }           
         }
         //Alanlara tıklayınca alt alan yordamını çağırma
         public void Alan_click(object sender, EventArgs e)
         {
-            FlowLayoutPanel alan_paneli = sender as FlowLayoutPanel;
-            string alan_id = alan_paneli.Tag.ToString();
-            foreach (var item in Response_Alan)
+            try
             {
-                if (Convert.ToInt32(item.Alan_Id) == Convert.ToInt32(alan_id))
+                FlowLayoutPanel alan_paneli = sender as FlowLayoutPanel;
+                string alan_id = alan_paneli.Tag.ToString();
+                foreach (var item in Response_Alan)
                 {
-                    label_AltAlan.Text = "";
-                    flowLayoutPanel3.Controls.Clear();
-                    //MessageBox.Show(item.Alan_Isim.ToString());
-                    AltAlanListele_Function(item.Alan_Isim.ToString());
+                    if (Convert.ToInt32(item.Alan_Id) == Convert.ToInt32(alan_id))
+                    {
+                        label_AltAlan.Text = "";
+                        flowLayoutPanel3.Controls.Clear();
+                        //MessageBox.Show(item.Alan_Isim.ToString());
+                        AltAlanListele_Function(item.Alan_Isim.ToString());
+                    }
                 }
             }
+            catch
+            {
+                MessageBox.Show("hata");
+            }
+            
         }    
         //alt alanların alanlardan gelen alan ismiyle service requesti yapması
         public void AltAlanListele_Function(string Request_AlanAdi)
         {
-            var response = service.AltAlanListesi(Request_AlanAdi.ToString());
-            if(response == null || response == "")
+            try
             {
-                AltAlanListele_for_FlowPanel("Boş");
-                label_AltAlan.Text = Request_AlanAdi;
-            }
-            else
-            {
-                Response_AltAlan = JsonConvert.DeserializeObject(response);
-                int altalan_id;
-                string altalan_adi;
-                string altalan_alan_id;
-                foreach (var item in Response_AltAlan)
+                var response = service.AltAlanListesi(Request_AlanAdi.ToString());
+                if (response == null || response == "")
                 {
-                    altalan_id = item.Dal_Id;
-                    altalan_adi = item.Dal_Isim;
-                    altalan_alan_id = item.Alan_Isim;
-                    AltAlanListele_for_FlowPanel(altalan_adi);
+                    AltAlanListele_for_FlowPanel("Boş");
                     label_AltAlan.Text = Request_AlanAdi;
                 }
-            }            
+                else
+                {
+                    Response_AltAlan = JsonConvert.DeserializeObject(response);
+                    int altalan_id;
+                    string altalan_adi;
+                    string altalan_alan_id;
+                    foreach (var item in Response_AltAlan)
+                    {
+                        altalan_id = item.Dal_Id;
+                        altalan_adi = item.Dal_Isim;
+                        altalan_alan_id = item.Alan_Isim;
+                        AltAlanListele_for_FlowPanel(altalan_adi);
+                        label_AltAlan.Text = Request_AlanAdi;
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Sunucu yada Servis kaynaklı hata", "HELPAS");
+            }
+               
         }
         //alt alanların flow layout panel tasarımı
         public void AltAlanListele_for_FlowPanel(string AltAlan_Adi)
@@ -656,6 +703,8 @@ namespace HelpAsCompanyApp
             flp.Controls.Add(lblheader);
             flowLayoutPanel3.Controls.Add(flp);
         }
+        
+       
         #endregion
 
         #region Haberler 
@@ -716,18 +765,26 @@ namespace HelpAsCompanyApp
         //haber listeleme fonksiyonu
         public void HaberListele_Function()
         {
-            var response = service.HaberListele();
-            Response_Haber = JsonConvert.DeserializeObject(response);
-            int haber_id;
-            string haber_baslik;
-            string haber_icerik;
-            foreach (var item in Response_Haber)
+            try
             {
-                haber_id = item.Haber_Id;
-                haber_baslik = item.Haber_Baslik;
-                haber_icerik = item.Haber_Icerik;
-                HaberListele_for_FlowPanel(haber_id, haber_baslik, haber_icerik);
+                var response = service.HaberListele();
+                Response_Haber = JsonConvert.DeserializeObject(response);
+                int haber_id;
+                string haber_baslik;
+                string haber_icerik;
+                foreach (var item in Response_Haber)
+                {
+                    haber_id = item.Haber_Id;
+                    haber_baslik = item.Haber_Baslik;
+                    haber_icerik = item.Haber_Icerik;
+                    HaberListele_for_FlowPanel(haber_id, haber_baslik, haber_icerik);
+                }
             }
+            catch
+            {
+                MessageBox.Show("Sunucu yada Servis kaynaklı hata", "HELPAS");
+            }
+           
         }
 
         //Haber Ekleme butonu
@@ -739,10 +796,18 @@ namespace HelpAsCompanyApp
             }
             else
             {
-                var response = service.HaberEkle(textBox1.Text, richTextBox2.Text);
-                HaberListesiFlowPanel.Controls.Clear();
-                HaberListele_Function();
-                MessageBox.Show(response);
+                try
+                {
+                    var response = service.HaberEkle(textBox1.Text, richTextBox2.Text);
+                    HaberListesiFlowPanel.Controls.Clear();
+                    HaberListele_Function();
+                    MessageBox.Show(response);
+                }
+                catch
+                {
+                    MessageBox.Show("Sunucu yada Servis kaynaklı hata", "HELPAS");
+                }
+                
             }
 
         }
@@ -750,35 +815,59 @@ namespace HelpAsCompanyApp
         //Haber Silme butonu
         private void button11_Click(object sender, EventArgs e)
         {
-            var response = service.HaberSil(Convert.ToInt32(textBox1.Tag));
-            HaberListesiFlowPanel.Controls.Clear();
-            HaberListele_Function();
-            MessageBox.Show(response);
+            try
+            {
+                var response = service.HaberSil(Convert.ToInt32(textBox1.Tag));
+                HaberListesiFlowPanel.Controls.Clear();
+                HaberListele_Function();
+                MessageBox.Show(response);
+            }
+            catch
+            {
+                MessageBox.Show("Sunucu yada Servis kaynaklı hata", "HELPAS");
+            }
+
         }
 
         //Haber Güncelleme butonu
         private void button9_Click(object sender, EventArgs e)
         {
-            var response = service.HaberGüncelle(Convert.ToInt32(textBox1.Tag), textBox1.Text, richTextBox2.Text);
-            HaberListesiFlowPanel.Controls.Clear();
-            HaberListele_Function();
-            MessageBox.Show(response);
+            try
+            {
+                var response = service.HaberGüncelle(Convert.ToInt32(textBox1.Tag), textBox1.Text, richTextBox2.Text);
+                HaberListesiFlowPanel.Controls.Clear();
+                HaberListele_Function();
+                MessageBox.Show(response);
+            }
+            catch
+            {
+                MessageBox.Show("Sunucu yada Servis kaynaklı hata", "HELPAS");
+            }
+
         }
 
         //Flow habere tıklama işlemi
         public void Haber_click(object sender, EventArgs e)
         {
-            FlowLayoutPanel haber_paneli = sender as FlowLayoutPanel;
-            string haber_id = haber_paneli.Tag.ToString();
-            foreach (var item in Response_Haber)
+            try
             {
-                if (Convert.ToInt32(item.Haber_Id) == Convert.ToInt32(haber_id))
+                FlowLayoutPanel haber_paneli = sender as FlowLayoutPanel;
+                string haber_id = haber_paneli.Tag.ToString();
+                foreach (var item in Response_Haber)
                 {
-                    textBox1.Text = item.Haber_Baslik.ToString();
-                    richTextBox2.Text = item.Haber_Icerik.ToString();
-                    textBox1.Tag = item.Haber_Id;
+                    if (Convert.ToInt32(item.Haber_Id) == Convert.ToInt32(haber_id))
+                    {
+                        textBox1.Text = item.Haber_Baslik.ToString();
+                        richTextBox2.Text = item.Haber_Icerik.ToString();
+                        textBox1.Tag = item.Haber_Id;
+                    }
                 }
             }
+            catch
+            {
+                MessageBox.Show("Hata Oluştu", "HELPAS");
+            }
+           
 
         }
         //-------------------------------------------------------------HABERLER ^^^^^^^^^^^^^^^^^^
@@ -808,18 +897,25 @@ namespace HelpAsCompanyApp
             }
             else
             {
-                Response_AltAlan_Usta = JsonConvert.DeserializeObject(response);
-                int altalan_id;
-                string altalan_adi;
-                string altalan_alan_id;
-                foreach (var item in Response_AltAlan_Usta)
+                try
                 {
-                    altalan_id = item.Dal_Id;
-                    altalan_adi = item.Dal_Isim;
-                    altalan_alan_id = item.Alan_Isim;
-                    comboBox_AltAlan_Usta.Items.Add(altalan_id + "- " + altalan_adi);
-
+                    Response_AltAlan_Usta = JsonConvert.DeserializeObject(response);
+                    int altalan_id;
+                    string altalan_adi;
+                    string altalan_alan_id;
+                    foreach (var item in Response_AltAlan_Usta)
+                    {
+                        altalan_id = item.Dal_Id;
+                        altalan_adi = item.Dal_Isim;
+                        altalan_alan_id = item.Alan_Isim;
+                        comboBox_AltAlan_Usta.Items.Add(altalan_id + "- " + altalan_adi);
+                    }
                 }
+                catch
+                {
+                    MessageBox.Show("Sunucu yada Servis kaynaklı hata", "HELPAS");
+                }
+                
             }
         }
         //usta ekleme/arama/güncelleme combo box eventi
@@ -860,32 +956,48 @@ namespace HelpAsCompanyApp
         //Ustalar alanların comboBox'a gömülmesi
         public void Alan_Listele_Usta_Function()
         {
-            var response = service.AlanListesi();
-            Response_Alan_Usta = JsonConvert.DeserializeObject(response);
-            int alan_id;
-            string alan_adi;
-            foreach (var item in Response_Alan_Usta)
+            try
             {
-                alan_id = item.Alan_Id;
-                alan_adi = item.Alan_Isim;
-                comboBox_Usta_Alan.Items.Add(alan_id+"- "+alan_adi);
-                comboBox_Alanlar.Items.Add(alan_id + "- " + alan_adi);
+                var response = service.AlanListesi();
+                Response_Alan_Usta = JsonConvert.DeserializeObject(response);
+                int alan_id;
+                string alan_adi;
+                foreach (var item in Response_Alan_Usta)
+                {
+                    alan_id = item.Alan_Id;
+                    alan_adi = item.Alan_Isim;
+                    comboBox_Usta_Alan.Items.Add(alan_id + "- " + alan_adi);
+                    comboBox_Alanlar.Items.Add(alan_id + "- " + alan_adi);
+                }
             }
+            catch
+            {
+                MessageBox.Show("Sunucu yada Servis kaynaklı bir hata", "HELPAS");
+            }
+            
         }       
         //Ustalar şehirleri comboBox'a gömme
         public void Sehir_Listele_Usta_Function()
         {
-            var response = service.SehirListesi();
-            Response_Sehirler_Usta = JsonConvert.DeserializeObject(response);
-            int sehir_id;
-            string sehir_name;
-            foreach (var item in Response_Sehirler_Usta)
+            try
             {
-                sehir_id = item.Id;
-                sehir_name = item.Name;
-                comboBox_Sehirler_Usta.Items.Add(sehir_id+"- "+sehir_name);
-                comboBox_Sehirler.Items.Add(sehir_id + "- " + sehir_name);
+                var response = service.SehirListesi();
+                Response_Sehirler_Usta = JsonConvert.DeserializeObject(response);
+                int sehir_id;
+                string sehir_name;
+                foreach (var item in Response_Sehirler_Usta)
+                {
+                    sehir_id = item.Id;
+                    sehir_name = item.Name;
+                    comboBox_Sehirler_Usta.Items.Add(sehir_id + "- " + sehir_name);
+                    comboBox_Sehirler.Items.Add(sehir_id + "- " + sehir_name);
+                }
             }
+            catch
+            {
+                MessageBox.Show("Sunucu yada Servis kaynaklı hata", "HELPAS");
+            }
+            
         }
         //şehir comboBox seçilince otomatik şehrin ilçelerinin getirilmesi
         private void comboBox_Sehirler_Usta_SelectedIndexChanged(object sender, EventArgs e)
@@ -895,18 +1007,23 @@ namespace HelpAsCompanyApp
             comboBox_Ilceler_Usta.Items.Clear();
             comboBox_Ilceler_Usta.Text = "";
             string sehir_secimi = comboBox_Sehirler_Usta.SelectedItem.ToString().Substring(3);
-            
-            
-            var response = service.IlceListesi(sehir_secimi.Trim());         
-            Response_Ilceler_Usta = JsonConvert.DeserializeObject(response);
-            int ilce_no;
-            string isim;
-            foreach (var item in Response_Ilceler_Usta)
+            try
             {
-                ilce_no = item.ilce_no;
-                isim = item.isim;
-                comboBox_Ilceler_Usta.Items.Add(ilce_no+"- "+isim);
+                var response = service.IlceListesi(sehir_secimi.Trim());
+                Response_Ilceler_Usta = JsonConvert.DeserializeObject(response);
+                int ilce_no;
+                string isim;
+                foreach (var item in Response_Ilceler_Usta)
+                {
+                    ilce_no = item.ilce_no;
+                    isim = item.isim;
+                    comboBox_Ilceler_Usta.Items.Add(ilce_no + "- " + isim);
+                }
             }
+            catch
+            {
+                MessageBox.Show("Sunucu yada Servis hatası", "HELPAS");
+            }         
         }
         private void comboBox_Sehirler_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -915,18 +1032,24 @@ namespace HelpAsCompanyApp
             comboBox_Ilceler.Items.Clear();
             comboBox_Ilceler.Text = "";
             string sehir_secimi = comboBox_Sehirler.SelectedItem.ToString().Substring(3);
-
-
-            var response = service.IlceListesi(sehir_secimi.Trim());
-            Response_Ilceler_Usta = JsonConvert.DeserializeObject(response);
-            int ilce_no;
-            string isim;
-            foreach (var item in Response_Ilceler_Usta)
+            try
             {
-                ilce_no = item.ilce_no;
-                isim = item.isim;
-                comboBox_Ilceler.Items.Add(ilce_no + "- " + isim);
+                var response = service.IlceListesi(sehir_secimi.Trim());
+                Response_Ilceler_Usta = JsonConvert.DeserializeObject(response);
+                int ilce_no;
+                string isim;
+                foreach (var item in Response_Ilceler_Usta)
+                {
+                    ilce_no = item.ilce_no;
+                    isim = item.isim;
+                    comboBox_Ilceler.Items.Add(ilce_no + "- " + isim);
+                }
             }
+            catch
+            {
+                MessageBox.Show("Sunucu yada Servis hatası", "HELPAS");
+            }
+            
         }
         //USTA BULMA BUTONU
         private void button12_Click_1(object sender, EventArgs e)
@@ -987,10 +1110,7 @@ namespace HelpAsCompanyApp
                 catch
                 {
                     MessageBox.Show("Bu koşullarda usta bulunamadı");
-                }
-                
-                    
-                             
+                }                        
             }
             else
             {
@@ -1041,48 +1161,74 @@ namespace HelpAsCompanyApp
         //BURALARI GÖRMEZDEN GELELİM FACİA :)
         //TEK BİR SEHİR İSMİ VS ÇEKMEK İÇİN SERVİS YAZDIM ve fonk isimlerini çekmek için :)
         public dynamic Sehir_Ismi(int sehir_id)
-        {            
-            dynamic cevap;
-            var response = service.SehirIsmiDonder(sehir_id);
-            cevap = JsonConvert.DeserializeObject(response);
-            foreach (var item in cevap)
+        {
+            try
             {
-                sehir_ismi = item.Name;
-             
+                dynamic cevap;
+                var response = service.SehirIsmiDonder(sehir_id);
+                cevap = JsonConvert.DeserializeObject(response);
+                foreach (var item in cevap)
+                {
+                    sehir_ismi = item.Name;
+                }                
+            }
+            catch
+            {
+                MessageBox.Show("Sunucu yada servis hatası","HELPAS");
             }
             return sehir_ismi;
         }
         public dynamic Ilce_Ismi(int ilce_id)
         {
-            dynamic cevap;
-            var response = service.IlceIsmiDonder(ilce_id);
-            cevap = JsonConvert.DeserializeObject(response);
-            foreach (var item in cevap)
+            try
             {
-                ilce_ismi = item.isim;
-
+                dynamic cevap;
+                var response = service.IlceIsmiDonder(ilce_id);
+                cevap = JsonConvert.DeserializeObject(response);
+                foreach (var item in cevap)
+                {
+                    ilce_ismi = item.isim;
+                }
             }
+            catch
+            {
+                MessageBox.Show("Sunucu yada servis hatası", "HELPAS");
+            }            
             return ilce_ismi;
         }
         public dynamic Alan__Ismi(int alan_id)
         {
-            dynamic cevap;
-            var response = service.AlanIsmiDonder(alan_id);
-            cevap = JsonConvert.DeserializeObject(response);
-            foreach (var item in cevap)
+            try
             {
-                alan_ismi = item.Alan_Isim;
+                dynamic cevap;
+                var response = service.AlanIsmiDonder(alan_id);
+                cevap = JsonConvert.DeserializeObject(response);
+                foreach (var item in cevap)
+                {
+                    alan_ismi = item.Alan_Isim;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Sunucu yada servis hatası", "HELPAS");
             }
             return alan_ismi;
         }
         public dynamic AltAlan__Ismi(int altalan_id)
         {
-            dynamic cevap;
-            var response = service.AltAlanIsmiDonder(altalan_id);
-            cevap = JsonConvert.DeserializeObject(response);
-            foreach (var item in cevap)
+            try
             {
-                altalan_ismi = item.Dal_Isim;
+                dynamic cevap;
+                var response = service.AltAlanIsmiDonder(altalan_id);
+                cevap = JsonConvert.DeserializeObject(response);
+                foreach (var item in cevap)
+                {
+                    altalan_ismi = item.Dal_Isim;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Sunucu yada servis hatası", "HELPAS");
             }
             return altalan_ismi;
         }
@@ -1251,45 +1397,52 @@ namespace HelpAsCompanyApp
             groupBox9.Visible = false;
             FlowLayoutPanel usta_paneli = sender as FlowLayoutPanel;
             string _usta_id = usta_paneli.Tag.ToString();
-            foreach (var item in Response_Usta_Listele)
+            try
             {
-                if (Convert.ToInt32(item.Usta_Id) == Convert.ToInt32(_usta_id))
+                foreach (var item in Response_Usta_Listele)
                 {
-                    if(item.Usta_Musaitlik == 0)
+                    if (Convert.ToInt32(item.Usta_Id) == Convert.ToInt32(_usta_id))
                     {
-                        button_UstaEkle.Enabled = false;
-                        button_UstaKaydet.Enabled = false;
-                        button_UstaSil.Enabled = false;
-                        textBox_isim.Text = item.Usta_Isim;
-                        textBox_soyisim.Text = item.Usta_SoyIsim;
-                        comboBox_Alanlar.Text = Alan__Ismi(Convert.ToInt32(item.Alan_Id));
-                        comboBox_Brans.Text = item.AltAlan_Id;
-                        comboBox_Sehirler.Text = Sehir_Ismi(Convert.ToInt32(item.Sehir_Id));
-                        comboBox_Ilceler.Text = Ilce_Ismi(Convert.ToInt32(item.Ilce_Id));
-                        textBox_telefon.Text = item.Usta_Telefon;
-                        textBox_mail.Text = item.Usta_Email;
-                        textBox_puan.Text = item.Usta_Puan;
-                        textBox_musaitlik.Text = item.Usta_Musaitlik;
-                        MessageBox.Show("Usta şuan msait olmadığı için bilgileri değiştiremezsiniz.");
+                        if (item.Usta_Musaitlik == 0)
+                        {
+                            button_UstaEkle.Enabled = false;
+                            button_UstaKaydet.Enabled = false;
+                            button_UstaSil.Enabled = false;
+                            textBox_isim.Text = item.Usta_Isim;
+                            textBox_soyisim.Text = item.Usta_SoyIsim;
+                            comboBox_Alanlar.Text = Alan__Ismi(Convert.ToInt32(item.Alan_Id));
+                            comboBox_Brans.Text = item.AltAlan_Id;
+                            comboBox_Sehirler.Text = Sehir_Ismi(Convert.ToInt32(item.Sehir_Id));
+                            comboBox_Ilceler.Text = Ilce_Ismi(Convert.ToInt32(item.Ilce_Id));
+                            textBox_telefon.Text = item.Usta_Telefon;
+                            textBox_mail.Text = item.Usta_Email;
+                            textBox_puan.Text = item.Usta_Puan;
+                            textBox_musaitlik.Text = item.Usta_Musaitlik;
+                            MessageBox.Show("Usta şuan müsait olmadığı için bilgileri değiştiremezsiniz.");
+                        }
+                        else
+                        {
+                            button_UstaEkle.Enabled = true;
+                            button_UstaKaydet.Enabled = true;
+                            button_UstaSil.Enabled = true;
+                            textBox_isim.Text = item.Usta_Isim;
+                            textBox_soyisim.Text = item.Usta_SoyIsim;
+                            comboBox_Alanlar.Text = Alan__Ismi(Convert.ToInt32(item.Alan_Id));
+                            comboBox_Brans.Text = item.AltAlan_Id;
+                            comboBox_Sehirler.Text = Sehir_Ismi(Convert.ToInt32(item.Sehir_Id));
+                            comboBox_Ilceler.Text = Ilce_Ismi(Convert.ToInt32(item.Ilce_Id));
+                            textBox_telefon.Text = item.Usta_Telefon;
+                            textBox_mail.Text = item.Usta_Email;
+                            textBox_puan.Text = item.Usta_Puan;
+                            textBox_musaitlik.Text = item.Usta_Musaitlik;
+                        }
                     }
-                    else
-                    {
-                        button_UstaEkle.Enabled = true;
-                        button_UstaKaydet.Enabled = true;
-                        button_UstaSil.Enabled = true;
-                        textBox_isim.Text = item.Usta_Isim;
-                        textBox_soyisim.Text = item.Usta_SoyIsim;
-                        comboBox_Alanlar.Text = Alan__Ismi(Convert.ToInt32(item.Alan_Id));
-                        comboBox_Brans.Text = item.AltAlan_Id;
-                        comboBox_Sehirler.Text = Sehir_Ismi(Convert.ToInt32(item.Sehir_Id));
-                        comboBox_Ilceler.Text = Ilce_Ismi(Convert.ToInt32(item.Ilce_Id));
-                        textBox_telefon.Text = item.Usta_Telefon;
-                        textBox_mail.Text = item.Usta_Email;
-                        textBox_puan.Text = item.Usta_Puan;
-                        textBox_musaitlik.Text = item.Usta_Musaitlik;
-                    }                    
                 }
             }
+            catch
+            {
+                MessageBox.Show("Sunucu yada Servisle bağlantı kesildi.", "HELPAS");
+            }            
         }
 
         private void button_UstaTemizle_Click(object sender, EventArgs e)
@@ -1351,6 +1504,7 @@ namespace HelpAsCompanyApp
 
         private void button_tamamla_Click(object sender, EventArgs e)
         {
+            
             if (
                 textBox_isim.Text == "" ||
                 textBox_soyisim.Text == "" ||
@@ -1362,9 +1516,8 @@ namespace HelpAsCompanyApp
             {
                 MessageBox.Show("Boş alanlar mevcut, boş alanları doldurduğunuza emin olun.");
             }
-
             else
-            {
+            {               
                 int i;
                 for (i = 0; i < comboBox_Brans.Items.Count; i++)
                 {
@@ -1372,44 +1525,47 @@ namespace HelpAsCompanyApp
                 }
                 if (i == 0)
                 {
-                    string shr = comboBox_Sehirler.SelectedItem.ToString().Split('-').First();
-                    Int32.TryParse(shr.ToString(), out _sehirId);
-
-                    string ilc = comboBox_Ilceler.SelectedItem.ToString().Split('-').First();
-                    Int32.TryParse(ilc.ToString(), out _ilceId);
-
-                    string aln_id = comboBox_Alanlar.SelectedItem.ToString().Split('-').First();
-                    Int32.TryParse(aln_id.ToString(), out _alanId);
-                    int puan;
-                    int musait;
-
-                    int _altalan_id = 0;
-                    Int32.TryParse(textBox_puan.Text, out puan);
-
-                    Int32.TryParse(textBox_musaitlik.Text, out musait);
-                   
-                    var response = service.Usta_Ekle(
-                        _alanId,
-                        _sehirId,
-                        _ilceId,
-                        textBox_isim.Text,
-                        textBox_soyisim.Text,
-                        textBox_telefon.Text,
-                        textBox_mail.Text,
-                        puan,
-                        musait,
-                        _altalan_id
-                        );
-                   
-                    MessageBox.Show(response);
-                    if(response=="ok")
+                    try
                     {
-                        groupBox9.Visible = false;
-                        button_UstaEkle.Enabled = true;
-                        button_UstaSil.Enabled = true;
-                        button_UstaKaydet.Enabled = true;
+                        string shr = comboBox_Sehirler.SelectedItem.ToString().Split('-').First();
+                        Int32.TryParse(shr.ToString(), out _sehirId);
+
+                        string ilc = comboBox_Ilceler.SelectedItem.ToString().Split('-').First();
+                        Int32.TryParse(ilc.ToString(), out _ilceId);
+
+                        string aln_id = comboBox_Alanlar.SelectedItem.ToString().Split('-').First();
+                        Int32.TryParse(aln_id.ToString(), out _alanId);
+                        int puan;
+                        int musait;
+
+                        int _altalan_id = 0;
+                        Int32.TryParse(textBox_puan.Text, out puan);
+                        Int32.TryParse(textBox_musaitlik.Text, out musait);
+                        var response = service.Usta_Ekle(
+                            _alanId,
+                            _sehirId,
+                            _ilceId,
+                            textBox_isim.Text,
+                            textBox_soyisim.Text,
+                            textBox_telefon.Text,
+                            textBox_mail.Text,
+                            puan,
+                            musait,
+                            _altalan_id
+                            );
+                        MessageBox.Show(response);
+                        if (response == "ok")
+                        {
+                            groupBox9.Visible = false;
+                            button_UstaEkle.Enabled = true;
+                            button_UstaSil.Enabled = true;
+                            button_UstaKaydet.Enabled = true;
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Sunucu yada Servis kaynaklı hata", "HELPAS");
                     }                    
-                   
                 }
                 else if (i != 0)
                 {
@@ -1462,44 +1618,46 @@ namespace HelpAsCompanyApp
         //GERİ BİLDİRİM SERVİS İSTEĞİ
         public void Geri_Bildirim_Request()
         {
-            Geri_Bildirimler G_Bildirimler = new Geri_Bildirimler();
-            
-            var response = service.Geri_Bildirim_Listele();
-            if(response!=null)
+            try
             {
-                Response_Geri_Bildirimler = JsonConvert.DeserializeObject(response);
-                int _Bildirim_Id;
-                int _Uye_Id;
-                string _Uye_Adi;
-                string _Uye_Soyadi;
-                string _Tarih;
-                string _Aciklama;
-                foreach (var item in Response_Geri_Bildirimler)
+                Geri_Bildirimler G_Bildirimler = new Geri_Bildirimler();
+                var response = service.Geri_Bildirim_Listele();
+                if (response != null)
                 {
-                    _Bildirim_Id = item.Id_Bildirim;
-                    _Uye_Id = item.Id_Uye;
-                    _Uye_Adi = item.Uye_Ad;
-                    _Uye_Soyadi = item.Uye_Soyad;
-                    _Tarih = item.Tarih;
-                    _Aciklama = item.Aciklama;
-                    flowLayoutPanel_Geri_Bildirim_MAIN.Controls.Add(G_Bildirimler.Geri_Bildirim_FlowLayoutDesign(_Bildirim_Id, _Uye_Id, _Uye_Adi,_Uye_Soyadi, _Tarih, _Aciklama));
+                    Response_Geri_Bildirimler = JsonConvert.DeserializeObject(response);
+                    int _Bildirim_Id;
+                    int _Uye_Id;
+                    string _Uye_Adi;
+                    string _Uye_Soyadi;
+                    string _Tarih;
+                    string _Aciklama;
+                    foreach (var item in Response_Geri_Bildirimler)
+                    {
+                        _Bildirim_Id = item.Id_Bildirim;
+                        _Uye_Id = item.Id_Uye;
+                        _Uye_Adi = item.Uye_Ad;
+                        _Uye_Soyadi = item.Uye_Soyad;
+                        _Tarih = item.Tarih;
+                        _Aciklama = item.Aciklama;
+                        flowLayoutPanel_Geri_Bildirim_MAIN.Controls.Add(G_Bildirimler.Geri_Bildirim_FlowLayoutDesign(_Bildirim_Id, _Uye_Id, _Uye_Adi, _Uye_Soyadi, _Tarih, _Aciklama));
+                    }
+                }
+                else if (response == null)
+                {
+                    MessageBox.Show("Hiç bildirim yok");
                 }
             }
-            else if(response == null)
+            catch
             {
-                MessageBox.Show("Hiç bildirim yok");
-            }
-            
-
+                MessageBox.Show("Sunucu yada Servis kaynaklı bir hata", "HELPAS");
+            }           
         }
         //GERİ BİLDİRİM MAIN FLOW DA GELEN DYNAMİC FLOWLARI LİSTELİYORUZ 
         public async void listele()
         {
             flowLayoutPanel_Geri_Bildirim_MAIN.Controls.Clear();
             Geri_Bildirim_Request();
-        }
-
-
+        }       
         #endregion
 
         #region KULLANICILAR
@@ -1510,41 +1668,47 @@ namespace HelpAsCompanyApp
             flowLayoutPanel_UYELER.Controls.Clear();
             if(radioButton1.Checked==true)
             {
-                var response = service.UYE_LİSTELE();
-                if (response != null)
+                try
                 {
-                    Response_Uyeler = JsonConvert.DeserializeObject(response);
-                    int uye_id;
-                    string uye_ad;
-                    string uye_soyad;
-                    string uye_telefon;
-                    string uye_mail;
-                    string uye_sehir;
-                    string uye_ilce;
-                    string uye_sifre;
-                    foreach (var item in Response_Uyeler)
+                    var response = service.UYE_LİSTELE();
+                    if (response != null)
                     {
-                        uye_id = item.Uye_Id;
-                        uye_ad = item.Uye_Ad;
-                        uye_soyad = item.Uye_Soyad;
-                        uye_telefon = item.Uye_Telefon;
-                        uye_mail = item.Uye_Email;
-                        uye_sehir = Sehir_Ismi(Convert.ToInt32(item.Uye_Sehir_Id));
-                        uye_ilce = Ilce_Ismi(Convert.ToInt32(item.Uye_Ilce_Id));
-                        uye_sifre = item.Uye_Sifre;
-                        Uye_Listele_FlowPanel(uye_id, uye_ad, uye_soyad, uye_telefon, uye_mail, uye_sehir, uye_ilce, uye_sifre);
+                        Response_Uyeler = JsonConvert.DeserializeObject(response);
+                        int uye_id;
+                        string uye_ad;
+                        string uye_soyad;
+                        string uye_telefon;
+                        string uye_mail;
+                        string uye_sehir;
+                        string uye_ilce;
+                        string uye_sifre;
+                        foreach (var item in Response_Uyeler)
+                        {
+                            uye_id = item.Uye_Id;
+                            uye_ad = item.Uye_Ad;
+                            uye_soyad = item.Uye_Soyad;
+                            uye_telefon = item.Uye_Telefon;
+                            uye_mail = item.Uye_Email;
+                            uye_sehir = Sehir_Ismi(Convert.ToInt32(item.Uye_Sehir_Id));
+                            uye_ilce = Ilce_Ismi(Convert.ToInt32(item.Uye_Ilce_Id));
+                            uye_sifre = item.Uye_Sifre;
+                            Uye_Listele_FlowPanel(uye_id, uye_ad, uye_soyad, uye_telefon, uye_mail, uye_sehir, uye_ilce, uye_sifre);
+                        }
+                    }
+                    else if (response == null)
+                    {
+                        MessageBox.Show("Hiç bildirim yok");
                     }
                 }
-                else if (response == null)
+                catch
                 {
-                    MessageBox.Show("Hiç bildirim yok");
-                }
+                    MessageBox.Show("Sunucu yada servis kaynaklı hata", "HELPAS");
+                }                
             }
             else
             {
                 flowLayoutPanel_UYELER.Controls.Clear();
-            }
-            
+            }            
         }
         //üyeleri flowpanele yerleştirme
         public void Uye_Listele_FlowPanel(int uye_id, string uye_ad, string uye_soyad, string uye_tel, string uye_mail, string sehir, string ilce, string sifre)
@@ -1560,7 +1724,7 @@ namespace HelpAsCompanyApp
             flp.AutoScroll = true;
             flp.FlowDirection = FlowDirection.TopDown;
             flp.Tag = uye_id;          
-            //flp.DoubleClick += new EventHandler(this.Engelle_click);
+            flp.DoubleClick += new EventHandler(this.Kullanicilar_Direkt_Engel_Click);
 
             //isim soyisim
             Font f_isim_soyisim = new Font("Rajdhani", 14, FontStyle.Bold);
@@ -1640,6 +1804,19 @@ namespace HelpAsCompanyApp
             flowLayoutPanel_UYELER.Controls.Clear();
             if (radioButton2.Checked == true)
             {
+                Engelli_Uye_Listele();
+            }
+            else
+            {
+                flowLayoutPanel_UYELER.Controls.Clear();
+            }
+        }
+        //ENGELLİ UYELERİ LİSTELE
+        public void Engelli_Uye_Listele()
+        {           
+            flowLayoutPanel_UYELER.Controls.Clear();
+            try
+            {
                 var response = service.Engelli_Uye_Listele();
                 if (response != null)
                 {
@@ -1675,10 +1852,10 @@ namespace HelpAsCompanyApp
                     MessageBox.Show("Hiç bildirim yok");
                 }
             }
-            else
+            catch
             {
-                flowLayoutPanel_UYELER.Controls.Clear();
-            }
+                MessageBox.Show("Sunucu yada Servis kaynaklı hata", "HELPAS");
+            }            
         }
         //engelli kullanıcıları flowpanele yerleştirme
         public void Engelli_Uye_Listele_FlowPanel(int ek_id, string ek_uye_ad, string ek_uye_soyad, string ek_uye_telefon, string ek_uye_mail, string ek_uye_sifre, string ek_uye_sehir, string ek_uye_ilce, string ek_uye_engel_sebep, string ek_uye_enge_tarih)
@@ -1694,8 +1871,7 @@ namespace HelpAsCompanyApp
             flp.AutoScroll = true;
             flp.FlowDirection = FlowDirection.TopDown;
             flp.Tag = ek_id;
-            //flp.DoubleClick += new EventHandler(this.Engelle_click);
-
+            
             //isim soyisim
             Font f_isim_soyisim = new Font("Rajdhani", 14, FontStyle.Bold);
             Label label_isim_soyisim = new Label();
@@ -1788,6 +1964,8 @@ namespace HelpAsCompanyApp
             btn_EngelKaldir.ForeColor = Color.DarkKhaki;
             btn_EngelKaldir.FlatStyle = FlatStyle.Flat;
             btn_EngelKaldir.Text = "Engeli Kaldır";
+            btn_EngelKaldir.Tag = ek_id;
+            btn_EngelKaldir.Click+= new EventHandler(this.Engel_Kaldir_Click);
 
             flp.Controls.Add(label_isim_soyisim);
             flp.Controls.Add(lbl_tel);
@@ -1801,7 +1979,441 @@ namespace HelpAsCompanyApp
             flp.Controls.Add(btn_EngelKaldir);
             flowLayoutPanel_UYELER.Controls.Add(flp);
         }
-        
+        //Engelli listesi panelinde Engel kaldır butonu click eventi
+        public void Engel_Kaldir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int engel_id;
+                Button Engel_Kaldir = sender as Button;
+                string Engel_Id = Engel_Kaldir.Tag.ToString();
+                Int32.TryParse(Engel_Id.ToString(), out engel_id);
+                DialogResult ds;
+                ds = MessageBox.Show("Kullanıcı engelini kaldırmak istiyor musun?", "HELPAS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (ds == DialogResult.Yes)
+                {
+                    var response = service.UYE_ENGELI_KALDIR(engel_id);
+                    if(response=="ok")
+                    {
+                        MessageBox.Show("Engel Kalktı", "HELPAS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Engelli_Uye_Listele();
+
+                    }
+                    else if(response=="error")
+                    {
+                        MessageBox.Show("Engel kaldirilamadı.");
+                    }                   
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Hata ile karşılaşıldı.");
+            }                       
+        }
+
+        //DİREKT ENGELLEMEK İÇİN ENGELLE FORMUNA YÖNELTİKECEN İSTEK
+        public void Kullanicilar_Direkt_Engel_Click(object sender, EventArgs e)
+        {
+            DialogResult ds;
+            ds = MessageBox.Show("Kullanıcıyı engellemek istiyor musun?", "HELPAS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(ds==DialogResult.Yes)
+            {
+                FlowLayoutPanel panel = sender as FlowLayoutPanel;
+                Kullanici_Engelle_Form K_E_F = new Kullanici_Engelle_Form(panel.Tag.ToString(), "");
+                K_E_F.ShowDialog();
+            }          
+        }
+
+        #endregion
+
+
+
+        #region Istekler
+
+        //Istekleri Listeleme
+        public void BekleyenIstekListele_for_Istekler_Function()
+        {
+            var response = service.Istek_Listele_Bekleyenler();
+            Response_BekleyenIstek_Listele = JsonConvert.DeserializeObject(response);
+            int istek_id;
+            string alan_ismi;
+            string dal_ismi;
+            int uye_id;
+            string sehir_ismi;
+            string ilce_ismi;
+            string istek_aciklama;
+            string istek_tarihi;
+            int usta_id;
+            foreach (var item in Response_BekleyenIstek_Listele)
+            {
+                
+                if(item.Id_Dal=="")
+                {
+                    dal_ismi = "yok";
+                    istek_id = item.Istek_Id;
+                    alan_ismi = Alan__Ismi(Convert.ToInt32(item.Id_Alan));                    
+                    uye_id = Convert.ToInt32(item.Id_Uye);
+                    sehir_ismi = Sehir_Ismi(Convert.ToInt32(item.Id_Sehir));
+                    ilce_ismi = Ilce_Ismi(Convert.ToInt32(item.Id_Ilce));
+                    istek_aciklama = item.Istek_Aciklama;
+                    istek_tarihi = item.Istek_Tarih;
+                    BekleyenIstekListele_IsteklerFlowPanel(istek_id, alan_ismi, dal_ismi, uye_id, sehir_ismi, ilce_ismi, istek_aciklama, istek_tarihi);
+                }
+                else
+                {
+                    istek_id = item.Istek_Id;
+                    alan_ismi = Alan__Ismi(Convert.ToInt32(item.Id_Alan));
+                    dal_ismi = AltAlan__Ismi(Convert.ToInt32(item.Id_Dal));
+                    uye_id = Convert.ToInt32(item.Id_Uye);
+                    sehir_ismi = Sehir_Ismi(Convert.ToInt32(item.Id_Sehir));
+                    ilce_ismi = Ilce_Ismi(Convert.ToInt32(item.Id_Ilce));
+                    istek_aciklama = item.Istek_Aciklama;
+                    istek_tarihi = item.Istek_Tarih;
+                    BekleyenIstekListele_IsteklerFlowPanel(istek_id, alan_ismi, dal_ismi, uye_id, sehir_ismi, ilce_ismi, istek_aciklama, istek_tarihi);
+                }               
+            }                 
+        }
+        //Istekleri Listeleme
+        public async void HizmetSaglanmis_Istekleri_Listele_Function()
+        {
+            var response = service.Istek_HizmetVerilenler();
+            dynamic Response_SaglananIstek_Listele = JsonConvert.DeserializeObject(response);
+            int istek_id;
+            string alan_ismi;
+            string dal_ismi;
+            int uye_id;
+            string sehir_ismi;
+            string ilce_ismi;
+            string istek_aciklama;
+            string istek_tarihi;
+            int usta_id;
+            foreach (var item in Response_SaglananIstek_Listele)
+            {
+
+                if (item.Id_Dal == "")
+                {
+                    dal_ismi = "yok";
+                    istek_id = item.Istek_Id;
+                    alan_ismi = Alan__Ismi(Convert.ToInt32(item.Id_Alan));
+                    uye_id = Convert.ToInt32(item.Id_Uye);
+                    sehir_ismi = Sehir_Ismi(Convert.ToInt32(item.Id_Sehir));
+                    ilce_ismi = Ilce_Ismi(Convert.ToInt32(item.Id_Ilce));
+                    istek_aciklama = item.Istek_Aciklama;
+                    istek_tarihi = item.Istek_Tarih;
+                    usta_id = Convert.ToInt32(item.Usta);
+                    HizmetSaglanmisIstekListele_IsteklerFlowPanel(istek_id, alan_ismi, dal_ismi, uye_id, sehir_ismi, ilce_ismi, istek_aciklama, istek_tarihi,usta_id);
+                }
+                else
+                {
+                    istek_id = item.Istek_Id;
+                    alan_ismi = Alan__Ismi(Convert.ToInt32(item.Id_Alan));
+                    dal_ismi = AltAlan__Ismi(Convert.ToInt32(item.Id_Dal));
+                    uye_id = Convert.ToInt32(item.Id_Uye);
+                    sehir_ismi = Sehir_Ismi(Convert.ToInt32(item.Id_Sehir));
+                    ilce_ismi = Ilce_Ismi(Convert.ToInt32(item.Id_Ilce));
+                    istek_aciklama = item.Istek_Aciklama;
+                    istek_tarihi = item.Istek_Tarih;
+                    usta_id = Convert.ToInt32(item.Usta);
+                    HizmetSaglanmisIstekListele_IsteklerFlowPanel(istek_id, alan_ismi, dal_ismi, uye_id, sehir_ismi, ilce_ismi, istek_aciklama, istek_tarihi, usta_id);
+                }
+            }
+        }
+        //usta atanmayı bekleyen istekler
+        public void BekleyenIstekListele_IsteklerFlowPanel(int istek_id,string alan_ismi,string dal_ismi,int uye_id,string sehir_ismi,string ilce_ismi,string istek_aciklama,string istek_tarihi)
+        {
+            //bildirimler paneli size 350,222 veya 234,253
+            int x = 350;
+            int y = 310;
+
+            FlowLayoutPanel flp = new FlowLayoutPanel();
+            flp.BackColor = Color.LightGray;
+            flp.Size = new System.Drawing.Size(x, y);
+            flp.Padding = new Padding(10);
+            flp.AutoScroll = true;
+            flp.FlowDirection = FlowDirection.TopDown;
+            flp.Tag = istek_id;
+
+            //alan ismi
+            Font f_alan_ismi = new Font("Rajdhani", 14, FontStyle.Bold);
+            Label label_alan_ismi = new Label();
+            label_alan_ismi.Size = new System.Drawing.Size(426, 104);
+            label_alan_ismi.AutoSize = true;
+            label_alan_ismi.AutoEllipsis = true;
+            label_alan_ismi.UseCompatibleTextRendering = true;
+            label_alan_ismi.ForeColor = Color.FromArgb(46, 204, 113);
+            label_alan_ismi.AutoSize = true;
+            label_alan_ismi.Font = f_alan_ismi;
+            label_alan_ismi.Text = "Alan İsmi: " + alan_ismi;
+
+            //branş ismi
+            Font f_brans = new Font("Rajdhani", 14, FontStyle.Bold);
+            Label label_brans = new Label();
+            label_brans.Size = new System.Drawing.Size(426, 104);
+            label_brans.AutoSize = true;
+            label_brans.AutoEllipsis = true;
+            label_brans.UseCompatibleTextRendering = true;
+            label_brans.ForeColor = Color.FromArgb(46, 204, 113);
+            label_brans.AutoSize = true;
+            label_brans.Font = f_brans;
+            label_brans.Text = "Branş İsmi: " + dal_ismi;
+
+            //üye_id
+            Font font_uye_id = new Font("Rajdhani", 14);
+            Label lbl_uye_id = new Label();
+            lbl_uye_id.AutoSize = true;
+            lbl_uye_id.AutoEllipsis = true;
+            lbl_uye_id.UseCompatibleTextRendering = true;
+            lbl_uye_id.ForeColor = Color.DimGray;
+            lbl_uye_id.AutoSize = true;
+            lbl_uye_id.Font = font_uye_id;
+            lbl_uye_id.Text = "Üye Numarası: " + uye_id;
+
+            //şehir
+            Font font_sehir = new Font("Rajdhani", 14);
+            Label lbl_sehir = new Label();
+            lbl_sehir.AutoSize = true;
+            lbl_sehir.AutoEllipsis = true;
+            lbl_sehir.UseCompatibleTextRendering = true;
+            lbl_sehir.ForeColor = Color.Black;
+            lbl_sehir.Font = font_sehir;
+            lbl_sehir.Text = "Şehir: " + sehir_ismi;
+
+            //ilçe
+            Font font_ilce = new Font("Rajdhani", 14);
+            Label lbl_ilce = new Label();
+            lbl_ilce.AutoSize = true;
+            lbl_ilce.AutoEllipsis = true;
+            lbl_ilce.UseCompatibleTextRendering = true;
+            lbl_ilce.ForeColor = Color.Black;
+            lbl_ilce.Font = font_ilce;
+            lbl_ilce.Text = "İlçe: " + ilce_ismi;
+
+            //istek tarihi
+            Font font_istek_tarihi = new Font("Rajdhani", 14);
+            Label lbl_istek_tarihi = new Label();
+            lbl_istek_tarihi.AutoSize = true;
+            lbl_istek_tarihi.AutoEllipsis = true;
+            lbl_istek_tarihi.UseCompatibleTextRendering = true;
+            lbl_istek_tarihi.ForeColor = Color.Black;
+            lbl_istek_tarihi.Font = font_istek_tarihi;
+            lbl_istek_tarihi.Text = "İstek Tarihi: " + istek_tarihi;
+
+            //istek_aciklaması
+            Font font_istek_aciklamasi = new Font("Rajdhani", 14,FontStyle.Bold);
+            Label lbl_istek_aciklamasi = new Label();
+            lbl_istek_aciklamasi.AutoSize = false;
+            lbl_istek_aciklamasi.Size = new Size(330, 75);
+            lbl_istek_aciklamasi.AutoEllipsis = true;
+            lbl_istek_aciklamasi.UseCompatibleTextRendering = true;
+            lbl_istek_aciklamasi.ForeColor = Color.Black;
+            lbl_istek_aciklamasi.Font = font_istek_aciklamasi;
+            lbl_istek_aciklamasi.Text = "İstek Açıklaması: " + istek_aciklama;
+
+           
+            //hizmet sağla buton
+            Button btn_HizmetSagla = new Button();
+            Font font_button = new Font("Rajdhani", 16);
+            btn_HizmetSagla.Size = new Size(320, 39);
+            btn_HizmetSagla.Font = font_button;
+            btn_HizmetSagla.ForeColor = Color.DarkKhaki;
+            btn_HizmetSagla.FlatStyle = FlatStyle.Flat;
+            btn_HizmetSagla.Text = "Hizmet Sağla";
+            btn_HizmetSagla.Tag = alan_ismi+"+"+dal_ismi+"+"+sehir_ismi+"+"+ilce_ismi;
+            btn_HizmetSagla.AccessibleName = istek_id.ToString();
+            btn_HizmetSagla.Top = -30;
+            //btn_HizmetSagla.Name;
+            btn_HizmetSagla.Click += new EventHandler(this.Hizmet_Sagla_Click);
+
+            //dinamik panel
+            flp.Controls.Add(label_alan_ismi);
+            flp.Controls.Add(label_brans);
+            flp.Controls.Add(lbl_uye_id);
+            flp.Controls.Add(lbl_sehir);
+            flp.Controls.Add(lbl_ilce);
+            flp.Controls.Add(lbl_istek_tarihi);
+            flp.Controls.Add(lbl_istek_aciklamasi);          
+            flp.Controls.Add(btn_HizmetSagla);
+
+            //main panel
+            flowLayoutPanel_Istekler.Controls.Add(flp);
+        }
+
+        //Hizmet SAĞLANMIŞ İSTEKLER LİSTESİ
+        public void HizmetSaglanmisIstekListele_IsteklerFlowPanel(int istek_id, string alan_ismi, string dal_ismi, int uye_id, string sehir_ismi, string ilce_ismi, string istek_aciklama, string istek_tarihi, int usta_id)
+        {
+            //bildirimler paneli size 350,222 veya 234,253
+            int x = 350;
+            int y = 310;
+
+            FlowLayoutPanel flp = new FlowLayoutPanel();
+            flp.BackColor = Color.LightGray;
+            flp.Size = new System.Drawing.Size(x, y);
+            flp.Padding = new Padding(10);
+            flp.AutoScroll = true;
+            flp.FlowDirection = FlowDirection.TopDown;
+            flp.Tag = istek_id;
+
+            //alan ismi
+            Font f_alan_ismi = new Font("Rajdhani", 14, FontStyle.Bold);
+            Label label_alan_ismi = new Label();
+            label_alan_ismi.Size = new System.Drawing.Size(426, 104);
+            label_alan_ismi.AutoSize = true;
+            label_alan_ismi.AutoEllipsis = true;
+            label_alan_ismi.UseCompatibleTextRendering = true;
+            label_alan_ismi.ForeColor = Color.FromArgb(46, 204, 113);
+            label_alan_ismi.AutoSize = true;
+            label_alan_ismi.Font = f_alan_ismi;
+            label_alan_ismi.Text = "Alan İsmi: " + alan_ismi;
+
+            //branş ismi
+            Font f_brans = new Font("Rajdhani", 14, FontStyle.Bold);
+            Label label_brans = new Label();
+            label_brans.Size = new System.Drawing.Size(426, 104);
+            label_brans.AutoSize = true;
+            label_brans.AutoEllipsis = true;
+            label_brans.UseCompatibleTextRendering = true;
+            label_brans.ForeColor = Color.FromArgb(46, 204, 113);
+            label_brans.AutoSize = true;
+            label_brans.Font = f_brans;
+            label_brans.Text = "Branş İsmi: " + dal_ismi;
+
+            //üye_id
+            Font font_uye_id = new Font("Rajdhani", 14);
+            Label lbl_uye_id = new Label();
+            lbl_uye_id.AutoSize = true;
+            lbl_uye_id.AutoEllipsis = true;
+            lbl_uye_id.UseCompatibleTextRendering = true;
+            lbl_uye_id.ForeColor = Color.DimGray;
+            lbl_uye_id.AutoSize = true;
+            lbl_uye_id.Font = font_uye_id;
+            lbl_uye_id.Text = "Üye Numarası: " + uye_id;
+
+            //şehir
+            Font font_sehir = new Font("Rajdhani", 14);
+            Label lbl_sehir = new Label();
+            lbl_sehir.AutoSize = true;
+            lbl_sehir.AutoEllipsis = true;
+            lbl_sehir.UseCompatibleTextRendering = true;
+            lbl_sehir.ForeColor = Color.Black;
+            lbl_sehir.Font = font_sehir;
+            lbl_sehir.Text = "Şehir: " + sehir_ismi;
+
+            //ilçe
+            Font font_ilce = new Font("Rajdhani", 14);
+            Label lbl_ilce = new Label();
+            lbl_ilce.AutoSize = true;
+            lbl_ilce.AutoEllipsis = true;
+            lbl_ilce.UseCompatibleTextRendering = true;
+            lbl_ilce.ForeColor = Color.Black;
+            lbl_ilce.Font = font_ilce;
+            lbl_ilce.Text = "İlçe: " + ilce_ismi;
+
+            //atanmış usta
+            Font font_usta = new Font("Rajdhani", 14);
+            Label lbl_usta = new Label();
+            lbl_usta.AutoSize = true;
+            lbl_usta.AutoEllipsis = true;
+            lbl_usta.UseCompatibleTextRendering = true;
+            lbl_usta.ForeColor = Color.Black;
+            lbl_usta.Font = font_usta;
+            lbl_usta.Text = "Usta Id: " + usta_id;
+
+            //istek tarihi
+            Font font_istek_tarihi = new Font("Rajdhani", 14,FontStyle.Bold);
+            Label lbl_istek_tarihi = new Label();
+            lbl_istek_tarihi.AutoSize = true;
+            lbl_istek_tarihi.AutoEllipsis = true;
+            lbl_istek_tarihi.UseCompatibleTextRendering = true;
+            lbl_istek_tarihi.ForeColor = Color.Black;
+            lbl_istek_tarihi.Font = font_istek_tarihi;
+            lbl_istek_tarihi.Text = "İstek Tarihi: " + istek_tarihi;
+
+            //istek_aciklaması
+            Font font_istek_aciklamasi = new Font("Rajdhani", 14, FontStyle.Bold);
+            Label lbl_istek_aciklamasi = new Label();
+            lbl_istek_aciklamasi.AutoSize = false;
+            lbl_istek_aciklamasi.Size = new Size(330, 75);
+            lbl_istek_aciklamasi.AutoEllipsis = true;
+            lbl_istek_aciklamasi.UseCompatibleTextRendering = true;
+            lbl_istek_aciklamasi.ForeColor = Color.Black;
+            lbl_istek_aciklamasi.Font = font_istek_aciklamasi;
+            lbl_istek_aciklamasi.Text = "İstek Açıklaması: " + istek_aciklama;
+
+
+            //hizmet bitir buton
+            Button btn_HizmetiBitir = new Button();
+            Font font_button = new Font("Rajdhani", 16);
+            btn_HizmetiBitir.Size = new Size(320, 39);
+            btn_HizmetiBitir.Font = font_button;
+            btn_HizmetiBitir.ForeColor = Color.DarkKhaki;
+            btn_HizmetiBitir.FlatStyle = FlatStyle.Flat;
+            btn_HizmetiBitir.Text = "Hizmeti Bitir";
+            btn_HizmetiBitir.AccessibleName = istek_id.ToString();
+            btn_HizmetiBitir.Tag = usta_id;
+            btn_HizmetiBitir.Top = -30;
+            btn_HizmetiBitir.Click += new EventHandler(this.Hizmet_Bitir_Click);
+
+            //dinamik panel
+            flp.Controls.Add(label_alan_ismi);
+            flp.Controls.Add(label_brans);
+            flp.Controls.Add(lbl_uye_id);
+            flp.Controls.Add(lbl_sehir);
+            flp.Controls.Add(lbl_ilce);
+            flp.Controls.Add(lbl_usta);
+            flp.Controls.Add(lbl_istek_tarihi);
+            flp.Controls.Add(lbl_istek_aciklamasi);
+            flp.Controls.Add(btn_HizmetiBitir);
+
+            //main panel
+            flowLayoutPanel_Istekler.Controls.Add(flp);
+        }
+
+        //HİZMETİ KALDIRMA BUTONU
+        public void Hizmet_Bitir_Click(object sender, EventArgs e)
+        {
+            Button hizmet_bitir = sender as Button;
+            DialogResult ds;
+            ds = MessageBox.Show("Bu işlem şunları içerir;\n- Hizmet sona erer.\n- Usta serbest kalır.\n- İstek, tablodan tamamen kaldırılır.\n\nHizmeti bitirmek istiyorum.", "HELPAS", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(ds==DialogResult.Yes)
+            {
+                try
+                {   
+                    var response = service.Usta_Ata(Convert.ToInt32(hizmet_bitir.Tag), Convert.ToInt32(hizmet_bitir.AccessibleName));
+                    if(response=="ok")
+                    {
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Sunucu ya da Servis hatası", "HELPAS");
+                }
+            }
+
+        }
+
+        //HİZMET VERME BUTONU
+        public void Hizmet_Sagla_Click(object sender, EventArgs e)
+        {
+            Button buton = sender as Button;
+            HizmetSaglaForm H_S_F = new HizmetSaglaForm(buton.Tag.ToString(), buton.AccessibleName);
+            H_S_F.ShowDialog();
+        }
+
+        //BEKLEYEN İSTEKLER SEÇENEĞİ RADİOBUTTON
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            flowLayoutPanel_Istekler.Controls.Clear();
+            BekleyenIstekListele_for_Istekler_Function();
+        }
+
+        //HİZMET SAĞLANAN İSTEKLER SEÇENEĞİ RADİOBUTTON
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            flowLayoutPanel_Istekler.Controls.Clear();
+            HizmetSaglanmis_Istekleri_Listele_Function();
+        }
+
         #endregion
 
 

@@ -48,6 +48,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_Panel_Ismi = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.yorumlar_panel = new System.Windows.Forms.Panel();
@@ -59,8 +60,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.istekler_panel = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel_Istekler = new System.Windows.Forms.FlowLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.ustalar_panel = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -130,15 +132,14 @@
             this.HaberListesiFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.kullanıcılar_panel = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel_UYELER = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.lbl_Panel_Ismi = new System.Windows.Forms.Label();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.button12 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel_UYELER = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -452,6 +453,17 @@
             this.panel2.Size = new System.Drawing.Size(1425, 33);
             this.panel2.TabIndex = 3;
             // 
+            // lbl_Panel_Ismi
+            // 
+            this.lbl_Panel_Ismi.AutoSize = true;
+            this.lbl_Panel_Ismi.Font = new System.Drawing.Font("Rajdhani", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lbl_Panel_Ismi.ForeColor = System.Drawing.Color.Yellow;
+            this.lbl_Panel_Ismi.Location = new System.Drawing.Point(688, 3);
+            this.lbl_Panel_Ismi.Name = "lbl_Panel_Ismi";
+            this.lbl_Panel_Ismi.Size = new System.Drawing.Size(108, 28);
+            this.lbl_Panel_Ismi.TabIndex = 4;
+            this.lbl_Panel_Ismi.Text = "PANEL ISMI";
+            // 
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
@@ -561,37 +573,60 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.radioButton5);
+            this.groupBox2.Controls.Add(this.radioButton4);
+            this.groupBox2.Controls.Add(this.flowLayoutPanel_Istekler);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(18, 25);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1089, 603);
+            this.groupBox2.Size = new System.Drawing.Size(1101, 603);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
-            // comboBox2
+            // radioButton5
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(24, 84);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(260, 21);
-            this.comboBox2.TabIndex = 3;
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.BackColor = System.Drawing.Color.Transparent;
+            this.radioButton5.Font = new System.Drawing.Font("Rajdhani", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioButton5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.radioButton5.Location = new System.Drawing.Point(191, 13);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(224, 32);
+            this.radioButton5.TabIndex = 10;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "Hizmet Sağlanan Istekler";
+            this.radioButton5.UseVisualStyleBackColor = false;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
             // 
-            // comboBox1
+            // radioButton4
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(24, 58);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(260, 21);
-            this.comboBox1.TabIndex = 2;
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.BackColor = System.Drawing.Color.Transparent;
+            this.radioButton4.Font = new System.Drawing.Font("Rajdhani", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioButton4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.radioButton4.Location = new System.Drawing.Point(9, 14);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(158, 32);
+            this.radioButton4.TabIndex = 9;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Bekleyen Istekler";
+            this.radioButton4.UseVisualStyleBackColor = false;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
+            // flowLayoutPanel_Istekler
+            // 
+            this.flowLayoutPanel_Istekler.AutoScroll = true;
+            this.flowLayoutPanel_Istekler.Location = new System.Drawing.Point(6, 51);
+            this.flowLayoutPanel_Istekler.Name = "flowLayoutPanel_Istekler";
+            this.flowLayoutPanel_Istekler.Size = new System.Drawing.Size(1089, 546);
+            this.flowLayoutPanel_Istekler.TabIndex = 8;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(466, 16);
+            this.label8.Location = new System.Drawing.Point(940, 16);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(143, 20);
             this.label8.TabIndex = 1;
@@ -647,7 +682,7 @@
             // 
             this.groupBox9.Controls.Add(this.button_iptal);
             this.groupBox9.Controls.Add(this.button_tamamla);
-            this.groupBox9.Location = new System.Drawing.Point(793, 240);
+            this.groupBox9.Location = new System.Drawing.Point(818, 240);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(135, 81);
             this.groupBox9.TabIndex = 34;
@@ -685,7 +720,7 @@
             this.button_UstaSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_UstaSil.Font = new System.Drawing.Font("Rajdhani", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button_UstaSil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button_UstaSil.Location = new System.Drawing.Point(950, 188);
+            this.button_UstaSil.Location = new System.Drawing.Point(975, 188);
             this.button_UstaSil.Name = "button_UstaSil";
             this.button_UstaSil.Size = new System.Drawing.Size(103, 43);
             this.button_UstaSil.TabIndex = 33;
@@ -697,7 +732,7 @@
             this.button_UstaEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_UstaEkle.Font = new System.Drawing.Font("Rajdhani", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button_UstaEkle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button_UstaEkle.Location = new System.Drawing.Point(806, 188);
+            this.button_UstaEkle.Location = new System.Drawing.Point(831, 188);
             this.button_UstaEkle.Name = "button_UstaEkle";
             this.button_UstaEkle.Size = new System.Drawing.Size(103, 43);
             this.button_UstaEkle.TabIndex = 32;
@@ -710,7 +745,7 @@
             this.button_UstaTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_UstaTemizle.Font = new System.Drawing.Font("Rajdhani", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button_UstaTemizle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button_UstaTemizle.Location = new System.Drawing.Point(950, 103);
+            this.button_UstaTemizle.Location = new System.Drawing.Point(975, 103);
             this.button_UstaTemizle.Name = "button_UstaTemizle";
             this.button_UstaTemizle.Size = new System.Drawing.Size(103, 43);
             this.button_UstaTemizle.TabIndex = 31;
@@ -724,7 +759,7 @@
             this.comboBox_Brans.Font = new System.Drawing.Font("Rajdhani", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.comboBox_Brans.ForeColor = System.Drawing.SystemColors.Info;
             this.comboBox_Brans.FormattingEnabled = true;
-            this.comboBox_Brans.Location = new System.Drawing.Point(553, 197);
+            this.comboBox_Brans.Location = new System.Drawing.Point(578, 197);
             this.comboBox_Brans.Name = "comboBox_Brans";
             this.comboBox_Brans.Size = new System.Drawing.Size(201, 26);
             this.comboBox_Brans.TabIndex = 30;
@@ -735,7 +770,7 @@
             this.comboBox_Alanlar.Font = new System.Drawing.Font("Rajdhani", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.comboBox_Alanlar.ForeColor = System.Drawing.SystemColors.Info;
             this.comboBox_Alanlar.FormattingEnabled = true;
-            this.comboBox_Alanlar.Location = new System.Drawing.Point(553, 168);
+            this.comboBox_Alanlar.Location = new System.Drawing.Point(578, 168);
             this.comboBox_Alanlar.Name = "comboBox_Alanlar";
             this.comboBox_Alanlar.Size = new System.Drawing.Size(201, 26);
             this.comboBox_Alanlar.TabIndex = 29;
@@ -747,7 +782,7 @@
             this.comboBox_Ilceler.Font = new System.Drawing.Font("Rajdhani", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.comboBox_Ilceler.ForeColor = System.Drawing.SystemColors.Info;
             this.comboBox_Ilceler.FormattingEnabled = true;
-            this.comboBox_Ilceler.Location = new System.Drawing.Point(553, 140);
+            this.comboBox_Ilceler.Location = new System.Drawing.Point(578, 140);
             this.comboBox_Ilceler.Name = "comboBox_Ilceler";
             this.comboBox_Ilceler.Size = new System.Drawing.Size(201, 26);
             this.comboBox_Ilceler.TabIndex = 28;
@@ -758,7 +793,7 @@
             this.comboBox_Sehirler.Font = new System.Drawing.Font("Rajdhani", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.comboBox_Sehirler.ForeColor = System.Drawing.SystemColors.Info;
             this.comboBox_Sehirler.FormattingEnabled = true;
-            this.comboBox_Sehirler.Location = new System.Drawing.Point(553, 111);
+            this.comboBox_Sehirler.Location = new System.Drawing.Point(578, 111);
             this.comboBox_Sehirler.Name = "comboBox_Sehirler";
             this.comboBox_Sehirler.Size = new System.Drawing.Size(201, 26);
             this.comboBox_Sehirler.TabIndex = 27;
@@ -769,7 +804,7 @@
             this.button_UstaKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_UstaKaydet.Font = new System.Drawing.Font("Rajdhani", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button_UstaKaydet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button_UstaKaydet.Location = new System.Drawing.Point(806, 103);
+            this.button_UstaKaydet.Location = new System.Drawing.Point(831, 103);
             this.button_UstaKaydet.Name = "button_UstaKaydet";
             this.button_UstaKaydet.Size = new System.Drawing.Size(103, 43);
             this.button_UstaKaydet.TabIndex = 26;
@@ -792,7 +827,7 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label27.ForeColor = System.Drawing.Color.Lime;
-            this.label27.Location = new System.Drawing.Point(507, 285);
+            this.label27.Location = new System.Drawing.Point(532, 285);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(42, 24);
             this.label27.TabIndex = 24;
@@ -803,7 +838,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label26.ForeColor = System.Drawing.Color.Lime;
-            this.label26.Location = new System.Drawing.Point(504, 113);
+            this.label26.Location = new System.Drawing.Point(529, 113);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(43, 24);
             this.label26.TabIndex = 23;
@@ -814,7 +849,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label25.ForeColor = System.Drawing.Color.Lime;
-            this.label25.Location = new System.Drawing.Point(491, 228);
+            this.label25.Location = new System.Drawing.Point(516, 228);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(57, 24);
             this.label25.TabIndex = 22;
@@ -825,7 +860,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label24.ForeColor = System.Drawing.Color.Lime;
-            this.label24.Location = new System.Drawing.Point(499, 256);
+            this.label24.Location = new System.Drawing.Point(524, 256);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(48, 24);
             this.label24.TabIndex = 21;
@@ -836,7 +871,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label23.ForeColor = System.Drawing.Color.Lime;
-            this.label23.Location = new System.Drawing.Point(516, 142);
+            this.label23.Location = new System.Drawing.Point(541, 142);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(31, 24);
             this.label23.TabIndex = 20;
@@ -847,7 +882,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label22.ForeColor = System.Drawing.Color.Lime;
-            this.label22.Location = new System.Drawing.Point(429, 312);
+            this.label22.Location = new System.Drawing.Point(454, 312);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(120, 24);
             this.label22.TabIndex = 19;
@@ -858,7 +893,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label21.ForeColor = System.Drawing.Color.Lime;
-            this.label21.Location = new System.Drawing.Point(500, 198);
+            this.label21.Location = new System.Drawing.Point(525, 198);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(47, 24);
             this.label21.TabIndex = 18;
@@ -869,7 +904,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label20.ForeColor = System.Drawing.Color.Lime;
-            this.label20.Location = new System.Drawing.Point(509, 168);
+            this.label20.Location = new System.Drawing.Point(534, 168);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(38, 24);
             this.label20.TabIndex = 17;
@@ -880,7 +915,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label19.ForeColor = System.Drawing.Color.Lime;
-            this.label19.Location = new System.Drawing.Point(484, 85);
+            this.label19.Location = new System.Drawing.Point(509, 85);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(64, 24);
             this.label19.TabIndex = 16;
@@ -891,7 +926,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label18.ForeColor = System.Drawing.Color.Lime;
-            this.label18.Location = new System.Drawing.Point(511, 55);
+            this.label18.Location = new System.Drawing.Point(536, 55);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(36, 24);
             this.label18.TabIndex = 15;
@@ -902,7 +937,7 @@
             this.textBox_musaitlik.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.textBox_musaitlik.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox_musaitlik.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox_musaitlik.Location = new System.Drawing.Point(553, 312);
+            this.textBox_musaitlik.Location = new System.Drawing.Point(578, 312);
             this.textBox_musaitlik.Name = "textBox_musaitlik";
             this.textBox_musaitlik.Size = new System.Drawing.Size(201, 23);
             this.textBox_musaitlik.TabIndex = 13;
@@ -913,7 +948,7 @@
             this.textBox_puan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.textBox_puan.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox_puan.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox_puan.Location = new System.Drawing.Point(553, 285);
+            this.textBox_puan.Location = new System.Drawing.Point(578, 285);
             this.textBox_puan.Name = "textBox_puan";
             this.textBox_puan.Size = new System.Drawing.Size(201, 23);
             this.textBox_puan.TabIndex = 12;
@@ -924,7 +959,7 @@
             this.textBox_mail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.textBox_mail.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox_mail.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox_mail.Location = new System.Drawing.Point(553, 257);
+            this.textBox_mail.Location = new System.Drawing.Point(578, 257);
             this.textBox_mail.Name = "textBox_mail";
             this.textBox_mail.Size = new System.Drawing.Size(201, 23);
             this.textBox_mail.TabIndex = 11;
@@ -935,7 +970,7 @@
             this.textBox_telefon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.textBox_telefon.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox_telefon.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox_telefon.Location = new System.Drawing.Point(552, 229);
+            this.textBox_telefon.Location = new System.Drawing.Point(577, 229);
             this.textBox_telefon.Name = "textBox_telefon";
             this.textBox_telefon.Size = new System.Drawing.Size(201, 23);
             this.textBox_telefon.TabIndex = 10;
@@ -946,7 +981,7 @@
             this.textBox_soyisim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.textBox_soyisim.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox_soyisim.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox_soyisim.Location = new System.Drawing.Point(552, 85);
+            this.textBox_soyisim.Location = new System.Drawing.Point(577, 85);
             this.textBox_soyisim.Name = "textBox_soyisim";
             this.textBox_soyisim.Size = new System.Drawing.Size(201, 23);
             this.textBox_soyisim.TabIndex = 5;
@@ -957,7 +992,7 @@
             this.textBox_isim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.textBox_isim.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox_isim.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox_isim.Location = new System.Drawing.Point(552, 56);
+            this.textBox_isim.Location = new System.Drawing.Point(577, 56);
             this.textBox_isim.Name = "textBox_isim";
             this.textBox_isim.Size = new System.Drawing.Size(201, 23);
             this.textBox_isim.TabIndex = 4;
@@ -1088,7 +1123,7 @@
             this.flowpanel_USTA_MAIN.AutoScroll = true;
             this.flowpanel_USTA_MAIN.Location = new System.Drawing.Point(4, 156);
             this.flowpanel_USTA_MAIN.Name = "flowpanel_USTA_MAIN";
-            this.flowpanel_USTA_MAIN.Size = new System.Drawing.Size(417, 466);
+            this.flowpanel_USTA_MAIN.Size = new System.Drawing.Size(439, 466);
             this.flowpanel_USTA_MAIN.TabIndex = 2;
             // 
             // label7
@@ -1096,7 +1131,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(487, 25);
+            this.label7.Location = new System.Drawing.Point(512, 25);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(342, 20);
             this.label7.TabIndex = 1;
@@ -1344,7 +1379,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(462, 15);
+            this.label9.Location = new System.Drawing.Point(488, 15);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(110, 20);
             this.label9.TabIndex = 0;
@@ -1367,7 +1402,7 @@
             this.HaberListesiFlowPanel.Cursor = System.Windows.Forms.Cursors.Cross;
             this.HaberListesiFlowPanel.Location = new System.Drawing.Point(6, 16);
             this.HaberListesiFlowPanel.Name = "HaberListesiFlowPanel";
-            this.HaberListesiFlowPanel.Size = new System.Drawing.Size(450, 586);
+            this.HaberListesiFlowPanel.Size = new System.Drawing.Size(472, 586);
             this.HaberListesiFlowPanel.TabIndex = 1;
             // 
             // kullanıcılar_panel
@@ -1393,26 +1428,63 @@
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             // 
-            // radioButton1
+            // radioButton3
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Rajdhani", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.radioButton1.Location = new System.Drawing.Point(6, 45);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(164, 35);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Tüm Kullanıcılar";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Rajdhani", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioButton3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.radioButton3.Location = new System.Drawing.Point(366, 44);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(88, 35);
+            this.radioButton3.TabIndex = 5;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Filtrele";
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel_UYELER
+            // groupBox10
             // 
-            this.flowLayoutPanel_UYELER.Location = new System.Drawing.Point(11, 116);
-            this.flowLayoutPanel_UYELER.Name = "flowLayoutPanel_UYELER";
-            this.flowLayoutPanel_UYELER.Size = new System.Drawing.Size(720, 469);
-            this.flowLayoutPanel_UYELER.TabIndex = 2;
+            this.groupBox10.Controls.Add(this.label14);
+            this.groupBox10.Controls.Add(this.textBox2);
+            this.groupBox10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.groupBox10.Location = new System.Drawing.Point(473, 10);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(258, 99);
+            this.groupBox10.TabIndex = 4;
+            this.groupBox10.TabStop = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label14.Location = new System.Drawing.Point(96, 14);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(60, 24);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "E-MAIL";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.textBox2.Font = new System.Drawing.Font("Rajdhani", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(6, 46);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(245, 26);
+            this.textBox2.TabIndex = 7;
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.GreenYellow;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Rajdhani", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button12.ForeColor = System.Drawing.Color.Black;
+            this.button12.Location = new System.Drawing.Point(875, 22);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(64, 85);
+            this.button12.TabIndex = 6;
+            this.button12.Text = "Uygula";
+            this.button12.UseVisualStyleBackColor = false;
             // 
             // radioButton2
             // 
@@ -1428,74 +1500,27 @@
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // lbl_Panel_Ismi
+            // flowLayoutPanel_UYELER
             // 
-            this.lbl_Panel_Ismi.AutoSize = true;
-            this.lbl_Panel_Ismi.Font = new System.Drawing.Font("Rajdhani", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lbl_Panel_Ismi.ForeColor = System.Drawing.Color.Yellow;
-            this.lbl_Panel_Ismi.Location = new System.Drawing.Point(688, 3);
-            this.lbl_Panel_Ismi.Name = "lbl_Panel_Ismi";
-            this.lbl_Panel_Ismi.Size = new System.Drawing.Size(108, 28);
-            this.lbl_Panel_Ismi.TabIndex = 4;
-            this.lbl_Panel_Ismi.Text = "PANEL ISMI";
+            this.flowLayoutPanel_UYELER.AutoScroll = true;
+            this.flowLayoutPanel_UYELER.Location = new System.Drawing.Point(11, 116);
+            this.flowLayoutPanel_UYELER.Name = "flowLayoutPanel_UYELER";
+            this.flowLayoutPanel_UYELER.Size = new System.Drawing.Size(734, 469);
+            this.flowLayoutPanel_UYELER.TabIndex = 2;
             // 
-            // groupBox10
+            // radioButton1
             // 
-            this.groupBox10.Controls.Add(this.label14);
-            this.groupBox10.Controls.Add(this.textBox2);
-            this.groupBox10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.groupBox10.Location = new System.Drawing.Point(473, 10);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(258, 99);
-            this.groupBox10.TabIndex = 4;
-            this.groupBox10.TabStop = false;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Rajdhani", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.radioButton3.Location = new System.Drawing.Point(366, 44);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(88, 35);
-            this.radioButton3.TabIndex = 5;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Filtrele";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.GreenYellow;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Rajdhani", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button12.ForeColor = System.Drawing.Color.Black;
-            this.button12.Location = new System.Drawing.Point(875, 22);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(64, 85);
-            this.button12.TabIndex = 6;
-            this.button12.Text = "Uygula";
-            this.button12.UseVisualStyleBackColor = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.textBox2.Font = new System.Drawing.Font("Rajdhani", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(6, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(245, 26);
-            this.textBox2.TabIndex = 7;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label14.Location = new System.Drawing.Point(96, 14);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(60, 24);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "E-MAIL";
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Rajdhani", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.radioButton1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.radioButton1.Location = new System.Drawing.Point(6, 45);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(164, 35);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Tüm Kullanıcılar";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // Form2
             // 
@@ -1504,13 +1529,13 @@
             this.ClientSize = new System.Drawing.Size(1425, 679);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.kullanıcılar_panel);
             this.Controls.Add(this.istekler_panel);
             this.Controls.Add(this.haberler_panel);
             this.Controls.Add(this.yorumlar_panel);
             this.Controls.Add(this.alanlar_panel);
             this.Controls.Add(this.geri_bildirimler_panel);
             this.Controls.Add(this.ustalar_panel);
+            this.Controls.Add(this.kullanıcılar_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1657,8 +1682,6 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button button_tamamla;
         private System.Windows.Forms.Button button_iptal;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_Geri_Bildirim_MAIN;
         public System.Windows.Forms.Label label_geri_bildirim_sayisi;
         public System.Windows.Forms.Label label_gb_sayisi;
@@ -1671,5 +1694,8 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_Istekler;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton4;
     }
 }
