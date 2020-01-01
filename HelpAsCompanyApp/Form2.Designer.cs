@@ -53,17 +53,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.yorumlar_panel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label_tarih = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label_Usta_Ismi_Yorumlar = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel_UstaYorumları = new System.Windows.Forms.FlowLayoutPanel();
+            this.button_Yorum_Kaldir_Ustalar = new System.Windows.Forms.Button();
+            this.label_uye_ismi = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel_YorumYapılan_Ustalar = new System.Windows.Forms.FlowLayoutPanel();
             this.istekler_panel = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel_Istekler = new System.Windows.Forms.FlowLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
             this.ustalar_panel = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -111,13 +115,11 @@
             this.label_AltAlan = new System.Windows.Forms.Label();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
             this.geri_bildirimler_panel = new System.Windows.Forms.Panel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label_gb_sayisi = new System.Windows.Forms.Label();
             this.flowLayoutPanel_Geri_Bildirim_MAIN = new System.Windows.Forms.FlowLayoutPanel();
             this.label_geri_bildirim_sayisi = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.haberler_panel = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -127,16 +129,10 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.HaberListesiFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.kullanıcılar_panel = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button12 = new System.Windows.Forms.Button();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel_UYELER = new System.Windows.Forms.FlowLayoutPanel();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -167,7 +163,6 @@
             this.groupBox3.SuspendLayout();
             this.kullanıcılar_panel.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -496,11 +491,16 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button8);
-            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label_tarih);
+            this.groupBox1.Controls.Add(this.label32);
+            this.groupBox1.Controls.Add(this.label_Usta_Ismi_Yorumlar);
+            this.groupBox1.Controls.Add(this.label30);
+            this.groupBox1.Controls.Add(this.label29);
+            this.groupBox1.Controls.Add(this.flowLayoutPanel_UstaYorumları);
+            this.groupBox1.Controls.Add(this.button_Yorum_Kaldir_Ustalar);
+            this.groupBox1.Controls.Add(this.label_uye_ismi);
             this.groupBox1.Controls.Add(this.richTextBox1);
-            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.flowLayoutPanel_YorumYapılan_Ustalar);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Location = new System.Drawing.Point(18, 29);
             this.groupBox1.Name = "groupBox1";
@@ -508,59 +508,119 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // button8
+            // label_tarih
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(211)))), ((int)(((byte)(102)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Rajdhani", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button8.Location = new System.Drawing.Point(719, 469);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(268, 40);
-            this.button8.TabIndex = 4;
-            this.button8.Text = "Yorumu Kaldır";
-            this.button8.UseVisualStyleBackColor = false;
+            this.label_tarih.Font = new System.Drawing.Font("Rajdhani", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label_tarih.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label_tarih.Location = new System.Drawing.Point(782, 80);
+            this.label_tarih.Name = "label_tarih";
+            this.label_tarih.Size = new System.Drawing.Size(315, 18);
+            this.label_tarih.TabIndex = 10;
+            this.label_tarih.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_tarih.Visible = false;
             // 
-            // label10
+            // label32
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Rajdhani", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.ForeColor = System.Drawing.Color.Gold;
-            this.label10.Location = new System.Drawing.Point(787, 57);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(128, 31);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Ahmet Arslan";
+            this.label32.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label32.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label32.Location = new System.Drawing.Point(784, 30);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(315, 20);
+            this.label32.TabIndex = 9;
+            this.label32.Text = "Yorum Yapanın Ismi";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label32.Visible = false;
+            // 
+            // label_Usta_Ismi_Yorumlar
+            // 
+            this.label_Usta_Ismi_Yorumlar.Font = new System.Drawing.Font("Rajdhani", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label_Usta_Ismi_Yorumlar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(211)))), ((int)(((byte)(102)))));
+            this.label_Usta_Ismi_Yorumlar.Location = new System.Drawing.Point(380, 48);
+            this.label_Usta_Ismi_Yorumlar.Name = "label_Usta_Ismi_Yorumlar";
+            this.label_Usta_Ismi_Yorumlar.Size = new System.Drawing.Size(370, 28);
+            this.label_Usta_Ismi_Yorumlar.TabIndex = 8;
+            this.label_Usta_Ismi_Yorumlar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Usta_Ismi_Yorumlar.Visible = false;
+            // 
+            // label30
+            // 
+            this.label30.Font = new System.Drawing.Font("Rajdhani", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label30.Location = new System.Drawing.Point(381, 11);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(369, 28);
+            this.label30.TabIndex = 7;
+            this.label30.Text = "Ustanın Yorumları";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label30.Visible = false;
+            // 
+            // label29
+            // 
+            this.label29.Font = new System.Drawing.Font("Rajdhani", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label29.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label29.Location = new System.Drawing.Point(6, 10);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(369, 22);
+            this.label29.TabIndex = 6;
+            this.label29.Text = "Yorum Yapılan Ustalar";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // flowLayoutPanel_UstaYorumları
+            // 
+            this.flowLayoutPanel_UstaYorumları.AutoScroll = true;
+            this.flowLayoutPanel_UstaYorumları.Location = new System.Drawing.Point(380, 97);
+            this.flowLayoutPanel_UstaYorumları.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel_UstaYorumları.Name = "flowLayoutPanel_UstaYorumları";
+            this.flowLayoutPanel_UstaYorumları.Size = new System.Drawing.Size(370, 497);
+            this.flowLayoutPanel_UstaYorumları.TabIndex = 5;
+            this.flowLayoutPanel_UstaYorumları.Visible = false;
+            // 
+            // button_Yorum_Kaldir_Ustalar
+            // 
+            this.button_Yorum_Kaldir_Ustalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(211)))), ((int)(((byte)(102)))));
+            this.button_Yorum_Kaldir_Ustalar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Yorum_Kaldir_Ustalar.Font = new System.Drawing.Font("Rajdhani", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button_Yorum_Kaldir_Ustalar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button_Yorum_Kaldir_Ustalar.Location = new System.Drawing.Point(810, 456);
+            this.button_Yorum_Kaldir_Ustalar.Name = "button_Yorum_Kaldir_Ustalar";
+            this.button_Yorum_Kaldir_Ustalar.Size = new System.Drawing.Size(268, 40);
+            this.button_Yorum_Kaldir_Ustalar.TabIndex = 4;
+            this.button_Yorum_Kaldir_Ustalar.Text = "Yorumu Kaldır";
+            this.button_Yorum_Kaldir_Ustalar.UseVisualStyleBackColor = false;
+            this.button_Yorum_Kaldir_Ustalar.Visible = false;
+            this.button_Yorum_Kaldir_Ustalar.Click += new System.EventHandler(this.button_Yorum_Kaldir_Ustalar_Click);
+            // 
+            // label_uye_ismi
+            // 
+            this.label_uye_ismi.Font = new System.Drawing.Font("Rajdhani", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label_uye_ismi.ForeColor = System.Drawing.Color.Gold;
+            this.label_uye_ismi.Location = new System.Drawing.Point(784, 50);
+            this.label_uye_ismi.Name = "label_uye_ismi";
+            this.label_uye_ismi.Size = new System.Drawing.Size(315, 31);
+            this.label_uye_ismi.TabIndex = 3;
+            this.label_uye_ismi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_uye_ismi.Visible = false;
             // 
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.richTextBox1.Font = new System.Drawing.Font("Rajdhani", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.richTextBox1.Location = new System.Drawing.Point(631, 102);
+            this.richTextBox1.Location = new System.Drawing.Point(784, 115);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(448, 345);
+            this.richTextBox1.Size = new System.Drawing.Size(315, 324);
             this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.richTextBox1.Text = "";
+            this.richTextBox1.Visible = false;
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanel_YorumYapılan_Ustalar
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 57);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(594, 550);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(474, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "YORUMLAR PANEL";
+            this.flowLayoutPanel_YorumYapılan_Ustalar.AutoScroll = true;
+            this.flowLayoutPanel_YorumYapılan_Ustalar.Location = new System.Drawing.Point(5, 46);
+            this.flowLayoutPanel_YorumYapılan_Ustalar.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel_YorumYapılan_Ustalar.Name = "flowLayoutPanel_YorumYapılan_Ustalar";
+            this.flowLayoutPanel_YorumYapılan_Ustalar.Size = new System.Drawing.Size(370, 548);
+            this.flowLayoutPanel_YorumYapılan_Ustalar.TabIndex = 1;
             // 
             // istekler_panel
             // 
@@ -576,7 +636,6 @@
             this.groupBox2.Controls.Add(this.radioButton5);
             this.groupBox2.Controls.Add(this.radioButton4);
             this.groupBox2.Controls.Add(this.flowLayoutPanel_Istekler);
-            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Location = new System.Drawing.Point(18, 25);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1101, 603);
@@ -620,17 +679,6 @@
             this.flowLayoutPanel_Istekler.Name = "flowLayoutPanel_Istekler";
             this.flowLayoutPanel_Istekler.Size = new System.Drawing.Size(1089, 546);
             this.flowLayoutPanel_Istekler.TabIndex = 8;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(940, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 20);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "İSTEKLER PANEL";
             // 
             // ustalar_panel
             // 
@@ -810,6 +858,7 @@
             this.button_UstaKaydet.TabIndex = 26;
             this.button_UstaKaydet.Text = "Kaydet";
             this.button_UstaKaydet.UseVisualStyleBackColor = true;
+            this.button_UstaKaydet.Click += new System.EventHandler(this.button_UstaKaydet_Click);
             // 
             // label28
             // 
@@ -1151,7 +1200,6 @@
             this.groupBox5.Controls.Add(this.label_AltAlan);
             this.groupBox5.Controls.Add(this.flowLayoutPanel3);
             this.groupBox5.Controls.Add(this.flowLayoutPanel2);
-            this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Location = new System.Drawing.Point(18, 20);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(1095, 614);
@@ -1185,17 +1233,6 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(884, 275);
             this.flowLayoutPanel2.TabIndex = 2;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(470, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(139, 20);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "ALANLAR PANEL";
-            // 
             // geri_bildirimler_panel
             // 
             this.geri_bildirimler_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
@@ -1210,7 +1247,6 @@
             this.groupBox6.Controls.Add(this.label_gb_sayisi);
             this.groupBox6.Controls.Add(this.flowLayoutPanel_Geri_Bildirim_MAIN);
             this.groupBox6.Controls.Add(this.label_geri_bildirim_sayisi);
-            this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Location = new System.Drawing.Point(18, 33);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(1095, 601);
@@ -1233,10 +1269,9 @@
             this.flowLayoutPanel_Geri_Bildirim_MAIN.AutoScroll = true;
             this.flowLayoutPanel_Geri_Bildirim_MAIN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel_Geri_Bildirim_MAIN.BackColor = System.Drawing.Color.Gainsboro;
-            this.flowLayoutPanel_Geri_Bildirim_MAIN.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel_Geri_Bildirim_MAIN.Location = new System.Drawing.Point(29, 62);
+            this.flowLayoutPanel_Geri_Bildirim_MAIN.Location = new System.Drawing.Point(12, 62);
             this.flowLayoutPanel_Geri_Bildirim_MAIN.Name = "flowLayoutPanel_Geri_Bildirim_MAIN";
-            this.flowLayoutPanel_Geri_Bildirim_MAIN.Size = new System.Drawing.Size(1038, 515);
+            this.flowLayoutPanel_Geri_Bildirim_MAIN.Size = new System.Drawing.Size(1066, 515);
             this.flowLayoutPanel_Geri_Bildirim_MAIN.TabIndex = 4;
             // 
             // label_geri_bildirim_sayisi
@@ -1249,17 +1284,6 @@
             this.label_geri_bildirim_sayisi.Size = new System.Drawing.Size(166, 31);
             this.label_geri_bildirim_sayisi.TabIndex = 3;
             this.label_geri_bildirim_sayisi.Text = "Geri bildirim sayısı";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(462, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(182, 20);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "GERİ BİLDİRİM PANEL";
             // 
             // haberler_panel
             // 
@@ -1279,7 +1303,6 @@
             this.groupBox3.Controls.Add(this.button10);
             this.groupBox3.Controls.Add(this.button9);
             this.groupBox3.Controls.Add(this.richTextBox2);
-            this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Controls.Add(this.HaberListesiFlowPanel);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -1374,17 +1397,6 @@
             this.richTextBox2.TabIndex = 3;
             this.richTextBox2.Text = "";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(488, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 20);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "haberler panel";
-            // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
@@ -1416,9 +1428,6 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.radioButton3);
-            this.groupBox7.Controls.Add(this.groupBox10);
-            this.groupBox7.Controls.Add(this.button12);
             this.groupBox7.Controls.Add(this.radioButton2);
             this.groupBox7.Controls.Add(this.flowLayoutPanel_UYELER);
             this.groupBox7.Controls.Add(this.radioButton1);
@@ -1428,70 +1437,12 @@
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Rajdhani", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButton3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.radioButton3.Location = new System.Drawing.Point(366, 44);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(88, 35);
-            this.radioButton3.TabIndex = 5;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Filtrele";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.label14);
-            this.groupBox10.Controls.Add(this.textBox2);
-            this.groupBox10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.groupBox10.Location = new System.Drawing.Point(473, 10);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(258, 99);
-            this.groupBox10.TabIndex = 4;
-            this.groupBox10.TabStop = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Rajdhani", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label14.Location = new System.Drawing.Point(96, 14);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(60, 24);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "E-MAIL";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.textBox2.Font = new System.Drawing.Font("Rajdhani", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(6, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(245, 26);
-            this.textBox2.TabIndex = 7;
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.GreenYellow;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Rajdhani", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button12.ForeColor = System.Drawing.Color.Black;
-            this.button12.Location = new System.Drawing.Point(875, 22);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(64, 85);
-            this.button12.TabIndex = 6;
-            this.button12.Text = "Uygula";
-            this.button12.UseVisualStyleBackColor = false;
-            // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Rajdhani", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.radioButton2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.radioButton2.Location = new System.Drawing.Point(178, 46);
+            this.radioButton2.Location = new System.Drawing.Point(531, 48);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(182, 35);
             this.radioButton2.TabIndex = 3;
@@ -1503,9 +1454,10 @@
             // flowLayoutPanel_UYELER
             // 
             this.flowLayoutPanel_UYELER.AutoScroll = true;
+            this.flowLayoutPanel_UYELER.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.flowLayoutPanel_UYELER.Location = new System.Drawing.Point(11, 116);
             this.flowLayoutPanel_UYELER.Name = "flowLayoutPanel_UYELER";
-            this.flowLayoutPanel_UYELER.Size = new System.Drawing.Size(734, 469);
+            this.flowLayoutPanel_UYELER.Size = new System.Drawing.Size(1083, 469);
             this.flowLayoutPanel_UYELER.TabIndex = 2;
             // 
             // radioButton1
@@ -1513,7 +1465,7 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Rajdhani", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.radioButton1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.radioButton1.Location = new System.Drawing.Point(6, 45);
+            this.radioButton1.Location = new System.Drawing.Point(359, 47);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(164, 35);
             this.radioButton1.TabIndex = 1;
@@ -1529,13 +1481,13 @@
             this.ClientSize = new System.Drawing.Size(1425, 679);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.istekler_panel);
-            this.Controls.Add(this.haberler_panel);
             this.Controls.Add(this.yorumlar_panel);
             this.Controls.Add(this.alanlar_panel);
             this.Controls.Add(this.geri_bildirimler_panel);
             this.Controls.Add(this.ustalar_panel);
             this.Controls.Add(this.kullanıcılar_panel);
+            this.Controls.Add(this.istekler_panel);
+            this.Controls.Add(this.haberler_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1556,7 +1508,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.yorumlar_panel.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.istekler_panel.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -1578,8 +1529,6 @@
             this.kullanıcılar_panel.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1610,13 +1559,8 @@
         private System.Windows.Forms.Panel ustalar_panel;
         private System.Windows.Forms.Panel alanlar_panel;
         private System.Windows.Forms.Panel geri_bildirimler_panel;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel haberler_panel;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -1625,9 +1569,9 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Button button7;
-        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_YorumYapılan_Ustalar;
+        private System.Windows.Forms.Button button_Yorum_Kaldir_Ustalar;
+        private System.Windows.Forms.Label label_uye_ismi;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
@@ -1689,13 +1633,14 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_UYELER;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label lbl_Panel_Ismi;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_Istekler;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label_Usta_Ismi_Yorumlar;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_UstaYorumları;
+        private System.Windows.Forms.Label label_tarih;
     }
 }

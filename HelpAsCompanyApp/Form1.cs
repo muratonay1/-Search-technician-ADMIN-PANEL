@@ -70,7 +70,7 @@ namespace HelpAsCompanyApp
                 }
                 else
                 {
-                    return "ok";
+                    return "err";
                 }
             }
             catch (Exception ex)

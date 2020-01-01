@@ -459,6 +459,107 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Uye_Kisisel_Istek_Listesi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UYE_ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Uye_Kisisel_Istek_ListesiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Uye_Kisisel_Istek_ListesiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mobil_Ban_Sorgula">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mobil_Ban_SorgulaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mobil_Ban_SorgulaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mobil_Kayıt_Ol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soyad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sehir" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ilce" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sifre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mobil_Kayıt_OlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mobil_Kayıt_OlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Usta_Goruntule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Usta_GoruntuleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usta_GoruntuleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Hizmet_Sonlandir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="usta_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="istek_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Hizmet_SonlandirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Hizmet_SonlandirResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Usta_Yorumlari_Mobil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usta_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Usta_Yorumlari_MobilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usta_Yorumlari_MobilResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Yorum_Yapılan_Ustalar">
+        <s:complexType />
+      </s:element>
+      <s:element name="Yorum_Yapılan_UstalarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Yorum_Yapılan_UstalarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="IlceListesiSoapIn">
@@ -653,6 +754,48 @@
   <wsdl:message name="Usta_Musaitlik_DegistirSoapOut">
     <wsdl:part name="parameters" element="tns:Usta_Musaitlik_DegistirResponse" />
   </wsdl:message>
+  <wsdl:message name="Uye_Kisisel_Istek_ListesiSoapIn">
+    <wsdl:part name="parameters" element="tns:Uye_Kisisel_Istek_Listesi" />
+  </wsdl:message>
+  <wsdl:message name="Uye_Kisisel_Istek_ListesiSoapOut">
+    <wsdl:part name="parameters" element="tns:Uye_Kisisel_Istek_ListesiResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mobil_Ban_SorgulaSoapIn">
+    <wsdl:part name="parameters" element="tns:Mobil_Ban_Sorgula" />
+  </wsdl:message>
+  <wsdl:message name="Mobil_Ban_SorgulaSoapOut">
+    <wsdl:part name="parameters" element="tns:Mobil_Ban_SorgulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mobil_Kayıt_OlSoapIn">
+    <wsdl:part name="parameters" element="tns:Mobil_Kayıt_Ol" />
+  </wsdl:message>
+  <wsdl:message name="Mobil_Kayıt_OlSoapOut">
+    <wsdl:part name="parameters" element="tns:Mobil_Kayıt_OlResponse" />
+  </wsdl:message>
+  <wsdl:message name="Usta_GoruntuleSoapIn">
+    <wsdl:part name="parameters" element="tns:Usta_Goruntule" />
+  </wsdl:message>
+  <wsdl:message name="Usta_GoruntuleSoapOut">
+    <wsdl:part name="parameters" element="tns:Usta_GoruntuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="Hizmet_SonlandirSoapIn">
+    <wsdl:part name="parameters" element="tns:Hizmet_Sonlandir" />
+  </wsdl:message>
+  <wsdl:message name="Hizmet_SonlandirSoapOut">
+    <wsdl:part name="parameters" element="tns:Hizmet_SonlandirResponse" />
+  </wsdl:message>
+  <wsdl:message name="Usta_Yorumlari_MobilSoapIn">
+    <wsdl:part name="parameters" element="tns:Usta_Yorumlari_Mobil" />
+  </wsdl:message>
+  <wsdl:message name="Usta_Yorumlari_MobilSoapOut">
+    <wsdl:part name="parameters" element="tns:Usta_Yorumlari_MobilResponse" />
+  </wsdl:message>
+  <wsdl:message name="Yorum_Yapılan_UstalarSoapIn">
+    <wsdl:part name="parameters" element="tns:Yorum_Yapılan_Ustalar" />
+  </wsdl:message>
+  <wsdl:message name="Yorum_Yapılan_UstalarSoapOut">
+    <wsdl:part name="parameters" element="tns:Yorum_Yapılan_UstalarResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebService1Soap">
     <wsdl:operation name="IlceListesi">
       <wsdl:input message="tns:IlceListesiSoapIn" />
@@ -781,6 +924,34 @@
     <wsdl:operation name="Usta_Musaitlik_Degistir">
       <wsdl:input message="tns:Usta_Musaitlik_DegistirSoapIn" />
       <wsdl:output message="tns:Usta_Musaitlik_DegistirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Uye_Kisisel_Istek_Listesi">
+      <wsdl:input message="tns:Uye_Kisisel_Istek_ListesiSoapIn" />
+      <wsdl:output message="tns:Uye_Kisisel_Istek_ListesiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mobil_Ban_Sorgula">
+      <wsdl:input message="tns:Mobil_Ban_SorgulaSoapIn" />
+      <wsdl:output message="tns:Mobil_Ban_SorgulaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mobil_Kayıt_Ol">
+      <wsdl:input message="tns:Mobil_Kayıt_OlSoapIn" />
+      <wsdl:output message="tns:Mobil_Kayıt_OlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Goruntule">
+      <wsdl:input message="tns:Usta_GoruntuleSoapIn" />
+      <wsdl:output message="tns:Usta_GoruntuleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Hizmet_Sonlandir">
+      <wsdl:input message="tns:Hizmet_SonlandirSoapIn" />
+      <wsdl:output message="tns:Hizmet_SonlandirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Yorumlari_Mobil">
+      <wsdl:input message="tns:Usta_Yorumlari_MobilSoapIn" />
+      <wsdl:output message="tns:Usta_Yorumlari_MobilSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Yorum_Yapılan_Ustalar">
+      <wsdl:input message="tns:Yorum_Yapılan_UstalarSoapIn" />
+      <wsdl:output message="tns:Yorum_Yapılan_UstalarSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
@@ -1073,6 +1244,69 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Uye_Kisisel_Istek_Listesi">
+      <soap:operation soapAction="http://tempuri.org/Uye_Kisisel_Istek_Listesi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mobil_Ban_Sorgula">
+      <soap:operation soapAction="http://tempuri.org/Mobil_Ban_Sorgula" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mobil_Kayıt_Ol">
+      <soap:operation soapAction="http://tempuri.org/Mobil_Kayıt_Ol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Goruntule">
+      <soap:operation soapAction="http://tempuri.org/Usta_Goruntule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hizmet_Sonlandir">
+      <soap:operation soapAction="http://tempuri.org/Hizmet_Sonlandir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Yorumlari_Mobil">
+      <soap:operation soapAction="http://tempuri.org/Usta_Yorumlari_Mobil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Yorum_Yapılan_Ustalar">
+      <soap:operation soapAction="http://tempuri.org/Yorum_Yapılan_Ustalar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1357,6 +1591,69 @@
     </wsdl:operation>
     <wsdl:operation name="Usta_Musaitlik_Degistir">
       <soap12:operation soapAction="http://tempuri.org/Usta_Musaitlik_Degistir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Uye_Kisisel_Istek_Listesi">
+      <soap12:operation soapAction="http://tempuri.org/Uye_Kisisel_Istek_Listesi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mobil_Ban_Sorgula">
+      <soap12:operation soapAction="http://tempuri.org/Mobil_Ban_Sorgula" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mobil_Kayıt_Ol">
+      <soap12:operation soapAction="http://tempuri.org/Mobil_Kayıt_Ol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Goruntule">
+      <soap12:operation soapAction="http://tempuri.org/Usta_Goruntule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hizmet_Sonlandir">
+      <soap12:operation soapAction="http://tempuri.org/Hizmet_Sonlandir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Usta_Yorumlari_Mobil">
+      <soap12:operation soapAction="http://tempuri.org/Usta_Yorumlari_Mobil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Yorum_Yapılan_Ustalar">
+      <soap12:operation soapAction="http://tempuri.org/Yorum_Yapılan_Ustalar" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -46,12 +46,12 @@ namespace HelpAsCompanyApp
                     string Bugun_Yil = DateTime.Now.Year.ToString();
                     string Bugun_Ay = DateTime.Now.Month.ToString();
                     string TARIH = Bugun_Sayi + "-" + Bugun_Ay + "-" + Bugun_Yil + "-" + Bugun_Ismi_TR;
-                    var response = service.UYE_ENGELLE(USER_ID, textBox1.Text, TARIH);
+                    var response = service.UYE_ENGELLE(USER_ID, textBox1.Text, TARIH);                   
                     if(response=="ok")
                     {
                         MessageBox.Show("Kullanıcıyı Engelledin", "HELPAS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else if(response=="error")
+                    if(response=="error")
                     {
                         MessageBox.Show("Engelleme sırasında hata oluştu","HELPAS",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }                    

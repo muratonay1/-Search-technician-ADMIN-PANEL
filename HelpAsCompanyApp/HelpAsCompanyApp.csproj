@@ -151,6 +151,9 @@
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.HaberSilResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Hizmet_SonlandirResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Hizmet_SorgulaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -169,6 +172,12 @@
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Istek_OlusturResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Mobil_Ban_SorgulaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Mobil_Kayıt_OlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.SehirIsmiDonderResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -181,6 +190,9 @@
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Usta_EkleResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Usta_GoruntuleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Usta_ListeleResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -188,6 +200,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Usta_MusaitmiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Usta_Yorumlari_MobilResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.UYE_ENGELI_KALDIRResponse.datasource">
@@ -202,6 +217,9 @@
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Uye_GuncelleResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Uye_Kisisel_Istek_ListesiResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.UYE_LİSTELEResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -209,6 +227,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Uygun_UstalarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\SonService\HelpAsCompanyApp.SonService.Yorum_Yapılan_UstalarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SonService\WebService1.wsdl" />
